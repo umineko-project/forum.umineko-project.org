@@ -1,0 +1,987 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>(*) [EN/RU] Mobile devices / Мобильные устройства - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+
+<h1>(*) [EN/RU] Mobile devices / Мобильные устройства</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=246">https://forum.umineko-project.org/viewtopic.php?t=246</a>
+-->
+
+<div class="post" id="p2801">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2018-04-26 14:52:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Начиная с пятого эпизода имеется полноценная поддержка iOS 8.0 и новее, а также Android 4.1 и новее.<br>
+<br>
+Для установки на iOS устройства можно воспользоваться <a href="https://developer.apple.com/programs/" class="exlinks" onclick="this.target='_blank';">сертификатом разработчика Apple Developer</a> или приложеним <a href="http://www.cydiaimpactor.com" class="exlinks" onclick="this.target='_blank';">Cydia Impactor</a>. Для копирования файлов игры рекомендуется использовать актуальную версию iTunes.<br>
+<br>
+Для установки на Android устройства воспользуйтесь FAQ ниже.<br>
+<br>
+————<br>
+<br>
+Starting with episode 5 we have reasonably decent iOS (8.0+) and Android (4.1+) support.<br>
+<br>
+To install the app on your iOS device you could use an <a href="https://developer.apple.com/programs/" class="exlinks" onclick="this.target='_blank';">Apple Developer Program certificate</a> or <a href="http://www.cydiaimpactor.com" class="exlinks" onclick="this.target='_blank';">Cydia Impactor</a> application. To copy game files the latest iTunes version is recommended.<br>
+<br>
+To install on your Android device you may follow the FAQ below.<br>
+
+<dl class="codebox"><dt><a href="javascript:void%280%29;" onclick="var el = this.parentNode.parentNode.getElementsByTagName('dd')[0]; var v = el.style.display != 'none'; el.style.display = v ? 'none' : 'block'; this.innerHTML = (v ? '[+]' : '[−]') + ' Spoiler'; ">[+] Spoiler </a></dt><dd style="display:none">
+Game path:<br>
+The game should be stored on any sdcard (emulated or external) in ONScripter-RU folder in the root of the sdcard.<br>
+* All the saves will be stored on the internal (emulated) sdcard due to external card being unwritable on some deivices/firmwares. For this reason you are not allowed to have ons.cfg (do not confuse with default.cfg) in the game folder if it is stored on the external sdcard.<br>
+* On some devices it is not possible to easily determine external sdcard path, and the game will fail to launch. If this happens create default.cfg file in ONScripter-RU folder on your internal (emulated) sdcard with 'root=/full/game/path' line without quotes.<br>
+<br>
+Compatibility:<br>
+The game targets any armv7s, arm64, or x86 droid device on firmware 4.1 and newer, with at least 2 gigabytes of RAM and OpenGL ES 2.0 support with at least 4096 pixel texture dimension limit. However, newer os versions are generally preferred.<br>
+* Starting with droid 4.3 it is possible to use OpenGL ES 3.0 renderer on supported device models.<br>
+* Starting with droid 4.4 it is possible to use the whole screen space.<br>
+* Starting with droid 5.0 it is possible to gain from using 64-bit CPUs natively on supported device models.<br>
+<br>
+Fixing visual glitches:<br>
+Some devices need <strong class="text-strong">render-self=no</strong> ons.cfg option to fix visual artifacts.<br>
+<br>
+Fixing cropped image on wide-screen devices:<br>
+You need to update to <a href="https://github.com/umineko-project/onscripter-ru/releases" class="exlinks" onclick="this.target='_blank';">r3569 or newer</a> and specify manual screen offset used to shift left the game image in ons.cfg. For example, on Redmi Note 9 Pro with 2400x1080 screen it is <strong class="text-strong">system-offset-x=180</strong>.<br>
+<br>
+Performance:<br>
+There are multiple performance issues at the moment and thus you should take good care of the configuration options described below.<br>
+<br>
+Choosing renderer:<br>
+By default ONScripter-RU uses OpenGL ES 2.0 renderer and falls back to OpenGL ES 3.0 if OpenGL ES 2.0 renderer failed to initialise or if 'renderer-blacklist=GLES2' line is present in ons.cfg (!). OpenGL ES 3.0 may not be available on some devices, however, it may deliver slightly better performance.<br>
+<br>
+Enabling hardware video decoding:<br>
+By default ONScripter-RU has hardware video decoding disabled on droid due to poor performance. However, you may be able to reduce power consumption by enabling it via 'hwdecoder=on' line in ons.cfg. Note that 1080p video playback is not guaranteed on any mobile devices regardless of this option.<br>
+<br>
+Fallback texture loading:<br>
+When using OpenGL ES 2.0 renderer on certain devices you might be able to improve certain texture loading performance (e.g. Config menu) by using additional RAM caching. To enable this add 'texture-upload=ramcopy' to ons.cfg. Note that it may cause crashes on lower end devices having not enough memory. This setting is ignored when using OpenGL ES 3.0 renderer.<br>
+<br>
+FPS limit:<br>
+You may be able to improve game performance and seriously reduce power consumption by limiting game fps to a lower value than 60 frames per second. To do so add 'force-fps=30' line to ons.cfg, where 30 is your preferred value. Note that you could additionally add 'force-vsync' line to ons.cfg to enable old-style vertical synchronisation, however it will unlikely benefit you in any way. Not setting a fps limit may result in getting rendering glitches like black stripes appearing in some scenes on some hardware.<br>
+<br>
+Texture size limit:<br>
+You might get slightly better performance in some scenes by limiting the supported texture dimentsion limit to a lower value than your device supports. To do so add 'texlimit=4096' line to ons.cfg, where 4096 is a power-of-two value in pixels.<br>
+<br>
+Getting log dumps:<br>
+You should install some adb drivers for your device, and then use command-line utility to obtain the necessary output. For example, on UNIX-like systems you could use: <br>
+adb logcat | grep --line-buffered -Ei 'sdl|onscripter' &gt; /path/to/my/log.txt</dd></dl>
+
+<span style="font-size: 125%; line-height: normal"><strong class="text-strong">Touch controls are the same for iOS and Android</strong></span>:<br>
+— single finger tap for left click<br>
+— double finger tap for right click<br>
+— triple finger tap for middle click<br>
+— two finger swipe for scroll<br>
+— three finger swipe right is skip<br>
+— three finger swipe left is automode<br>
+— three finger swipe up is mute<br>
+— three finger swipe down is tab (skip to next chapter)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2826">
+	<div class="info">
+		<p class="poster">Ginand</p>
+		<p class="dt">2018-05-04 18:59:26</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I keep having an "Invalid launch directory! error even though everything is seemingly in the right place. I triple checked all the folders and files. The file size is matching up. It's basically just been copy pasted from my PC folder (the .exe is working stunningly) onto the phone.<br>
+Everything is in "ONScripter-RU" which is in turn placed into the root folder, yet it seems like it doesn't even acknowledge the folders being where they're supposed to. I tried it with adding "root=ONScripter-RU" to default.cfg, but that was pretty much a wild attempt due to hitting a brick wall.<br>
+Any advice on what I can try next? Does the .apk perhaps drop a debug log somewhere?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2827">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2018-05-04 19:24:00</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi,<br>
+<br>
+Unfortunately it is not possible for us to determine where the game is as Android does not offer any APIs in this direction. It is unfortunate, but as a result your idea about editing the default.cfg file with the root line is pretty much what one needs to do.<br>
+<br>
+This line should contain not a relative (i.e. ONSCripter-RU) but actually a full path your sdcard. For example, one of our users had to add:
+<div class="codebox"><p>Code:</p><pre><code>root=/storage/0000-0000/ONScripter-RU</code></pre></div>
+I think the software like "ES File Explorer" offers you a way to obtain the full path. Another way could be trying the adb.<br>
+<br>
+Also, one of the common causes of visual glitches on Android is self-rendering, so if you get them try adding "render-self=no" first <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2828">
+	<div class="info">
+		<p class="poster">Ginand</p>
+		<p class="dt">2018-05-04 19:37:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thank you for the fast reply! Much obliged!<br>
+My apologies though, I meant to write down the full path but forgot after doublechecking the folder name. The actual path used was /storage/emulated/0/ONScripter-RU and I didn't have any luck with it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2829">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2018-05-04 19:41:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hmm, are you sure you added that to the correct default.cfg?<br>
+The thing is, you should not add to the ingame default.cfg (ONScripter-RU cannot find it), but actually to ONScripter-RU folder the game created itself to point the engine to the right sdcard. It should be in internal storage.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2830">
+	<div class="info">
+		<p class="poster">Ginand</p>
+		<p class="dt">2018-05-04 20:08:39</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">That's probably it. Any pointers on where the apk generates the folder(or the exact name)? I had no luck searching the data manually nor over the search function.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2831">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2018-05-04 20:50:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I checked out the code, and it looks like we try our best effort by looking at the following environment variables and attempting to create ONScripter-RU directory in their root: EXTERNAL_STORAGE, SECONDARY_STORAGE, EXTERNAL_SDCARD_STORAGE.<br>
+Basically this should create a directory in the root of (some) of your memory where DCIM folder (the one to store photos) is. If it does not work, you can always create ONScripter-RU folder there yourself and put there a default.cfg file with just a root=/path/to/game line.<br>
+Good luck!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2832">
+	<div class="info">
+		<p class="poster">Ginand</p>
+		<p class="dt">2018-05-04 22:10:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">That's interesting. It didn't generate at all for me. Subsequent uninstallations and reinstallations made no difference either. And the attempts to make one and put the config inside didn't bear fruit either. This shouldn't require a rooted device, I believe, right? I'm positive the issue is that the path isn't getting recognized. So close.<br>
+It'd be convenient to see an example of a configuration that worked, but sadly none on the dev team use android, right?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2833">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2018-05-05 01:41:51</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">No, there definitely is no need to have root. Could you tell us a little more about your device? Android version, the amount of SD cards and their full paths (internal and external whatever it names them), the firmware name/build, perhaps the model name.<br>
+<br>
+We got our hands on a couple of devices during Android support development, and it worked out of the box, i.e. recognised the storage paths and we did not need to specify anything like that. Problems like you face only seem to appear at our tester devices, and thus the workarounds. There was not the case where it did not function entirely, so if you have enough patience I am sure we can resolve this.<br>
+<br>
+Might you have some courage to help us debug it? I know it may sound painful, but without logs there hardly is a way to understand what is going on. Could you please install adb on your PC and run adb logcat? There is a very good how to on how to install adb: <a href="https://www.xda-developers.com/install-adb-windows-macos-linux/" class="exlinks" onclick="this.target='_blank';">https://www.xda-developers.com/install- ... cos-linux/</a><br>
+<br>
+After you obtain the logs (adb logcat &gt; log.txt) please upload them here (you may need to archive them or just copy-paste under a spoiler). You can filter the contents by sdl/onscripter-ru. If you think the file contains any private information, you may PM me.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2836">
+	<div class="info">
+		<p class="poster">Ginand</p>
+		<p class="dt">2018-05-05 11:38:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thank you for your patience. I was afraid of bugging you folks with this too much with this. I'm off to vacation in a few days and really hoped to get this version of Umineko up and running on mobile to help fill the long rides.<br>
+Model: Lenovo Moto G5<br>
+Android Version: 7.0<br>
+SD Card: One, but it's been formatted to serve as an extension of the internal storage. So there's only storage/emulated/0/<br>
+I currently have it set as storage/emulated/0/ONScripter-RU (only has the configuration file) and a separate directory for the game to which the .cfg leads to. Same error though.<br>
+<br>
+Now, a few interesting things happened. I was getting the usual error until I started debugging. While the log dump was happening, I opened the game again so the log gets the necessary info. The error has changed, this time not starting due to a opengl resolution error. I checked the config to see if the resolution was set as too high (it wasn't), and went back to start the game and write down the error. Except this time the game actually booted up and started verifying game files. <br>
+I'm not entirely sure how android indexes file, but considering the bigger filesize, could it be possible that renaming the folder... actually took this long to take effect? Odd.<br>
+<br>
+<br>
+EDIT:<br>
+Interestingly enough, the game returns to being unable to start if the rendered is changed. <br>
+<br>
+There is some noticeable visual tearing on some textures (like character mouths), but I can live with that.<br>
+Great work on this project!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2838">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2018-05-05 12:22:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">What the— Well, at least it started to run now.<br>
+<br>
+I think the most likely issue could be that you were editing default.cfg in Windows and used Windows Line Endings or UTF-8 Byte Order Mark. While it is supposed to handle Windows Line Endings (CRLF) now, perhaps a bug is still there. Consider downloading Notepad++ (<a href="https://notepad-plus-plus.org" class="exlinks" onclick="this.target='_blank';">https://notepad-plus-plus.org</a>) or some other more functional editor and setting Unix Line Endings (LF) and UTF-8 without BOM for default.cfg.<br>
+<br>
+This tearing should almost certainly be solved by adding the following line: <div class="codebox"><p>Code:</p><pre><code>render-self=no</code></pre></div></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2840">
+	<div class="info">
+		<p class="poster">Ginand</p>
+		<p class="dt">2018-05-05 12:56:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I've only edited the file over the phone itself, so it should have been fine (subsequent edits all worked out well too).<br>
+Thank you, that line solved the tearing and it runs nearly perfectly at the moment.<br>
+The only issue that after a while the screen turns black and a restart is necessary to continue. It's probably related to the device running out of memory, so I'll play around with some additional settings to see if it can be resolved.<br>
+Otherwise, perfect</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2841">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2018-05-05 13:12:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">That is good to hear. Unfortunately not much I can tell about black screens, but yes just 2 GB of RAM on Android could be more problematic than on iOS. We will see if we could improve the situation in the future.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2842">
+	<div class="info">
+		<p class="poster">Ginand</p>
+		<p class="dt">2018-05-05 20:11:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">No problem, I can live with it. The rest works marvelously.<br>
+Thanks again for your time and effort!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3548">
+	<div class="info">
+		<p class="poster">Rim Yroto</p>
+		<p class="dt">2019-04-23 13:07:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Здравствуйте! Столкнулся со следующей проблемой: во всей игре присутствуют артефакты в виде пиксельных полос. <br>
+Устройство: Xiaomi Mi Mix 2S<br>
+ОС: Android 9<br>
+UPD. Помогло добавление строки render-self=no в ons.cfg
+<dl class="codebox"><dt><a href="javascript:void%280%29;" onclick="var el = this.parentNode.parentNode.getElementsByTagName('dd')[0]; var v = el.style.display != 'none'; el.style.display = v ? 'none' : 'block'; this.innerHTML = (v ? '[+]' : '[−]') + ' Spoiler'; ">[+] Spoiler </a></dt><dd style="display:none"><div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="Screenshot_2019-04-23-15-48-07-097_org.umineko_project.onscripter_ru.png" class="postimage" alt="Если посмотреть на Кинзо" onclick="viewableArea(this);"></dt>
+			<dd><em>Если посмотреть на Кинзо</em></dd>			<dd>Screenshot_2019-04-23-15-48-07-097_org.umineko_project.onscripter_ru.png (1.72 MiB) Viewed 17660 times</dd>
+		</dl>
+		
+		
+			</div><div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="Screenshot_2019-04-23-15-49-13-541_org.umineko_project.onscripter_ru.png" class="postimage" alt="Или на название игры" onclick="viewableArea(this);"></dt>
+			<dd><em>Или на название игры</em></dd>			<dd>Screenshot_2019-04-23-15-49-13-541_org.umineko_project.onscripter_ru.png (2.74 MiB) Viewed 17660 times</dd>
+		</dl>
+		
+		
+			</div></dd></dl></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3651">
+	<div class="info">
+		<p class="poster">Dittorita</p>
+		<p class="dt">2019-06-25 23:15:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I'm having the same issue as the above commenter, regardless of renderer or resolution. I'm using a Galaxy S9 on Android P.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3652">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2019-06-26 07:36:27</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Well, the answer is in the same post, although I guess it may be hard to read Russian for a non-native speaker <img class="smilies" src="../../../images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Очень доволен"><br>
+Add render-self=no line to ons.cfg, and it will work.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3653">
+	<div class="info">
+		<p class="poster">Dittorita</p>
+		<p class="dt">2019-06-26 16:58:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ha, you're right! I copied it into Google Translate, guess I missed the last line. Thanks you two.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3666">
+	<div class="info">
+		<p class="poster">Roak</p>
+		<p class="dt">2019-07-08 14:03:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Are saves compatible between Android and PC? It would be cool if I could read on my phone and then copy the save onto my computer and pick up from there.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3667">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2019-07-08 14:20:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yes, they are compatible.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3668">
+	<div class="info">
+		<p class="poster">Roak</p>
+		<p class="dt">2019-07-08 14:46:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Sweet! I have a ten hour plane ride in a week so now I know what to spend some of that time on.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3847">
+	<div class="info">
+		<p class="poster">M1iraiNikki</p>
+		<p class="dt">2019-10-09 22:48:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Может кто на русском обьяснить как фиксануть ошибку Invalid launch directory ? на андроиде</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3848">
+	<div class="info">
+		<p class="poster">M1iraiNikki</p>
+		<p class="dt">2019-10-10 08:30:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote cite="./viewtopic.php?p=3847&amp;sid=799ef2ab2c24f60f89a44f47d8a110a0#p3847"><div><cite>M1iraiNikki wrote: <a href="./viewtopic.php?p=3847&amp;sid=799ef2ab2c24f60f89a44f47d8a110a0#p3847" data-post-id="3847" onclick="if(document.getElementById(hash.substr(1)))href=hash" class="loclinks">↑</a><span class="responsive-hide">10 Oct 2019, 01:48</span></cite>
+Может кто на русском обьяснить как фиксануть ошибку Invalid launch directory ? на андроиде
+</div></blockquote>
+все ,фиксанул</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3899">
+	<div class="info">
+		<p class="poster">levalas</p>
+		<p class="dt">2019-12-15 23:44:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Здравствуйте! Не могу запустить игру, всё скачал, установил, идёт проверка файлов и дальше нет прогресса, подскажите что делать, телефон Xiaomi Redmi 6, android 9.0, 3 gb Ram, игра стоит на внутренней памяти.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3901">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2019-12-15 23:54:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Добрый вечер, в некоторых случаях этот процесс небыстрый, стоит подождать до получаса.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3902">
+	<div class="info">
+		<p class="poster">levalas</p>
+		<p class="dt">2019-12-16 18:47:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">А что делать в случае, когда игра через некоторое время не показывает bg, а чуть позже исчезают спрайты и от них остаются только рты, а ещё через время зависает, а то и хуже вылетает?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3903">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2019-12-17 18:14:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Можно попробовать сначала использовать render-self=no в ons.cfg, если не поможет, поиграться с настройками кэшей. Игра требовательна к ресурсам, потому вылетать время от времени будет неизбежно.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3904">
+	<div class="info">
+		<p class="poster">levalas</p>
+		<p class="dt">2019-12-17 22:01:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote cite="./viewtopic.php?p=3903&amp;sid=799ef2ab2c24f60f89a44f47d8a110a0#p3903"><div><cite>vit9696 wrote: <a href="./viewtopic.php?p=3903&amp;sid=799ef2ab2c24f60f89a44f47d8a110a0#p3903" data-post-id="3903" onclick="if(document.getElementById(hash.substr(1)))href=hash" class="loclinks">↑</a><span class="responsive-hide">17 Dec 2019, 21:14</span></cite>
+Можно попробовать сначала использовать render-self=no в ons.cfg, если не поможет, поиграться с настройками кэшей. Игра требовательна к ресурсам, потому вылетать время от времени будет неизбежно.
+</div></blockquote>
+Спасибо! артефакты исчезли, но вылеты остались, но это терпимо</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3958">
+	<div class="info">
+		<p class="poster">Yurimaru</p>
+		<p class="dt">2020-01-09 17:13:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Здравствуйте. Невозможно запустить игру, застрял на верификации файлов. Все бы ничего, я бы подождал, но с течением времени просто появляется черный экран - и все.<br>
+Добавлял env[verify] none в ons.cfg тоже не помогло, как начинает верифицировать так и застревает.<br>
+<br>
+Также добавил render-self=no но артефакт все еще находится на своем месте.<br>
+<br>
+Я что-то не так делаю?<br>
+<br>
+Благодарю за ответ.<br>
+<br>
+Телефон OnePlus 7 Pro, 8GB. Android 10<br>
+<br>
+вот как все выглядит.
+<dl class="codebox"><dt><a href="javascript:void%280%29;" onclick="var el = this.parentNode.parentNode.getElementsByTagName('dd')[0]; var v = el.style.display != 'none'; el.style.display = v ? 'none' : 'block'; this.innerHTML = (v ? '[+]' : '[−]') + ' Spoiler'; ">[+] Spoiler </a></dt><dd style="display:none"><img src="https://pasteboard.co/IPccqqU.jpg" class="postimage" alt="Image"></dd></dl>
+
+Упомяну что он отказывается использовать GL2.<br>
+<br>
+АПД: С артефактом разобрался, его оказывается по ошибке вписал в дефолт.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3959">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2020-01-09 18:47:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Добрый день, для пропуска верифкации можно вписать env[verify]=none, но с этим нужно крайне осторожно. О причинах чёрного экрана ничего сказать не могу, возможно что-то с производительностью или повлияло отсутствие render-self=no при проверке.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3960">
+	<div class="info">
+		<p class="poster">Yurimaru</p>
+		<p class="dt">2020-01-09 19:17:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Так в том-то и дело, что env[verify]=none не работает, игра упорно грузит верификацию. Я бы с удовольствием прошел верификацию, на компьютере все было хорошо.<br>
+<br>
+Я понимаю что нужно осторожно, но я уже второй день не могу пройти верификацию, и убрать тоже не получается (<br>
+<br>
+Приложение вообще падает через 10-15 минут, хотя верификация еще не закончена.<br>
+<br>
+Рендерселф тоже вписан, но он работает, артефакт пропал.<br>
+<br>
+Может быть другой рендеринг нужно вписать? Я не знаю уже что делать.<br>
+<br>
+Вообще лучше запаковывать ресурсы в единый файл наподобие .dat имхо, так легче будет проверить все ли на месте, и передать на телефон файлы по mtp. Когда приложение вынуждено сотню тысяч отдельных файлов проверять по хэшу, юзерэкспириенс немного страдает(((<br>
+<br>
+Кстати, насчет производительности, мой телефон в топах за 19 год, вряд ли он чем-то хуже других в этом плане.<br>
+<br>
+Может есть идеи? Сейв файлы какие-нибудь, позволяющие мимо этого пройти.<br>
+<br>
+Апд: <br>
+Так выглядит когда я переключаюсь с этого приложения на другое. Может он зависает задолго до черного экрана? Не могу понять, анимации нет.
+<dl class="codebox"><dt><a href="javascript:void%280%29;" onclick="var el = this.parentNode.parentNode.getElementsByTagName('dd')[0]; var v = el.style.display != 'none'; el.style.display = v ? 'none' : 'block'; this.innerHTML = (v ? '[+]' : '[−]') + ' Spoiler'; ">[+] Spoiler </a></dt><dd style="display:none"><a href="https://pasteboard.co/IPd2KoQ.jpg" class="exlinks img-link" onclick="this.target='_blank';">https://pasteboard.co/IPd2KoQ.jpg</a></dd></dl></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3961">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2020-01-09 19:32:27</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">env[verify]=none совершенно точно работает, проверил у себя. Возможно куда-то не туда добавлено, нужно в ons.cfg. У меня на iPad верификация проходит за пару минут, так что 10-15 вряд ли норма даже для Android.<br>
+<br>
+Для поддержки единого файла нужно дорабатывать движок, сейчас это никто делать не будет. Впрочем, код открыт, можно прислать патч =)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3962">
+	<div class="info">
+		<p class="poster">Yurimaru</p>
+		<p class="dt">2020-01-09 19:37:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Заработало xD<br>
+Хохма состояла в том, что я написал env[verify]=none без знака равно.<br>
+Все же проверка ресурсов не удалась, увы, надо тут тоже галочку поставить. Буду читать на свой страх риск.<br>
+<br>
+В любом случае, спасибо!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4045">
+	<div class="info">
+		<p class="poster">vmarcelo</p>
+		<p class="dt">2020-03-10 22:02:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Anyone had this problem too? <br>
+<br>
+<a href="https://m.imgur.com/a/UfhPMKd" class="exlinks" onclick="this.target='_blank';">https://m.imgur.com/a/UfhPMKd</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4169">
+	<div class="info">
+		<p class="poster">seth1910</p>
+		<p class="dt">2020-07-01 03:14:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">So is this can be used for 07th-mod version ? or just for umineko project ?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4220">
+	<div class="info">
+		<p class="poster">ShoukoMi</p>
+		<p class="dt">2020-11-24 07:47:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">распаковал игру по пути "storage/0/ONScripter-RU/umineko" . добавил в default.cfg строчку "root=/storage/0/ONScripter-RU/". но движок упорно не видит игру. что сделал не так?<br>
+redmi note 9s 10android 6ram</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4222">
+	<div class="info">
+		<p class="poster">ShoukoMi</p>
+		<p class="dt">2020-11-24 19:04:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Та ошибка пропала, спутся 5 переустановки. Теперь No compatible game script found</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4223">
+	<div class="info">
+		<p class="poster">ShoukoMi</p>
+		<p class="dt">2020-11-24 19:26:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Божьей помощью победил. Изменил игровой default.cfg на ons.cfg, и создал другой с путем игры. Теперь при заходе пишет что битые бекграунды. Попробую перекачать</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4243">
+	<div class="info">
+		<p class="poster">lustre</p>
+		<p class="dt">2020-12-06 22:49:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Here's hoping someone bumps across this post.<br>
+<br>
+I'm getting a parsing error during the tea party for Episode 1<br>
+<img src="https://i.imgur.com/Asa2kve.jpg" class="postimage" alt="Image"><br>
+and have absolutely no idea how to fix it. I tried a few things, but alas - to no avail.<br>
+<br>
+If anyone's got any idea how to fix it, I'd be super grateful. It's been such a comfy reread until now <img class="smilies" src="../../../images/smilies/icon_e_sad.gif" width="15" height="17" alt=":(" title="Грустный"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4244">
+	<div class="info">
+		<p class="poster">Giza</p>
+		<p class="dt">2020-12-07 13:31:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote cite="./viewtopic.php?p=4243&amp;sid=214103356e1edca52e57673e2a654623#p4243"><div><cite>lustre wrote: <a href="./viewtopic.php?p=4243&amp;sid=214103356e1edca52e57673e2a654623#p4243" data-post-id="4243" onclick="if(document.getElementById(hash.substr(1)))href=hash" class="loclinks">↑</a><span class="responsive-hide">07 Dec 2020, 01:49</span></cite>
+Here's hoping someone bumps across this post.<br>
+<br>
+I'm getting a parsing error during the tea party for Episode 1<br>
+<img src="https://i.imgur.com/Asa2kve.jpg" class="postimage" alt="Image"><br>
+and have absolutely no idea how to fix it. I tried a few things, but alas - to no avail.<br>
+<br>
+If anyone's got any idea how to fix it, I'd be super grateful. It's been such a comfy reread until now <img class="smilies" src="../../../images/smilies/icon_e_sad.gif" width="15" height="17" alt=":(" title="Грустный">
+</div></blockquote>
+I think, do not have the required voice file. Check files<br>
+90400072<br>
+90400073</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4245">
+	<div class="info">
+		<p class="poster">luster2</p>
+		<p class="dt">2020-12-07 15:00:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote cite="./viewtopic.php?p=4244&amp;sid=8628aa9e7381b3cf908d4db9bed8289c#p4244"><div><cite>Giza wrote: <a href="./viewtopic.php?p=4244&amp;sid=8628aa9e7381b3cf908d4db9bed8289c#p4244" data-post-id="4244" onclick="if(document.getElementById(hash.substr(1)))href=hash" class="loclinks">↑</a><span class="responsive-hide">07 Dec 2020, 16:31</span></cite>
+I think, do not have the required voice file. Check files<br>
+90400072<br>
+90400073
+</div></blockquote>
+Ah, that was my first guess yesterday. But I was looking for a missing file in ./Umineko/sound/voice/13 that would start with "1" (as in: chapter 1). And I did find a few files that skipped the n+1 convention, so I tried putting an .ogg file with 1 second of silence in those "gaps", but it didn't do the trick.<br>
+<br>
+What I didn't expect is that the tea parties have a prefix of their own. And sure enough:<br>
+<img src="https://i.imgur.com/GtClAbF.jpg" class="postimage" alt="Image"><br>
+ZArchiver must have skipped 90400073.ogg when I was unpacking the archive.<br>
+<br>
+I put in a blank 90400073.ogg file and everything's A-okay now:<br>
+<img src="https://i.imgur.com/Khj8t76.jpg" class="postimage" alt="Image"><br>
+<br>
+All I can say is: thanks for a super quick response. Back to reading and being amazed at the sheer amount of work the team put into this project. Thanks!<br>
+<br>
+<span style="font-size: 55%; line-height: normal">Had to make a new account since there's an issue with password recovery, I think. Don't be mad at me, please.</span></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4246">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2020-12-09 09:47:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote class="uncited"><div> Had to make a new account since there's an issue with password recovery, I think. Don't be mad at me, please.</div></blockquote>
+Some mail providers have mail delivery issues. Usually Microsoft is broken.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4262">
+	<div class="info">
+		<p class="poster">Zeatheon</p>
+		<p class="dt">2020-12-24 08:53:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">There are some weird dots on all of the sprites or any animated sprites. Tried changing the resolution and the renderers but the results are the same.</div>
+<dl class="attachbox">
+					<dt>
+						Attachments
+					</dt>
+											<dd>
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="Screenshot_20201224-163658.jpg" class="postimage" alt="Screenshot_20201224-163658.jpg" onclick="viewableArea(this);"></dt>
+						<dd>Screenshot_20201224-163658.jpg (52.44 KiB) Viewed 19839 times</dd>
+		</dl>
+		
+		
+			</dd>
+									</dl>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4263">
+	<div class="info">
+		<p class="poster">ooa</p>
+		<p class="dt">2020-12-24 09:07:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote cite="./viewtopic.php?p=4262&amp;sid=8628aa9e7381b3cf908d4db9bed8289c#p4262"><div><cite>Zeatheon wrote: <a href="./viewtopic.php?p=4262&amp;sid=8628aa9e7381b3cf908d4db9bed8289c#p4262" data-post-id="4262" onclick="if(document.getElementById(hash.substr(1)))href=hash" class="loclinks">↑</a><span class="responsive-hide">24 Dec 2020, 11:53</span></cite>
+There are some weird dots on all of the sprites or any animated sprites. Tried changing the resolution and the renderers but the results are the same.
+</div></blockquote>
+
+This is generally an issue with self-rendering. Use "render-self=no" in ons.cfg.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4265">
+	<div class="info">
+		<p class="poster">Zeatheon</p>
+		<p class="dt">2020-12-25 05:16:58</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote cite="./viewtopic.php?p=4263&amp;sid=8628aa9e7381b3cf908d4db9bed8289c#p4263"><div><cite>ooa wrote: <a href="./viewtopic.php?p=4263&amp;sid=8628aa9e7381b3cf908d4db9bed8289c#p4263" data-post-id="4263" onclick="if(document.getElementById(hash.substr(1)))href=hash" class="loclinks">↑</a><span class="responsive-hide">24 Dec 2020, 12:07</span></cite>
+<blockquote cite="./viewtopic.php?p=4262&amp;sid=8628aa9e7381b3cf908d4db9bed8289c#p4262"><div><cite>Zeatheon wrote: <a href="./viewtopic.php?p=4262&amp;sid=8628aa9e7381b3cf908d4db9bed8289c#p4262" data-post-id="4262" onclick="if(document.getElementById(hash.substr(1)))href=hash" class="loclinks">↑</a><span class="responsive-hide">24 Dec 2020, 11:53</span></cite>
+There are some weird dots on all of the sprites or any animated sprites. Tried changing the resolution and the renderers but the results are the same.
+</div></blockquote>
+
+This is generally an issue with self-rendering. Use "render-self=no" in ons.cfg.
+</div></blockquote>
+Thanks, it worked.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4318">
+	<div class="info">
+		<p class="poster">MakotoShinji</p>
+		<p class="dt">2021-02-12 17:38:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Can anyone upload Umineko android downloading tutorial video on YT?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4319">
+	<div class="info">
+		<p class="poster">shikkakun</p>
+		<p class="dt">2021-02-17 20:59:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hello.<br>
+I'm trying to play on a device with Android 11 system.<br>
+Since when I tried to zip the files, the program told me the following files couldn't be transferred because they have an invalid number. I tried to open the game and the game also won't initiate because of this. I'm attaching a screenshot. Sorry if this is not a good hoster for photos. <a href="https://ibb.co/dgPQ5mz" class="exlinks" onclick="this.target='_blank';">https://ibb.co/dgPQ5mz</a><br>
+I also tried copying the files from my computer (I also have it installed there) to my cellphone but my cellphone doesn't recognize it no matter what. I can't transfer the file or even create a dummy, because that character is not valid (this one )<br>
+<br>
+Thanks in advance for your help.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4321">
+	<div class="info">
+		<p class="poster">ndgnuh</p>
+		<p class="dt">2021-03-04 08:13:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">How do I fix this weird offset problem on Android? I have tried every kind of window size and rendering configuration but it doesn't help. Thank you!  <br>
+<br>
+<br>
+<img src="https://preview.redd.it/vyz82ppdryk61.jpg?width=960&amp;crop=smart&amp;auto=webp&amp;s=33eea5d598f116b316705a251600f5785adde96f" class="postimage" alt="Image"><br>
+<br>
+<br>
+My phone model is Redmi Note9 Pro. I notice some other readers have this problem, too. Maybe it have something to do with 16:10 screen.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4326">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2021-03-09 20:01:00</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><span style="text-decoration:line-through">Apparently adding <strong class="text-strong">fullscreen</strong> option should fix this behaviour.</span><br>
+<br>
+Addressed in <a href="https://github.com/umineko-project/onscripter-ru/releases/tag/untagged-df5245a40dafcd1d907d" class="exlinks" onclick="this.target='_blank';">https://github.com/umineko-project/onsc ... afcd1d907d</a><br>
+Updated the first post. You need to specify <strong class="text-strong">system-offset-x=N</strong> with suitable N value for your system.<br>
+Thanks a lot to ndgnuh for discovering this.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4341">
+	<div class="info">
+		<p class="poster">Kami39</p>
+		<p class="dt">2021-04-01 03:14:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Two problems.<br>
+<br>
+One, the touchscreen won't work. I'm using a Samsung s10 Lite.<br>
+<br>
+Two, after using a wireless controller I could start the game but the game occupies only the top left of the screen.<br>
+<a href="http://imgur.com/a/cGITX56" class="exlinks" onclick="this.target='_blank';">http://imgur.com/a/cGITX56</a><br>
+<br>
+Would appreciate an answer to the second problem.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4342">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2021-04-03 11:29:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">You can try to workaround the issue by using system-offset-x/system-offset-y from the post right before yours.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4351">
+	<div class="info">
+		<p class="poster">chidosir</p>
+		<p class="dt">2021-04-11 11:50:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Are there any tips to improve performance, besides what's mentioned in the first post? Playing on a Xiaomi MI A1 (SD 625, Adreno 506, 4gb ram) and while it is playable some animations seem to run at a low framerate. The text as it comes is pretty choppy most times, and the lip syncing as well. But there are other times where some of the other animations in the scene are silky smooth for some reason, even while these ones are chugging. It makes me think that maybe there's some way to improve the situation.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4352">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2021-04-11 22:16:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hardly unfortunately. Playing longer should generally make it better thanks to caching, but otherwise no. The game is very hard to optimise unfortunately.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4388">
+	<div class="info">
+		<p class="poster">Miskuzi</p>
+		<p class="dt">2021-07-12 15:35:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Не могу редачить ons.cfg. Когда пытаюсь добавить "render-self=no", чтобы от артефактов избавиться, игра перестает запускаться с ошибкой "Invalid launch directory". Я уже менял этот файл когда только играть начал, все было норм. Сейчас я уже на 5м эпизоде, и вот вчера зашел в игре в настройки, переключил с openчто-то там с 2 на 3 и затем обратно. Видимо это как-то повлияло на этот ons.cfg, что теперь его не то, что вручную менять нельзя, я и язык с en на ru не могу поменять, опять вылетает та же ошибка. Поэтому в итоге просто имя файла русского поставил en.file. Но вот с артефактами на спрайтах без редактирования ons.cfg не справиться...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4389">
+	<div class="info">
+		<p class="poster">Miskuzi</p>
+		<p class="dt">2021-07-12 16:50:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">А теперь я вообще делитнул через приложения onscripter и папку с ним (там где сейвы хранились), насколько я понял, при установке апк эта папка создавалась автоматически и там вручную создавался default.cfg с путью до игры на внешней карте. Щас устанавливаю заного апк и эта папка не появляется... А если вручную ее создать и там так же вручную default.cfg с путью, то ошибка инвалид диреетория опять...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4390">
+	<div class="info">
+		<p class="poster">Miskuzi</p>
+		<p class="dt">2021-07-12 17:43:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Так ладно, пофиксил... Вся трабла оказалась в кодировках. <br>
+То есть при смене настроек уже после старта игры, он перезаписывает файл ons.cfg и ломает ему кодировку, так как это все же приложение для пк? Ну я так понял. Хотя присмене разрешения в настройках игра запускалась, а при смене GL и языка переставала.<br>
+Ну и когда вручную редачил ons.cfg, походу тож при сейве была не та кодировка, скачал специализированную прогу с указанием кодировок при сейве файла и все заработало.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4391">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2021-07-12 19:06:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Что-то очень странное, там нет русских букв, только латиница, потому кодировка не должна иметь значение. Файлы сохраняются с окончаниями строк Windows (CRLF), чтобы обеспечить совместимость с редакторами текста в Windows (блокнотом). Возможно имеющийся редактор как-то с ними работает некорректно. Если скините файл, возможно что-то можно будет сказать.<br>
+<br>
+Лично я редактирую ons.cfg в Sublime Text. На Windows ещё есть Notepad++.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4392">
+	<div class="info">
+		<p class="poster">gizmo36</p>
+		<p class="dt">2021-07-29 13:36:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hello! I can't copy some files to my device due to unsupported characters:
+<div class="codebox"><p>Code:</p><pre><code>sound/voice/05/31000123.ogg
+sound/voice/18/11800172.ogg
+sound/voice/11/42001328.ogg
+sound/voice/34/31000123.ogg
+sound/voice/13/40400245.ogg
+sound/voice/09/11300039.ogg
+</code></pre></div>
+Is there any solution?<br>
+<br>
+Samsung A71, Android 11</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4393">
+	<div class="info">
+		<p class="poster">chidosir</p>
+		<p class="dt">2021-08-05 18:28:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote cite="./viewtopic.php?p=4351&amp;sid=97ad2f2fa4f352f8f4c1a034a97c17ac#p4351"><div><cite>chidosir wrote: <a href="./viewtopic.php?p=4351&amp;sid=97ad2f2fa4f352f8f4c1a034a97c17ac#p4351" data-post-id="4351" onclick="if(document.getElementById(hash.substr(1)))href=hash" class="loclinks">↑</a><span class="responsive-hide">11 Apr 2021, 14:50</span></cite>
+Are there any tips to improve performance, besides what's mentioned in the first post? Playing on a Xiaomi MI A1 (SD 625, Adreno 506, 4gb ram) and while it is playable some animations seem to run at a low framerate. The text as it comes is pretty choppy most times, and the lip syncing as well. But there are other times where some of the other animations in the scene are silky smooth for some reason, even while these ones are chugging. It makes me think that maybe there's some way to improve the situation.
+</div></blockquote>
+
+just for additional info, after updating to a samsung galaxy a52 (SD 720g, adreno 618 and 6gb ram) the game now runs very smoothly at &gt;90 fps.<br>
+<br>
+if anyone here has problems with the game constantly crashing at startup I solved it by using the following ons.cfg and enabling gestures for the navigation bar (seems that there's an issue with the virtual navigation bar for some reason).<br>
+
+<div class="codebox"><p>Code:</p><pre><code>fullscreen
+render-self=no
+texlimit=2048
+prefer-renderer=GLES3
+force-fps=90
+game-script=en.file
+window-width=1080
+scale </code></pre></div>
+
+also for me (and probably others with &gt;full hd resolutions) the game was shoved up in the left corner. I did see on github a release talking about a "system-offset-x/y" argument but that didn't do squat for me. what did work was going into settings, display, fullscreen apps and enabling it for this game, but not sure if this is a samsung or android wide setting. hope this helps somebody.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4394">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2021-08-27 07:04:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">gizmo36, these files are no longer required as of <a href="https://github.com/umineko-project/umineko-scripting/commit/b498e1df8eeae5500e3eb880ee2bc3be2017bb99" class="exlinks" onclick="this.target='_blank';">https://github.com/umineko-project/umin ... be2017bb99</a>, it was bug. Ignore them and update to the latest release: <a href="https://github.com/umineko-project/umineko-scripting/releases/latest" class="exlinks" onclick="this.target='_blank';">https://github.com/umineko-project/umin ... ses/latest</a>.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4401">
+	<div class="info">
+		<p class="poster">otter</p>
+		<p class="dt">2021-09-16 02:05:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hey, so I've managed to get over several installation process issues until now and I'm currently stumped. I've already figured out I have to extract the .7z files on PC (it always errored out while extracting in android).<br>
+<br>
+Phone is Samsung A51, Android 11. Updated files to r4005.<br>
+I have the game files in external SD, /0000-0000/ONScripter-RU, and I had to manually make an ONScripter-RU file in internal, /emulated/0, with a default.cfg pointing to external SD to get over the invalid directory error. Not having issues with game alignment and game file verification even gave me an "All good!" but never starts the game. It only created a savedata folder in internal (no ons.cfg, attempts to add a blank one manually to either internal/external folders brings me back to invalid directory error).<br>
+
+<div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="Screenshot_20210915-181817.jpg" class="postimage" alt="Screenshot_20210915-181817.jpg" onclick="viewableArea(this);"></dt>
+						<dd>Screenshot_20210915-181817.jpg (113.25 KiB) Viewed 19023 times</dd>
+		</dl>
+		
+		
+			</div>
+
+That is as far as I have gotten and no matter how long I wait it does not start. On Mac I can just close and restart and it plays the game but on android it goes back to re-verifying the files.<br>
+<br>
+Here are what my internal and external folders look like, the external one possibly can't be edited by the game hence the issues? <a href="https://imgur.com/a/PaQyBBM" class="exlinks" onclick="this.target='_blank';">https://imgur.com/a/PaQyBBM</a><br>
+<br>
+EDIT: here's the logcat filtered to only onscripter-ru entries, ran it while the file verification process was ongoing until past the "all good!" message, until entries slowed down. <a href="https://ghostbin.com/paste/Pf48b" class="exlinks" onclick="this.target='_blank';">https://ghostbin.com/paste/Pf48b</a><br>
+<br>
+Thanks in advance</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4402">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2021-09-26 20:34:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Perform two-finger tap on the screen after completing the verification.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4406">
+	<div class="info">
+		<p class="poster">Haku219</p>
+		<p class="dt">2021-10-15 17:22:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I'm having a weird issue on Android with a Snapdragon 855 device where there's severe input latency for single taps, but not for double taps or any of the swipe gestures. So it wouldn't be performance related or anything. Is this normal? Is there anything I can do about it?<br>
+<br>
+I'm playing the game with the Japanese patch, but as that just changed the fonts and script, I don't think that's the cause.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4419">
+	<div class="info">
+		<p class="poster">Miskuzi</p>
+		<p class="dt">2021-12-28 06:48:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">При разрешении не 16:9 полетели влево кнопки.<br>
+То есть на экране вот есть кнопка, но чтобы на неё ткнуть, надо тыкать пикселей на 300 левее самой кнопки. И ещё почему-то правый край изображения обрезался (насчёт левого не знаю, справа просто меню и это заметно).<br>
+<br>
+Так, почитал тему, добавляю system-offset-x=180 в ons.cfg, но после этого игра перестаёт запускаться. Просто при открытии моментально закрывается.<br>
+Хотя у меня разрешение немного другое (не 2400, а 2460). Чё-то там посчитал, пересчитал по этим "формулам" получил 210, но всё равно не работает.<br>
+<br>
+Через настройки игры поставил "В окне" и 1920 ширина, заработало. Когда стояло "Авто", то не работало.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

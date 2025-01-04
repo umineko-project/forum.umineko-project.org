@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Remapping XInput xbox 360 gamepad - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+
+<h1>Remapping XInput xbox 360 gamepad</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=270">https://forum.umineko-project.org/viewtopic.php?t=270</a>
+-->
+
+<div class="post" id="p3056">
+	<div class="info">
+		<p class="poster">AEBus</p>
+		<p class="dt">2018-09-21 13:56:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hello. My gamepad (wired xbox 360 gamepad) supported by the game and all buttons work fine. But i want swap A (CROSS) with B (CIRCLE).<br>
+Buttons in debug consolle are defined as follows:
+<div class="codebox"><p>Code:</p><pre><code>TRIANGLE (Y) — Gamepad event, button: 3
+CIRCLE (B) — Gamepad event, button: 1
+CROSS (A) — Gamepad event, button: 0
+SQUARE (X) — Gamepad event, button: 2
+L1 (left trigger?) — when pressed nothing happens in console and in game
+R1 (right trigger?) — when pressed nothing happens in console, but in game button work as skip
+DOWN (direct pad?) — Gamepad event, hat move: 4 (when pressed)/ Gamepad event, hat move: 0 (when released)
+LEFT (direct pad?) — Gamepad event, hat move: 8 (when pressed)/ Gamepad event, hat move: 0 (when released)
+UP (direct pad?) — Gamepad event, hat move: 1 (when pressed)/ Gamepad event, hat move: 0 (when released)
+RIGHT (direct pad?) — Gamepad event, hat move: 2 (when pressed)/ Gamepad event, hat move: 0 (when released)
+SELECT (back) — Gamepad event, button: 6
+START (start) — Gamepad event, button: 7
+HOME (guide?) — Gamepad event, button: 10
+L2 (left bumper?) — Gamepad event, button: 4
+R2 (right bumper?) — Gamepad event, button: 5
+L3 (pressed left stick?) — Gamepad event, button: 8
+R3 (pressed right stick?) — Gamepad event, button: 9
+EXTRA (i dont know what is)
+DOWN (direct pad?) — Gamepad event, hat move: 4 (when pressed)/ Gamepad event, hat move: 0 (when released)
+LEFT (direct pad?) — Gamepad event, hat move: 8 (when pressed)/ Gamepad event, hat move: 0 (when released)
+UP (direct pad?) — Gamepad event, hat move: 1 (when pressed)/ Gamepad event, hat move: 0 (when released)
+RIGHT (direct pad?)  — Gamepad event, hat move: 2 (when pressed)/ Gamepad event, hat move: 0 (when released)</code></pre></div>
+so, i want swap A (CROSS) with B (CIRCLE), and in config i wrote this:
+<div class="codebox"><p>Code:</p><pre><code>pad-map=3,0,1,2,-1,-1,4,8,1,2,6,7,10,4,5,8,9,-1,4,8,1,2</code></pre></div>
+With this parameter direct pad buttons not work, when i press CIRCLE (B) triggered UP, when i press L2 (LB) triggered DOWN.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3058">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2018-09-22 08:43:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Just like Knox said, last 4 numbers should be 18,19,20,21. The engine is misleading as in hat case it prints sdl keycodes instead of ons mapped buttons:
+<div class="codebox"><p>Code:</p><pre><code>pad-map=3,0,1,2,-1,-1,4,8,1,2,6,7,10,4,5,8,9,-1,18,19,20,21</code></pre></div>
+
+We will fix it in a subsequent update <img class="smilies" src="../../../images/smilies/icon_e_wink.gif" width="15" height="17" alt=";)" title="Подмигивает"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3059">
+	<div class="info">
+		<p class="poster">AEBus</p>
+		<p class="dt">2018-09-22 11:48:53</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I am confused by the fact that in the configuration these buttons are mentioned 2 times<br>
+TRIANGLE, CIRCLE, CROSS, SQUARE, L1, R1, <span style="text-decoration:underline"><strong class="text-strong">DOWN, LEFT, UP, RIGHT</strong></span>, SELECT, START, HOME, L2, R2, L3, R3, EXTRA, <span style="text-decoration:underline"><strong class="text-strong">DOWN, LEFT, UP, RIGHT</strong></span></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3060">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2018-09-22 11:58:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">There should not be any confusion here, some gamepads report arrows as buttons (first four), and some others as hat moves (second four). Second four buttons are a later addition, and I was not careful enough to label them carefully.<br>
+<br>
+Knox, could you please update our FAQs to use HAT_ prefix for the second group? HAT_DOWN, HAT_UP, etc.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3061">
+	<div class="info">
+		<p class="poster">AEBus</p>
+		<p class="dt">2018-09-22 12:04:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">With<br>
+pad-map=3,0,1,2,-1,-1<strong class="text-strong"><span style="text-decoration:underline">,4,8,1,2</span></strong>,6,7,10,4,5,8,9,-1,<strong class="text-strong"><span style="text-decoration:underline">18,19,20,21</span></strong><br>
+direct pad buttons work, but when i press CIRCLE (B) triggered UP, when i press L2 (LB) triggered DOWN.<br>
+<br>
+With<br>
+pad-map=3,0,1,2,-1,-1,<strong class="text-strong"><span style="text-decoration:underline">18,19,20,21</span></strong>,6,7,10,4,5,8,9,-1,<strong class="text-strong"><span style="text-decoration:underline">18,19,20,21</span></strong><br>
+all buttons work fine</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3062">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2018-09-22 12:12:39</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ah, did not notice you had the first four confused as well, yes, that is right.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

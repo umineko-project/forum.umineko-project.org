@@ -1,0 +1,439 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>[RU] Чет ваще не запускается - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+
+<h1>[RU] Чет ваще не запускается</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=98">https://forum.umineko-project.org/viewtopic.php?t=98</a>
+-->
+
+<div class="post" id="p1010">
+	<div class="info">
+		<p class="poster">krossvas</p>
+		<p class="dt">2015-12-12 09:36:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Все файлы распаковал из экстры, всё лежит в одной папке. Из конфига видимо че-то подсасывает - рамка у окна по крайней мере показывается 1280 шириной, а потом крашится. Хз че он там читать собрался из нуля - файлов чтоли ему каких не хватает? Всё что было на загрузках запихал.<br>
+<br>
+-------------------<br>
+<br>
+Error occured on Saturday, December 12, 2015 at 12:18:52.<br>
+<br>
+onscripter-ru_sdl2_win_r1699.exe caused an Access Violation at location 00000000 Reading from location 00000000.<br>
+<br>
+Registers:<br>
+eax=0022f94c ebx=014c6be4 ecx=014bf090 edx=00000000 esi=0022fa60 edi=00000000<br>
+eip=00000000 esp=0022f8f8 ebp=0022f964 iopl=0         nv up ei pl nz na pe nc<br>
+cs=001b  ss=0023  ds=0023  es=0023  fs=003b  gs=0000             efl=00210202<br>
+<br>
+AddrPC   Params<br>
+00000000 00000001 0022F94C 6172662E<br>
+00681B77 01585520 014BF090 00000008  onscripter-ru_sdl2_win_r1699.exe!GPU_FreeRenderer<br>
+00649170 014BF090 00001000 00000004  onscripter-ru_sdl2_win_r1699.exe!GPU_LoadTarget<br>
+00AD8051 014BEEF0 0150F3B0 0022FBD8  onscripter-ru_sdl2_win_r1699.exe!GPU_GetModelViewProjection<br>
+77BD2CE8 01690000 00000000 765298DA  ntdll.dll!RtlFreeHeap<br>
+765298CD 014BEEF0 014C1D48 0022FFC4  msvcrt.dll!free<br>
+00405865 014C1D48 0152ED48 014C2F69  onscripter-ru_sdl2_win_r1699.exe!0x5865<br>
+004189AC 0152E84C 0152E84C 0022FD48  onscripter-ru_sdl2_win_r1699.exe!0x189ac<br>
+004039CA 77BD2E82 0152EC03 00000008  onscripter-ru_sdl2_win_r1699.exe!0x39ca<br>
+77BD2FE7 00000001 0152E828 0046BB6E  ntdll.dll!RtlpLowFragHeapAllocFromContext<br>
+0046B99C 00000001 0152E828 013A1D56  onscripter-ru_sdl2_win_r1699.exe!0x6b99c<br>
+0046BB6E 00400000 00000000 013A24BB  onscripter-ru_sdl2_win_r1699.exe!0x6bb6e<br>
+00B98C6D 01691458 00000041 00000001  onscripter-ru_sdl2_win_r1699.exe!GPU_GetModelViewProjection<br>
+004013E2 7FFD8000 0022FFD4 77BE37EB  onscripter-ru_sdl2_win_r1699.exe!0x13e2<br>
+77AEEE1C 7FFD8000 2534B8F7 00000000  kernel32.dll!BaseThreadInitThunk<br>
+77BE37EB 004014C0 7FFD8000 00000000  ntdll.dll!__RtlUserThreadStart<br>
+77BE37BE 004014C0 7FFD8000 00000000  ntdll.dll!_RtlUserThreadStart<br>
+<br>
+onscripter-ru_sdl2_win_r1699.exe	2015.4.1.0<br>
+ntdll.dll   	6.1.7601.18247<br>
+kernel32.dll	6.1.7601.18409<br>
+KERNELBASE.dll	6.1.7601.18409<br>
+ADVAPI32.dll	6.1.7601.18247<br>
+msvcrt.dll  	7.0.7601.17744<br>
+sechost.dll 	6.1.7600.16385<br>
+RPCRT4.dll  	6.1.7601.18532<br>
+GDI32.dll   	6.1.7601.18577<br>
+USER32.dll  	6.1.7601.17514<br>
+LPK.dll     	6.1.7601.18177<br>
+USP10.dll   	1.626.7601.18454<br>
+IMM32.DLL   	6.1.7601.17514<br>
+MSCTF.dll   	6.1.7600.16385<br>
+ole32.dll   	6.1.7601.17514<br>
+OLEAUT32.dll	6.1.7601.18640<br>
+OPENGL32.DLL	6.1.7600.16385<br>
+GLU32.dll   	6.1.7600.16385<br>
+DDRAW.dll   	6.1.7600.16385<br>
+DCIMAN32.dll	6.1.7601.18177<br>
+SETUPAPI.dll	6.1.7601.17514<br>
+CFGMGR32.dll	6.1.7601.17514<br>
+DEVOBJ.dll  	6.1.7600.16385<br>
+dwmapi.dll  	6.1.7600.16385<br>
+SHELL32.dll 	6.1.7601.18517<br>
+SHLWAPI.dll 	6.1.7601.17514<br>
+VERSION.dll 	6.1.7600.16385<br>
+WINMM.DLL   	6.1.7601.17514<br>
+WS2_32.dll  	6.1.7601.17514<br>
+NSI.dll     	6.1.7600.16385<br>
+exchndl.dll 	0.7.4.0<br>
+mgwhelp.dll 	0.7.4.0<br>
+dbghelp.dll 	6.3.9600.17029<br>
+PSAPI.DLL   	6.1.7600.16385<br>
+profapi.dll 	6.1.7600.16385<br>
+DSOUND.DLL  	6.1.7600.16385<br>
+POWRPROF.dll	6.1.7600.16385<br>
+uxtheme.dll 	6.1.7600.16385<br>
+ig4icd32.dll	8.15.10.2302<br>
+CRYPTBASE.dll	6.1.7600.16385<br>
+CLBCatQ.DLL 	2001.12.8530.16385<br>
+dinput8.dll 	6.1.7600.16385<br>
+HID.DLL     	6.1.7600.16385<br>
+WINTRUST.dll	6.1.7601.18205<br>
+CRYPT32.dll 	6.1.7601.18277<br>
+MSASN1.dll  	6.1.7601.17514<br>
+XInput1_3.dll	9.18.944.0<br>
+WININET.dll 	11.0.9600.17496<br>
+api-ms-win-downlevel-user32-l1-1-0.dll	6.2.9200.16492<br>
+api-ms-win-downlevel-shlwapi-l1-1-0.dll	6.2.9200.16492<br>
+api-ms-win-downlevel-version-l1-1-0.dll	6.2.9200.16492<br>
+api-ms-win-downlevel-normaliz-l1-1-0.dll	6.2.9200.16492<br>
+normaliz.DLL	6.1.7600.16385<br>
+iertutil.dll	11.0.9600.17496<br>
+api-ms-win-downlevel-advapi32-l1-1-0.dll	6.2.9200.16492<br>
+USERENV.dll 	6.1.7601.17514<br>
+Secur32.dll 	6.1.7601.18443<br>
+SSPICLI.DLL 	6.1.7601.18443<br>
+api-ms-win-downlevel-advapi32-l2-1-0.dll	6.2.9200.16492<br>
+api-ms-win-downlevel-ole32-l1-1-0.dll	6.2.9200.16492<br>
+mswsock.dll 	6.1.7601.18254<br>
+IPHLPAPI.DLL	6.1.7601.17514<br>
+WINNSI.DLL  	6.1.7600.16385<br>
+wship6.dll  	6.1.7600.16385<br>
+api-ms-win-downlevel-shlwapi-l2-1-0.dll	6.2.9200.16492<br>
+DNSAPI.dll  	6.1.7601.17570<br>
+urlmon.dll  	11.0.9600.17496<br>
+wshtcpip.dll	6.1.7600.16385<br>
+mdnsNSP.dll 	3.1.0.1<br>
+rasadhlp.dll	6.1.7600.16385<br>
+fwpuclnt.dll	6.1.7601.18283<br>
+Comctl32.dll	6.10.7601.17514<br>
+<br>
+Windows 6.1.7601<br>
+DrMingw 0.7.4<br>
+<br>
+-------------------</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1011">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2015-12-12 09:38:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Привет, похоже на отсутствие поддержки OpenGL. Драйвера последние? Какая графическая карта?
+<div class="inline-attachment">
+			
+		
+		
+				<dl class="file">
+			<dt><span class="imageset icon_topic_attach"></span> <a class="postlink" href="init-demo.exe.zip">init-demo.exe.zip</a></dt>
+						<dd>(991.05 KiB) Downloaded 1096 times</dd>
+		</dl>
+		
+			</div>
+Данный файл запускается?<br>
+<br>
+P. S. Кажется, ты немного ошибся с полом. Сейчас поправлю.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1050">
+	<div class="info">
+		<p class="poster">krossvas</p>
+		<p class="dt">2015-12-12 23:11:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Не, этот тоже крашится. <br>
+Нормально всё с поддержкой OpenGL, эмули PPSSPP и PCSX2 работают, ну и для интереса FurMark'ом померял - меряет OpenGL, выводит всё. <br>
+<br>
+Intel(R) G41 Express Chipset (8086-2E32)<br>
+Драйвера 8.15.10.2869 - GL:ig4icd32.dll (судя по всему последние, на сайте новее нет).<br>
+<br>
+Windows 7 Service Pack 1 (ну это как бы уже и так понятно из лога)<br>
+<br>
+Да пофиг на пол. Можешь хоть средний поставить <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1054">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2015-12-13 10:41:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Мы проанализировали краш более детально, ситуация следующая:<br>
+<br>
+OpenGL 2.1 действительно поддерживается и драйвером и системой, инициализация происходит успешно. Краш происходит при использовании FBO при вызове glGenFramebuffers сторонней библиотекой. Это надвигает нас на мысль, что в карте нет поддержки расширения GL_ARB_framebuffer_object.<br>
+<br>
+Это не конец света, есть большая вероятность, что поддерживается совместимое с ним GL_EXT_framebuffer_object. Для проверки этого мы написали маленькую демку:
+<div class="inline-attachment">
+			
+		
+		
+				<dl class="file">
+			<dt><span class="imageset icon_topic_attach"></span> <a class="postlink" href="fbo-test-demo.exe.zip">fbo-test-demo.exe.zip</a></dt>
+						<dd>(876.52 KiB) Downloaded 906 times</dd>
+		</dl>
+		
+			</div>
+Она выведет краткую информацию в консоли, которую необходимо скопировать и отправить нам. Что-то вроде этого:
+<div class="codebox"><p>Code:</p><pre><code>Initialising GPU...
+Got non-null rendering target; creating an image...
+Got non-null image, creating a target...
+Looking for framebuffer support
+glGenFramebuffers is supported
+glGenFramebuffersEXT is supported
+Для продолжения нажмите любую клавишу . . .</code></pre></div>
+
+Если поддержка GL_EXT_framebuffer_object есть, мы запросим исправление у разработчика сторонней библиотеки и включим его в α-ветку. Для подтверждения работоспособности мы можем выслать исправление лично/попросить тебя присоединиться к α-тестированию <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1063">
+	<div class="info">
+		<p class="poster">krossvas</p>
+		<p class="dt">2015-12-13 19:20:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Да я так-то мимо крокодил <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"> Я не уверен, что буду прям целиком буду всё читать/тестить, в третий-то раз <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"><br>
+А так да, не вопрос, потестирую в меру сил. <br>
+<br>
+Да, поддерживается этот экст.<br>
+
+<div class="codebox"><p>Code:</p><pre><code>Initialising GPU...
+Got non-null rendering target; creating an image..
+Got non-null image, creating a target...
+Looking for framebuffer support
+glGenFramebuffers is unsupported
+glGenFramebuffersEXT is supported
+Для продолжения нажмите любую клавишу . . .</code></pre></div>
+
+И он покрашился после нажатия на любую клавишу <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1064">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2015-12-13 21:18:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Как и ожидалось, как будут новости по исправлению glGenFramebuffers, напишу.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1096">
+	<div class="info">
+		<p class="poster">krossvas</p>
+		<p class="dt">2015-12-17 14:05:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">А когда там вообще новости ожидаются? После НГ?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1097">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2015-12-17 14:22:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ну, человек пару дней назад уже написал нам, что займётся исправлением. Думаю, за неделю-две будет готово, с учётом всех временных расходов.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1109">
+	<div class="info">
+		<p class="poster">krossvas</p>
+		<p class="dt">2015-12-19 10:23:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ну ок, после НГ тогда загляну <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1117">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2015-12-25 07:56:45</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Есть предварительное исправление проблемы. Могу скинуть по возможности/необходимости.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1124">
+	<div class="info">
+		<p class="poster">krossvas</p>
+		<p class="dt">2015-12-27 00:10:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Что значит предварительное? Ну и как бы - где?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1125">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2015-12-27 00:15:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">В смысле, предварительный патч готов. Если заработает, отправим в основную ветку.<br>
+Завтра "утром" скину в ЛС.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1127">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2015-12-27 12:14:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Скинул, пробуй <img class="smilies" src="../../../images/smilies/icon_e_wink.gif" width="15" height="17" alt=";)" title="Подмигивает"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1260">
+	<div class="info">
+		<p class="poster">krossvas</p>
+		<p class="dt">2016-02-10 08:34:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Уезжал, только добрался. Нет, теперь даже до создания окна не доходит, дохнет сразу при старте. Похоже какой-то дебаг не выключили:<br>
+<br>
+---------------------------<br>
+ONScripter-RU: Parse Error<br>
+---------------------------<br>
+Cannout reopen stdout<br>
+---------------------------<br>
+ОК   <br>
+---------------------------</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1261">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-02-10 09:13:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Добавил тебя в группу тестеров, сейчас сильно изменилось всё. Обновись на последнюю альфа версию и проверь:<br>
+<a href="https://forum.umineko-project.org/viewforum.php?f=4" class="loclinks" onclick="this.target='_blank';">α-testing / α-тестирование</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1262">
+	<div class="info">
+		<p class="poster">krossvas</p>
+		<p class="dt">2016-02-10 19:42:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Да, с последней альфой запускается. Но выдает 18 фпс даже  в статичных сценах (т.е. где тупо человек говорит что-то) <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"><br>
+<br>
+И можно надпись на окошке Umineko и т.п. с логотипом более прозрачным сделать? На нее текст постоянно налазиет и сливается по цвету - текст серый, логотип тоже.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1263">
+	<div class="info">
+		<p class="poster">Shumov</p>
+		<p class="dt">2016-02-10 23:20:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>krossvas wrote:</cite>И можно надпись на окошке Umineko и т.п. с логотипом более прозрачным сделать? На нее текст постоянно налазиет и сливается по цвету - текст серый, логотип тоже.</div></blockquote>
+
+тут я помогу
+<dl class="codebox"><dt><a href="javascript:void%280%29;" onclick="var el = this.parentNode.parentNode.getElementsByTagName('dd')[0]; var v = el.style.display != 'none'; el.style.display = v ? 'none' : 'block'; this.innerHTML = (v ? '[+]' : '[−]') + ' Spoiler'; ">[+] Spoiler </a></dt><dd style="display:none"><img src="https://d1ro8r1rbfn3jf.cloudfront.net/ms_94145/FbdniBL5fGwoiZQk57OlOHI3nrd0an/msgwnd_ru.png?Expires=1455232681&amp;Signature=SUmutGIbEQAr36kOu0RzkaexdFEYMLfyzf77kSluQZsI6y0t3RBykPrANLLCmXheR0U6H~zk4d5Z9u3fPc5O9WyMD3nEiop0FZ4G3gOIzDObPAboGFfxUtMWVmqatu00n95oR6ngY46erMcYIEBEpyUylayWaKUpTALlbvfxfyVFNgEwbhOLruBGIBAcBSgBMYJx7v71y5SnXg476tX4HFD2VaXc1sXAfHuG5dp7HtGH71Kj1xUbqlbmiiKAtGO3wyldqvADak1x06g2OvZWvj4xyDOThAoyp5UL1AqaW7ZUJEuzrMUhu8c3oB0a3hm9mQGlwZAIw5YvC2OW3PcW~w__&amp;Key-Pair-Id=APKAJHEJJBIZWFB73RSA" class="postimage" alt="Image"></dd></dl>
+нужно эту картинку сохранить как msgwnd_ru.png и закинуть её в папку *папка с игрой*\graphics\system\wnd, на замену соглашаться</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1264">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-02-11 00:42:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Над производительностью мы постоянно работаем, но в твоём случае добиться заметно ощутимых результатов вряд ли удастся.<br>
+У тебя Windows 7? Отключи Aero/играй в полноэкранном режиме (недавно выяснили такую проблему), fps будет повыше.<br>
+<br>
+Насчёт лого посмотрим. Может, действительно его стоит сделать потемнее.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1265">
+	<div class="info">
+		<p class="poster">Giza</p>
+		<p class="dt">2016-02-11 08:19:30</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Попробуйте эти во вложении.<br>
+<br>
+Каким разрешением экрана играете? И желательно скинули бы скриншот что сливается.</div>
+<dl class="attachbox">
+					<dt>
+						Attachments
+					</dt>
+											<dd>
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="msgwnd_ru.png" class="postimage" alt="Только текст прозрачнее" onclick="viewableArea(this);"></dt>
+			<dd><em>Только текст прозрачнее</em></dd>			<dd>msgwnd_ru.png (101.28 KiB) Viewed 14457 times</dd>
+		</dl>
+		
+		
+			</dd>
+											<dd>
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="msgwnd_ru-1.png" class="postimage" alt="Всё прозрачнее" onclick="viewableArea(this);"></dt>
+			<dd><em>Всё прозрачнее</em></dd>			<dd>msgwnd_ru.png (91.42 KiB) Viewed 14457 times</dd>
+		</dl>
+		
+		
+			</dd>
+									</dl>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1266">
+	<div class="info">
+		<p class="poster">krossvas</p>
+		<p class="dt">2016-02-15 15:29:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">1280x720 в окошке. Aero отключен. Лого попробую на неделе.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

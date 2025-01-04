@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ART: Null pointer dereference - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+
+<h1>ART: Null pointer dereference</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=309">https://forum.umineko-project.org/viewtopic.php?t=309</a>
+-->
+
+<div class="post" id="p3460">
+	<div class="info">
+		<p class="poster">Xaphan</p>
+		<p class="dt">2019-02-07 01:10:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">При загрузке, если переключить приложение выпадет ошибка:<br>
+<br>
+When loading, if you switch the application, an error will appear:<br>
+
+<dl class="codebox"><dt><a href="javascript:void%280%29;" onclick="var el = this.parentNode.parentNode.getElementsByTagName('dd')[0]; var v = el.style.display != 'none'; el.style.display = v ? 'none' : 'block'; this.innerHTML = (v ? '[+]' : '[−]') + ' Spoiler'; ">[+] Spoiler </a></dt><dd style="display:none">*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***<br>
+Build fingerprint: 'Xiaomi/sagit/sagit:8.0.0/OPR1.170623.027/V9.2.3.0.OCAMIEK:user/release-keys'<br>
+Revision: '0'<br>
+ABI: 'arm64'<br>
+pid: 26184, tid: 26216, name: SDLThread  &gt;&gt;&gt; org.umineko_project.onscripter_ru &lt;&lt;&lt;<br>
+signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x64<br>
+Cause: null pointer dereference<br>
+    x0   0000000000000000  x1   0000000000000000  x2   0000000000000024  x3   0000007419dd4e98<br>
+    x4   000000741a99262e  x5   00000074191ee024  x6   6f6e20646c756f43  x7   6574616572632074<br>
+    x8   000000741ab71868  x9   0000000000000002  x10  726320746f6e2064  x11  616d692065746165<br>
+    x12  6572207361206567  x13  2e64657473657571  x14  000000743513f614  x15  0000be2696bec875<br>
+    x16  000000743515d180  x17  00000074350b0010  x18  00000000000000ff  x19  0000000000000000<br>
+    x20  0000007416e0fa80  x21  000000741ab3c328  x22  000000741ab3bd48  x23  0000007416e0f9c0<br>
+    x24  0000007434037bb0  x25  0000000000000000  x26  0000007419dd5fb8  x27  0000000000000000<br>
+    x28  0000000000000430  x29  0000007419dd5e48  x30  000000741a30efc0<br>
+    sp   0000007419dd5ab0  pc   000000741a30efc4  pstate 0000000060000000<br>
+<br>
+backtrace:<br>
+    #00 pc 0000000000182fc4  /data/app/org.umineko_project.onscripter_ru-j33rtzXpxluEYUHMTOedyw==/lib/arm64/libmain.so (_ZN13GPUController11createImageEtthb+32)<br>
+    #01 pc 000000000018fb9c  /data/app/org.umineko_project.onscripter_ru-j33rtzXpxluEYUHMTOedyw==/lib/arm64/libmain.so (_ZN13GPUController20copyImageFromSurfaceEP11SDL_Surface+44)<br>
+    #02 pc 00000000001f0124  /data/app/org.umineko_project.onscripter_ru-j33rtzXpxluEYUHMTOedyw==/lib/arm64/libmain.so (_ZN11GlyphValues13buildGPUImageEbP20GlyphAtlasController+272)<br>
+    #03 pc 00000000001effd4  /data/app/org.umineko_project.onscripter_ru-j33rtzXpxluEYUHMTOedyw==/lib/arm64/libmain.so (_ZN11GlyphValues14buildGPUImagesEP20GlyphAtlasController+24)<br>
+    #04 pc 00000000001e69fc  /data/app/org.umineko_project.onscripter_ru-j33rtzXpxluEYUHMTOedyw==/lib/arm64/libmain.so (_ZN10ONScripter18renderUnicodeGlyphEP4FontP11GlyphParams+600)<br>
+    #05 pc 00000000001ef3d4  /data/app/org.umineko_project.onscripter_ru-j33rtzXpxluEYUHMTOedyw==/lib/arm64/libmain.so (_ZN8Fontinfo18renderUnicodeGlyphEj+68)<br>
+    #06 pc 0000000000169930  /data/app/org.umineko_project.onscripter_ru-j33rtzXpxluEYUHMTOedyw==/lib/arm64/libmain.so (_ZN18DialogueController21addCharToRenderBufferER13DialoguePieceDsR8Fontinfo+48)<br>
+    #07 pc 000000000016899c  /data/app/org.umineko_project.onscripter_ru-j33rtzXpxluEYUHMTOedyw==/lib/arm64/libmain.so (_ZN18DialogueController15addFittingCharsER13DialoguePieceRNSt6__ndk112basic_stringIDsNS2_11char_traitsIDsEENS2_9allocatorIDsEEEERKS8_PNS2_5dequeIS0_NS6_IS0_EEEE+1404)<br>
+    #08 pc 0000000000167e4c  /data/app/org.umineko_project.onscripter_ru-j33rtzXpxluEYUHMTOedyw==/lib/arm64/libmain.so (_ZN18DialogueController11layoutPieceER18TextRenderingStateRNSt6__ndk112basic_stringIDsNS2_11char_traitsIDsEENS2_9allocatorIDsEEEER8FontinfoPNS2_5dequeI13DialoguePieceNS6_ISD_EEEE+208)<br>
+    #09 pc 00000000001668c0  /data/app/org.umineko_project.onscripter_ru-j33rtzXpxluEYUHMTOedyw==/lib/arm64/libmain.so (_ZN18DialogueController13layoutSegmentER18TextRenderingStateNSt6__ndk112basic_stringIDsNS2_11char_traitsIDsEENS2_9allocatorIDsEEEER8Fontinfo+484)<br>
+    #10 pc 0000000000167ca8  /data/app/org.umineko_project.onscripter_ru-j33rtzXpxluEYUHMTOedyw==/lib/arm64/libmain.so (_ZN18DialogueController19prepareForRenderingEPKcR8FontinfoR18TextRenderingStateRtS6_+252)<br>
+    #11 pc 0000000000188e78  /data/app/org.umineko_project.onscripter_ru-j33rtzXpxluEYUHMTOedyw==/lib/arm64/libmain.so (_ZN10ONScripter18setupAnimationInfoEP13AnimationInfoP8Fontinfo+712)<br>
+    #12 pc 0000000000195c58  /data/app/org.umineko_project.onscripter_ru-j33rtzXpxluEYUHMTOedyw==/lib/arm64/libmain.so (_ZN10ONScripter10lspCommandEv+624)<br>
+    #13 pc 00000000001d2b08  /data/app/org.umineko_project.onscripter_ru-j33rtzXpxluEYUHMTOedyw==/lib/arm64/libmain.so (_ZN10ONScripter9parseLineEv+236)<br>
+    #14 pc 00000000001d2780  /data/app/org.umineko_project.onscripter_ru-j33rtzXpxluEYUHMTOedyw==/lib/arm64/libmain.so (_ZN10ONScripter12executeLabelEv+1020)<br>
+    #15 pc 00000000001c8c24  /data/app/org.umineko_project.onscripter_ru-j33rtzXpxluEYUHMTOedyw==/lib/arm64/libmain.so (SDL_main+928)<br>
+    #16 pc 0000000000262770  /data/app/org.umineko_project.onscripter_ru-j33rtzXpxluEYUHMTOedyw==/lib/arm64/libmain.so (Java_org_libsdl_app_SDLActivity_nativeRunMain+576)
+</dd></dl></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3461">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2019-02-07 16:17:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Вполне возможно, Android девайсов у нас нет, честно говоря, так что самый лучший workaround здесь не очень активно переключаться.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3462">
+	<div class="info">
+		<p class="poster">Xaphan</p>
+		<p class="dt">2019-02-07 19:44:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote class="uncited"><div>Android девайсов у нас нет, честно говоря, </div></blockquote>  не сочтите за дерзость но. Когда это, кого-то останавливало?))) Или AVD нет такой проблемы?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

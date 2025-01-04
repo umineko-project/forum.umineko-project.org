@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>How to Install on iOS? - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+
+<h1>How to Install on iOS?</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=169">https://forum.umineko-project.org/viewtopic.php?t=169</a>
+-->
+
+<div class="post" id="p1754">
+	<div class="info">
+		<p class="poster">Forteissimo</p>
+		<p class="dt">2016-08-22 20:10:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hello, first of all, I'd like to thank you for making this port possible! I deeply appreciate all the hard work that has gone through this project, and I'm simply eager the see what you've done with Chiru.<br>
+I apologize if I'm ignoring any previously shown instructions, but I am having trouble installing the game through iOS and I'd like to ask how exactly do I install it?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1755">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-08-23 02:59:51</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi, I moved your message to a new topic to make things easier to handle, after all the issue is not related to the sound problems.<br>
+<br>
+As of iOS we are still thinking whether to write the FAQ entry or not, we are a bit lazy <img class="smilies" src="../../../images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Очень доволен"><br>
+It is a really simple task of 3 steps:<br>
+— Checking the requirements;<br>
+— Installing the ipa;<br>
+— Copying game files.<br>
+I will try to cover them all, so it is going to be a little lengthy <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"><br>
+<br>
+1. The lowest requirements are iOS 8 and iPad 4 and newer, but to get optimal performance and avoid crashes without disabling several optimisations you need a device with 2 or more gigabytes of memory (Air 2, mini 4, either Pro, and likely newer when they appear). 
+<ul><li>If you have an older model (4 or Air) you will need to disable Object caching in preferences otherwise you will get the crashes. They may still happen in intensive scenes, like credits, but we are working on reducing them to the minimum. At least I was able to play the game without many issues.</li>
+<li>If you get battery drain you might want to add force-fps=30 to ons.cfg file after the first launch of the game.</li>
+<li>If you need to get 1080p movie playback (although on iOS it is absolutely irrelevant and not visible and I recommend going with 720p) you will need hwdecoder=on in ons.cfg.</li>
+<li>If you have iPad 4 you should armv7s binary, if you have any other model please go with arm64.</li>
+<li>To reduce game weight you could safely delete video/1080p folder.</li>
+<li>After installing the game make sure to open it at least once to avoid getting a 6 gigabyte backup in iCloud.</li></ul>
+
+2. To be able to install the ipa file you should pick one route you prefer:<br>
+a) Jailbreak your tablet (e.g. <a href="http://en.pangu.io/help.html" class="exlinks" onclick="this.target='_blank';">http://en.pangu.io/help.html</a>), then install AppSync Unified from <a href="http://cydia.angelxwind.net" class="exlinks" onclick="this.target='_blank';">http://cydia.angelxwind.net</a>, the. just install an ipa file via any software (I personally use mobiledevice and iMazing, but there are many other tools that work just fine (iFunBox, iTools, etc.). The guide how to jailbreak is explained on pangu page, and there are many guides on the net on how to install AppSync Unified and later use it to get an app.<br>
+b) Not going with a jailbreak and using your Apple ID. <a href="http://en.pangu.io/help.html" class="exlinks" onclick="this.target='_blank';">http://en.pangu.io/help.html</a> has a really nice guide on how to sign their application with Cydia Impactor and then install it on the device. Just follow it but use our ipa file and not any other. The only issue here is that you will have to resign the app every week.<br>
+c) Not going with a jailbreak and using Apple Developer provisioning. This is very similar with the previous variant but requires paid membership (99$) in Apple Developer program as well as a Mac. You enrol as a developer and create the signing certificates (or ask a friend or another developer to make them for you, this is likely going to be much cheaper), and then use codesign or gui tools like <a href="https://dantheman827.github.io/ios-app-signer/" class="exlinks" onclick="this.target='_blank';">https://dantheman827.github.io/ios-app-signer/</a>. I think you might be able to do it on Windows and Linux as well, just google for "resign ipa file" with an os postfix.<br>
+<br>
+3. After installing the ipa file you simply open iTunes or any other program and copy the game files to the app (the section is called File sharing if I remember correctly). You do not need the dll files or the engines but everything else is necessary.<br>
+<br>
+Feel free to ask any questions I do expect myself to be able to answer. There are quite a lot of (video)guides on the net regarding the 2nd step, so I feel you might prefer them over mine.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1758">
+	<div class="info">
+		<p class="poster">Forteissimo</p>
+		<p class="dt">2016-08-24 01:25:00</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thank you for taking the time to write this guide, I really appreciate it! I decided on using Cydia Impactor to install the .ipa file. However, I'm having a hard time getting it to install.<br>
+Whenever I try to do so, I keep getting <a href="http://i.imgur.com/pfRsygR.png" class="exlinks img-link" onclick="this.target='_blank';">this</a> error.<br>
+<br>
+I figured I had probably mistyped the Apple ID or missed a step, but after trying to install some other unrelated application, just to be sure I wasn't doing anything wrong, everything seemed to work just fine and the app was installed without any trouble. I imagine it must be something related to the Umineko .ipa, but I wouldn't know what is it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1759">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-08-24 02:10:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">You are correct, there is something related: Cydia Impactor does not tolerate the underscore symbol in our CFBundleName property x_X We will contact saurik, hopefully he fixes that and updates Cydia Impactor rather soon.<br>
+<br>
+As for now you could simply remove/replace the symbol:<br>
+1. Download an ipa (e.g. onscripter-ru_arm64_r2290.ipa)<br>
+2. Rename it to a zip file (e.g. onscripter-ru_arm64_r2290.zip)<br>
+3. Extract it anywhere. You will see Payload folder and iTunesArtwork<br>
+4. Open Payload → onscripter-ru_arm64.app → Info.plist file in any text editor and replace:
+<div class="codebox"><p>Code:</p><pre><code>	&lt;key&gt;CFBundleName&lt;/key&gt;
+	&lt;string&gt;onscripter-ru_arm64&lt;/string&gt;</code></pre></div>
+with something not having the _ symbol, e.g.:
+<div class="codebox"><p>Code:</p><pre><code>	&lt;key&gt;CFBundleName&lt;/key&gt;
+	&lt;string&gt;onscripter-ru-arm64&lt;/string&gt;</code></pre></div>
+5. Save the file and update the zip archive (or recreate it, you should put Payload and iTunesArtwork to the root of it)<br>
+<br>
+Once you rename the updated archive back to ipa you will be able to install the app with Cydia Impactor. <br>
+We are rather sorry for causing you trouble but in no way we expected such behaviour from a seemingly reliable tool.<br>
+<br>
+P. S. Be aware that some operating systems hide known file extensions leaving only the name visible (i.e. cutting ipa, zip, etc.). Just google something like "unhide file extensions" if you need a hint how to get them back <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

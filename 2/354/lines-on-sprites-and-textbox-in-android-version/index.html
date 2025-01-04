@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Lines on sprites and textbox in Android version? - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+
+<h1>Lines on sprites and textbox in Android version?</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=354">https://forum.umineko-project.org/viewtopic.php?t=354</a>
+-->
+
+<div class="post" id="p4179">
+	<div class="info">
+		<p class="poster">Clashman</p>
+		<p class="dt">2020-07-17 13:05:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><a href="https://i.redd.it/iwl2jv50zbb51.png" class="exlinks img-link" onclick="this.target='_blank';">https://i.redd.it/iwl2jv50zbb51.png</a><br>
+<br>
+The sprites do this intermittently, sometimes the sprite looks normal and then it can change to a different pose covered in the lines. The lines don't go past the sprites and the mouth movements appear on top of the lines. <br>
+<br>
+The data verified perfectly fine and the sprite files look perfectly normal, so this is presumably a rendering error. I'm running the game on a 9th gen Kindle Fire 10, changing between OpenGL 2 or 3 or turning data caching on or off doesn't help. Is there anything I can do to fix this?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4180">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2020-07-17 16:19:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Use render-self=no in ons.cfg. It is mentioned several times here on the forums.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4181">
+	<div class="info">
+		<p class="poster">Clashman</p>
+		<p class="dt">2020-07-17 22:07:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Oh, I looked up tearing in the forum and saw that mentioned, but from the context of that specific comment I thought I was supposed to put it in default.cfg which didn't work. Putting it in ons.cfg fixes it perfectly. Thank you!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

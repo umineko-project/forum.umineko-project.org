@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Omake 8 2nd floor errors - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+
+<h1>Omake 8 2nd floor errors</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=342">https://forum.umineko-project.org/viewtopic.php?t=342</a>
+-->
+
+<div class="post" id="p4074">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2020-04-18 07:21:26</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">In the Umineko Project postscript (on the 2nd floor in Omake 8), the right-click menu is supposedly disabled so that no save/load/log.... can function. But I found several related errors.<br>
+<br>
+1. One can actually open the right-click menu if one, having been sent back to the first floor after watching the postscript, immediately goes back to the 2nd floor and watches the postscript again. I don't think this inconsistency is intentional.
+<div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="0.png" class="postimage" alt="0.png" onclick="viewableArea(this);"></dt>
+						<dd>0.png (739.88 KiB) Viewed 13878 times</dd>
+		</dl>
+		
+		
+			</div>
+
+2. If one chooses to save, a weird save file will be created, with no title but only the date.
+<div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="00.png" class="postimage" alt="00.png" onclick="viewableArea(this);"></dt>
+						<dd>00.png (697.85 KiB) Viewed 13878 times</dd>
+		</dl>
+		
+		
+			</div>
+
+3. If one chooses to use the log, there would be two irregular situations. The conditions under which one rather than another happens is not entirely certain. But as far as I can tell:<br>
+<br>
+a. If one has just finished EP8 before creating the save aforementioned, the log opened in the Omake 8 postscript will be a full text of EP8.
+<div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="1.png" class="postimage" alt="1.png" onclick="viewableArea(this);"></dt>
+						<dd>1.png (1.38 MiB) Viewed 13878 times</dd>
+		</dl>
+		
+		
+			</div>
+
+b. If one has just visited a previous EP before creating the save aforementioned, the log opened in the Omake 8 postscript will be blank, and the game will crash.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4075">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2020-04-18 07:24:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The crash error message is:<br>
+
+<div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="2.png" class="postimage" alt="2.png" onclick="viewableArea(this);"></dt>
+						<dd>2.png (1.67 MiB) Viewed 13875 times</dd>
+		</dl>
+		
+		
+			</div></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4097">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2020-05-02 14:42:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">This should be resolved in:
+<div class="codebox"><p>Code:</p><pre><code>[master ae2d84f] Maintain disable rmenu across omake returns
+ 1 file changed, 4 insertions(+), 4 deletions(-)</code></pre></div>
+
+Please confirm. Right-click menu should always be disabled, so only the initial issue is valid.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4114">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2020-05-05 21:56:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thanks! Here is confirmed that the fix is effective.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

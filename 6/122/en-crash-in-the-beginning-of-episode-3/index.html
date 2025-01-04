@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>[EN] Crash in the beginning of episode 3 - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+
+<h1>[EN] Crash in the beginning of episode 3</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=122">https://forum.umineko-project.org/viewtopic.php?t=122</a>
+-->
+
+<div class="post" id="p1311">
+	<div class="info">
+		<p class="poster">Grelo</p>
+		<p class="dt">2016-04-15 11:27:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi,<br>
+<br>
+I noticed a problem with the new onscripter file. It crashes at the beginning of ep.3 after the animation of golden butterflies before <dl class="codebox"><dt><a href="javascript:void%280%29;" onclick="var el = this.parentNode.parentNode.getElementsByTagName('dd')[0]; var v = el.style.display != 'none'; el.style.display = v ? 'none' : 'block'; this.innerHTML = (v ? '[+]' : '[−]') + ' Spoiler'; ">[+] Spoiler </a></dt><dd style="display:none">Virgilia</dd></dl> shows up.<br>
+I think it has something to do with animation effect but i could be wrong. Thank you for your hard work <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"> . <br>
+
+<dl class="codebox"><dt><a href="javascript:void%280%29;" onclick="var el = this.parentNode.parentNode.getElementsByTagName('dd')[0]; var v = el.style.display != 'none'; el.style.display = v ? 'none' : 'block'; this.innerHTML = (v ? '[+]' : '[−]') + ' Spoiler'; ">[+] Spoiler </a></dt><dd style="display:none">Error occured on Friday, April 15, 2016 at 13:12:59.<br>
+<br>
+onscripter-ru_win_r1980.exe caused an Access Violation at location 007B4D5F in module onscripter-ru_win_r1980.exe Reading from location 0000002C.<br>
+<br>
+Loading symbols... done.<br>
+<br>
+Registers:<br>
+eax=212c22c0 ebx=00000000 ecx=212797e0 edx=ffffffaf esi=00000000 edi=00000000<br>
+eip=007b4d5f esp=014bfb10 ebp=212797e8 iopl=0         nv up ei pl nz na pe nc<br>
+cs=0023  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00210202<br>
+<br>
+AddrPC   Params<br>
+007B4D5F 00000000 00000004 014BFC68  onscripter-ru_win_r1980.exe!GPU_GetModelViewProjection<br>
+007B52CE 212795E0 00462BD9 00000000  onscripter-ru_win_r1980.exe!GPU_GetModelViewProjection<br>
+004BE0F4 00000000 212797E8 014BFB68  onscripter-ru_win_r1980.exe!SDL_LogCritical<br>
+00462BD9 01570000 00000000 00000016  onscripter-ru_win_r1980.exe!0x62bd9<br>
+76587990 034DC5B8 212795E0 014BFBAC  msvcrt.dll!_malloc<br>
+004630E0 034DC754 00000061 0500766F  onscripter-ru_win_r1980.exe!0x630e0<br>
+00416B8A 00000000 00000000 00000000  onscripter-ru_win_r1980.exe!0x16b8a<br>
+004170D7 00004000 00000001 00000000  onscripter-ru_win_r1980.exe!0x170d7<br>
+00B41EE0 014BFD40 034DBCC0 03525A40  onscripter-ru_win_r1980.exe!GPU_GetModelViewProjection<br>
+00403B80 03525A14 03525A14 014BFD40  onscripter-ru_win_r1980.exe!0x3b80<br>
+00403B80 01570000 03525938 03525940  onscripter-ru_win_r1980.exe!0x3b80<br>
+7750B598 00000010 00000000 03524780  ntdll.dll!@RtlpLowFragHeapFree@12<br>
+01580000 27310988 01580000 00001072<br>
+<br>
+onscripter-ru_win_r1980.exe	2016.1.1.0<br>
+ntdll.dll   	10.0.10586.122<br>
+KERNEL32.DLL	10.0.10586.0<br>
+KERNELBASE.dll	10.0.10586.162<br>
+ADVAPI32.dll	10.0.10586.63<br>
+msvcrt.dll  	7.0.10586.0<br>
+sechost.dll 	10.0.10586.0<br>
+RPCRT4.dll  	10.0.10586.0<br>
+SspiCli.dll 	10.0.10586.0<br>
+CRYPTBASE.dll	10.0.10586.0<br>
+bcryptPrimitives.dll	10.0.10586.0<br>
+GDI32.dll   	10.0.10586.63<br>
+USER32.dll  	10.0.10586.20<br>
+IMM32.DLL   	10.0.10586.0<br>
+ole32.dll   	10.0.10586.162<br>
+combase.dll 	10.0.10586.103<br>
+OLEAUT32.dll	10.0.10586.0<br>
+SHELL32.dll 	10.0.10586.122<br>
+cfgmgr32.dll	10.0.10586.0<br>
+OPENGL32.DLL	10.0.10586.0<br>
+windows.storage.dll	10.0.10586.162<br>
+shlwapi.dll 	10.0.10586.0<br>
+GLU32.dll   	10.0.10586.0<br>
+DDRAW.dll   	10.0.10586.0<br>
+kernel.appcore.dll	10.0.10586.0<br>
+shcore.dll  	10.0.10586.0<br>
+DCIMAN32.dll	10.0.10586.3<br>
+powrprof.dll	10.0.10586.0<br>
+profapi.dll 	10.0.10586.0<br>
+WS2_32.dll  	10.0.10586.0<br>
+VERSION.dll 	10.0.10586.0<br>
+WINMM.DLL   	10.0.10586.0<br>
+WINMMBASE.dll	10.0.10586.0<br>
+exchndl.dll 	0.7.7.0<br>
+PSAPI.DLL   	10.0.10586.0<br>
+mgwhelp.dll 	0.7.7.0<br>
+dbghelp.dll 	6.3.9600.17029<br>
+DSOUND.DLL  	10.0.10586.0<br>
+MMDevAPI.DLL	10.0.10586.0<br>
+DEVOBJ.dll  	10.0.10586.0<br>
+PROPSYS.dll 	7.0.10586.0<br>
+wdmaud.drv  	10.0.10586.0<br>
+ksuser.dll  	10.0.10586.0<br>
+AVRT.dll    	10.0.10586.0<br>
+AUDIOSES.DLL	10.0.10586.71<br>
+wintypes.dll	10.0.10586.103<br>
+msacm32.drv 	10.0.10586.0<br>
+MSACM32.dll 	10.0.10586.0<br>
+midimap.dll 	10.0.10586.0<br>
+clbcatq.dll 	2001.12.10941.16384<br>
+uxtheme.dll 	10.0.10586.0<br>
+MSCTF.dll   	10.0.10586.71<br>
+RTSSHooks.dll<br>
+MSVCR90.dll 	9.0.30729.9177<br>
+dwmapi.dll  	10.0.10586.0<br>
+ig75icd32.dll	20.19.15.4331<br>
+igdusc32.dll	20.19.15.4331<br>
+WTSAPI32.dll	10.0.10586.0<br>
+SetupAPI.dll	10.0.10586.0<br>
+WinUSB.DLL  	10.0.10586.0<br>
+hid.dll     	10.0.10586.0<br>
+WINTRUST.dll	10.0.10586.0<br>
+MSASN1.dll  	10.0.10586.0<br>
+CRYPT32.dll 	10.0.10586.0<br>
+dinput8.dll 	10.0.10586.0<br>
+XInput1_4.dll	10.0.10586.0<br>
+WININET.dll 	11.0.10586.212<br>
+iertutil.dll	11.0.10586.122<br>
+ondemandconnroutehelper.dll	10.0.10586.212<br>
+IPHLPAPI.DLL	10.0.10586.0<br>
+winhttp.dll 	10.0.10586.71<br>
+BfLLR.dll   	8.0.3.11<br>
+NSI.dll     	10.0.10586.0<br>
+DNSAPI.dll  	10.0.10586.212<br>
+mswsock.dll 	10.0.10586.0<br>
+dhcpcsvc6.DLL	10.0.10586.0<br>
+WINNSI.DLL  	10.0.10586.0<br>
+urlmon.dll  	11.0.10586.212<br>
+dhcpcsvc.DLL	10.0.10586.0<br>
+rasadhlp.dll	10.0.10586.71<br>
+fwpuclnt.dll	10.0.10586.212<br>
+bcrypt.dll  	10.0.10586.0<br>
+<br>
+Windows 10.0.10586<br>
+DrMingw 0.7.7</dd></dl></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1312">
+	<div class="info">
+		<p class="poster">Knox</p>
+		<p class="dt">2016-04-15 13:09:51</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ouch, really horrible to see that in a public release <img class="smilies" src="../../../images/smilies/icon_e_sad.gif" width="15" height="17" alt=":(" title="Грустный"><br>
+<br>
+This is why we don't normally update beta very often. Recent untested changes in alpha (which we were forced to include while fixing the credits crash) broke this <img class="smilies" src="../../../images/smilies/icon_e_sad.gif" width="15" height="17" alt=":(" title="Грустный"><br>
+<br>
+Thank you very much for the report -- a fix will be up soon, I'm sure. Please be on the lookout for any other disasters <img class="smilies" src="../../../images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Очень доволен"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1313">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-04-15 14:21:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Deadly annoying indeed, a side library changed its API and the new behaviour was quite unexpected.<br>
+I reuploaded the engine with a fix (r1982). Please, give it a try <img class="smilies" src="../../../images/smilies/icon_e_wink.gif" width="15" height="17" alt=";)" title="Подмигивает"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1314">
+	<div class="info">
+		<p class="poster">Grelo</p>
+		<p class="dt">2016-04-15 14:31:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">It seems that everything works fine now, thank you ! <img class="smilies" src="../../../images/smilies/icon_e_wink.gif" width="15" height="17" alt=";)" title="Подмигивает"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1315">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-04-15 14:32:30</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Nice to hear</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

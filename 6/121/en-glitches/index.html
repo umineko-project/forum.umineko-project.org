@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>[EN] Glitches - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+
+<h1>[EN] Glitches</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=121">https://forum.umineko-project.org/viewtopic.php?t=121</a>
+-->
+
+<div class="post" id="p1294">
+	<div class="info">
+		<p class="poster">johnspeez</p>
+		<p class="dt">2016-04-06 18:12:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">There is a typo in the game, in chapter 1. I am linking a screenshot of the typo: <a href="http://i.imgur.com/xUaFZPU.jpg" class="exlinks img-link" onclick="this.target='_blank';">http://i.imgur.com/xUaFZPU.jpg</a><br>
+<br>
+It should be "You leave", not "ou leave".<br>
+<br>
+Edit: More typos <a href="http://i.imgur.com/RLX0Baw.jpg" class="exlinks img-link" onclick="this.target='_blank';">http://i.imgur.com/RLX0Baw.jpg</a><br>
+<br>
+Based on these two images, maybe it has something to do with the italics?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1295">
+	<div class="info">
+		<p class="poster">Knox</p>
+		<p class="dt">2016-04-06 19:21:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">This is a strange one. It's not a typo; the lines are correct in the script. For some reason the text seems to be rendering improperly for you.<br>
+(looks like... some capital italic letters and... all of the small caps italic font? Very odd.)<br>
+<br>
+Can you tell us:<br>
+
+<ul><li>how you installed or upgraded the game? (which engine file, were you running previous versions before that, etc)</li>
+<li>whether you made any changes to ons.cfg?</li>
+<li>what GPU you have? (If you're unsure, then to provide some useful info, you can click Start, type <div class="codebox"><p>Code:</p><pre><code>dxdiag</code></pre></div>, load up dxdiag.exe, click Save All Information, and attach the text file in a PM to me or as a reply to this post.)</li></ul></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1296">
+	<div class="info">
+		<p class="poster">johnspeez</p>
+		<p class="dt">2016-04-06 21:00:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ah, I see. In ons.cfg, I changed the resolution to my laptop resolution, which is 1366x768. (window-width=1366).<br>
+<br>
+For some reason, it breaks the fonts when you use your exact computer resolution? I changed it to 1360 and now it works. (There are black bars on the top and right now, but the text is all good now.<br>
+<br>
+Here are some other weird glitches when setting it to exactly 1366: <a href="http://imgur.com/a/eRCl5" class="exlinks" onclick="this.target='_blank';">http://imgur.com/a/eRCl5</a><br>
+<br>
+dxdiag: <a href="http://pastebin.com/9YcDb6jT" class="exlinks" onclick="this.target='_blank';">http://pastebin.com/9YcDb6jT</a><br>
+Graphics card: ATI Mobility Raedon HD 4650</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1297">
+	<div class="info">
+		<p class="poster">Knox</p>
+		<p class="dt">2016-04-06 22:31:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I use my exact PC resolution and have no issue... <img class="smilies" src="../../../images/smilies/icon_e_confused.gif" width="15" height="17" alt=":?" title="Озадачен"> <br>
+<br>
+Sorry about this -- I guess use your workaround for now, and we'll let you know if we think of a possible fix or some way you could help us.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1298">
+	<div class="info">
+		<p class="poster">johnspeez</p>
+		<p class="dt">2016-04-06 23:23:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">No problem! Thanks for doing this port, it's amazingly well done. <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1299">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-04-07 07:46:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi! Your issue is relatively strange, but I think I know the cause of it. 1366x768 is a little less than 16:9 (1366x768.375), and making a window with even a slightly distorted aspect that should have been exceeding the display area is known to cause an undefined behaviour on Windows. <br>
+It is very unpleasant that our checks failed to signalise you (I guess integral division is used there) about something wrong, but setting window-width to 1365 should just solve it making the black stripes as small as possible.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1300">
+	<div class="info">
+		<p class="poster">johnspeez</p>
+		<p class="dt">2016-04-07 16:17:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thanks. That makes sense, I tried it and you're correct. Maybe in the next update there should be more default resolutions for people?<br>
+<br>
+I've run into another issue. I PM'd Knox, but I think I'll just post it here.<br>
+
+<blockquote class="uncited"><div>So, I just finished episode 1. I unlocked the tea party. The credits roll, and then, right as they are going to finish, my game crashes.<br>
+<br>
+Here is .RPT file: <a href="http://pastebin.com/cmSFsmda" class="exlinks" onclick="this.target='_blank';">http://pastebin.com/cmSFsmda</a><br>
+<br>
+If you need more information ask me. Thanks.</div></blockquote>
+
+Also, I realized that I probably posted this on the wrong board. Is it possible to move me to the proper one? Sorry.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1301">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-04-08 13:06:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I analysed the crash report, and was able to partially localise the problem. Somebody will send you a test release in the nearest future to get some special debugging information for the fix.<br>
+<br>
+I have just moved the topic as well <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1302">
+	<div class="info">
+		<p class="poster">johnspeez</p>
+		<p class="dt">2016-04-09 01:20:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Alright, thanks! I'll be sure to test it for you when it is released.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1305">
+	<div class="info">
+		<p class="poster">johnspeez</p>
+		<p class="dt">2016-04-11 08:55:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Had another crash on the credits that play in the ????? scene for Episode 3. Here is the .rpt file: <a href="http://pastebin.com/knK2fchN" class="exlinks" onclick="this.target='_blank';">http://pastebin.com/knK2fchN</a><br>
+<br>
+I'm not sure if this crash also occurs because of the same reason the credits in Episode 1 crash, so I decided to make another reply.<br>
+<br>
+Thanks so much for this port, 1080p is so much prettier <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1306">
+	<div class="info">
+		<p class="poster">Knox</p>
+		<p class="dt">2016-04-11 14:03:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Sent you a PM <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1307">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-04-13 13:43:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I have just pushed a new version. Please refresh your engine &amp; scripts. The crash should be gone <img class="smilies" src="../../../images/smilies/icon_e_wink.gif" width="15" height="17" alt=";)" title="Подмигивает"><br>
+Thanks for helping. Let me know whether the issue is solved.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1308">
+	<div class="info">
+		<p class="poster">johnspeez</p>
+		<p class="dt">2016-04-13 23:46:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Awesome, both Episode 1 tea party and Episode 3 ????? work now! Didn't get to see the dialog after the credits because it used to crash, haha.<br>
+<br>
+Thanks so much.<br>
+<br>
+I noticed that the subs for the credits in Episode 3 ????? were about 3 seconds off, wasn't sure if that was my computer or if the subs are actually mistimed. (I had both English and Karaoke on)<br>
+<br>
+Also, is the game supposed to crash when I try to open Episode 4? I know you guys haven't released it, but my game straight up crashes.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1309">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-04-14 08:36:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Nice to hear <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"> I guess you can try the omake now.<br>
+
+<blockquote class="uncited"><div>I noticed that the subs for the credits in Episode 3 ????? were about 3 seconds off, wasn't sure if that was my computer or if the subs are actually mistimed. (I had both English and Karaoke on)</div></blockquote>We will check this but sounds like performance issues.<br>
+
+<blockquote class="uncited"><div>Also, is the game supposed to crash when I try to open Episode 4? I know you guys haven't released it, but my game straight up crashes.</div></blockquote>
+That's a regression introduced in a previous alpha. I silently reuploaded the scripts with a fix to it <img class="smilies" src="../../../images/smilies/icon_e_wink.gif" width="15" height="17" alt=";)" title="Подмигивает"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1310">
+	<div class="info">
+		<p class="poster">Knox</p>
+		<p class="dt">2016-04-14 15:02:00</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote class="uncited"><div><blockquote class="uncited"><div>I noticed that the subs for the credits in Episode 3 ????? were about 3 seconds off, wasn't sure if that was my computer or if the subs are actually mistimed. (I had both English and Karaoke on)</div></blockquote>We will check this but sounds like performance issues.</div></blockquote>It is perfectly synced on my machine (Intel GPU). <img class="smilies" src="../../../images/smilies/icon_e_sad.gif" width="15" height="17" alt=":(" title="Грустный"> Assuming that it is always like this, even when jumping straight into ep 3 ???? after launching the game, it does sound like performance issues.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

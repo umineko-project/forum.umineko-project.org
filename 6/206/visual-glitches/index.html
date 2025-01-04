@@ -1,0 +1,695 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Visual glitches. - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+
+<h1>Visual glitches.</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=206">https://forum.umineko-project.org/viewtopic.php?t=206</a>
+-->
+
+<div class="post" id="p2149">
+	<div class="info">
+		<p class="poster">Bernkastel77</p>
+		<p class="dt">2017-09-12 14:34:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi vit9696.<br>
+<br>
+Thanks for the fast responses.<br>
+It's done. The topic was created.<br>
+<br>
+Here my GPU: <a href="http://imgur.com/a/O0Drm" class="exlinks" onclick="this.target='_blank';">http://imgur.com/a/O0Drm</a><br>
+<br>
+Can you help me? Hahaha.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2150">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-09-12 14:50:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi,<br>
+<br>
+I think I can. From what I can see is that you have an ASUS laptop with AMD and Intel GPUs installed. I think that due to some weird reason Intel GPU is used instead of AMD.<br>
+<br>
+My first suggestion will be to try to force AMD GPU. There is a KB article on AMD website, that explains how to specify the preferred GPU for an app:<br>
+<a href="https://community.amd.com/docs/DOC-1581" class="exlinks" onclick="this.target='_blank';">https://community.amd.com/docs/DOC-1581</a><br>
+<br>
+I think I won't be able to explain it better, and it might be a very good idea to try it first.<br>
+Also, you probably should undo all the changes you previously made (e.g. ons.cfg changes).<br>
+<br>
+Let me know if and where it fails, in this case we will think of updating the drivers. Could you also specify the exact laptop model?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2151">
+	<div class="info">
+		<p class="poster">Bernkastel77</p>
+		<p class="dt">2017-09-12 15:48:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">My PC is desktop, not laptop. It was built. I think it's don't have a specific model.<br>
+Also, i don't have this version of AMD Radeon settings, so I trying this with AMD CCC, i found this option (<a href="http://imgur.com/a/jSTRj" class="exlinks" onclick="this.target='_blank';">http://imgur.com/a/jSTRj</a>) which I believe is the same.<br>
+Maybe if I put onscripter here shall this work? I'll try.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2152">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-09-12 15:55:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ah, if it is a desktop, then it is likely that the drivers are just outdated (according to the screenshot they are from 2013).<br>
+Just install these ones: <a href="http://support.amd.com/en-us/download/desktop?os=Windows+7+-+64" class="exlinks" onclick="this.target='_blank';">http://support.amd.com/en-us/download/d ... ows+7+-+64</a> and retry.<br>
+<br>
+If it does not help, it might indeed be worth checking AMD CCC preferences, but I think that should not be needed.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2153">
+	<div class="info">
+		<p class="poster">Bernkastel77</p>
+		<p class="dt">2017-09-12 16:04:30</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">To be honest, when I tried solve this by my own, I tried install this "updater", but, for some reason, when the installing proceeds my screen turns entirely black (lol). So I restart my computer and nothing change.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2154">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-09-12 16:16:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">In this case you will firstly have to properly uninstall the existing installation, reboot, and install again (pick 17.9.1 I guess?). Here is a relevant KB article:<br>
+<a href="http://support.amd.com/en-us/kb-articles/pages/gpu57removeoldgraphicsdrivers.aspx" class="exlinks" onclick="this.target='_blank';">http://support.amd.com/en-us/kb-article ... ivers.aspx</a><br>
+<br>
+It is often good to avoid performing a direct upgrade and use a clean install due to clumsy situations like this.<br>
+<br>
+(Don't worry, even when you remove the drivers, there will still be software driver that does not provide hardware acceleration, so you will be able to boot into Windows)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2155">
+	<div class="info">
+		<p class="poster">Bernkastel77</p>
+		<p class="dt">2017-09-12 23:08:13</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi. Sorry for being late. I had to attend my college.<br>
+So now, i'm finally in home.<br>
+Well, first of all i'll make it clear: I tried what you just did say to do.<br>
+And guess what...? Didn't work.<br>
+Again, my screen became entirely black... curiously, this time the installation actually had been finished, but when I rebooted the system, before the windows start, my monitor suffered a blackout. <br>
+I searched in google and I found other people which had this trouble in the past. Apparently this is a typical AMD issue.<br>
+Buuuut, I was reading the release notes of the 17.9.1 ReLive and then I realized that is a beta version. Maybe, because of this, this fucking trouble occurs.<br>
+<br>
+Now, my last try will be in the 17.7.2, the previous version.<br>
+If it doesn't work... well, we'll have to come up with another solution.<br>
+<br>
+Btw, hope you're still awake. Hahahahaha.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2156">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-09-12 23:28:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Welcome back, you caught me right before heading to bed, so you should probably expect the next reply later in the morning.<br>
+I checked the forums, and it indeed seems to be a popular bug introduced in at least 17.4.x branch and still unfixed for several configurations. Goddamn AMD :/<br>
+<br>
+According to <a href="https://community.amd.com/thread/217162" class="exlinks" onclick="this.target='_blank';">https://community.amd.com/thread/217162</a> 17.3.3 was the last one that worked for the topic starter, so I think it is worth trying:  <a href="http://support.amd.com/en-us/download/desktop/previous/detail?os=Windows%207%20-%2064&amp;rev=17.3.3" class="exlinks" onclick="this.target='_blank';">http://support.amd.com/en-us/download/d ... rev=17.3.3</a><br>
+<br>
+If it does not, it might be worth trying a few more older versions, after all anything newer than 13.200.0 you have should be an improvement.<br>
+<br>
+If you get bored in the meanwhile, after some googling I additionally discovered the following suggestions, which might actually be worth trying:<br>
+1. Try power off / Start instead of reboot<br>
+2. Check if it is only the backlight not working, and not the driver, for that attempt to create/edit the following parameters in windows registry: <a href="http://forum.radeon.ru/viewtopic.php?p=887206#p887206" class="exlinks" onclick="this.target='_blank';">http://forum.radeon.ru/viewtopic.php?p=887206#p887206</a>, actually since you have a desktop you would probably want 0s instead of 1s</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2157">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-09-13 08:35:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">There is something else I want to tell you. We discussed what else this could be other than GPU drivers, and… given that your friend had exactly the same issue with completely different hardware, Giza came up with a suggestion that you might have your game files corrupted. There could be various reasons for that, including:<br>
+— Failed extraction (Older versions of certain archivers could silently extract incorrectly O_o, did you use the latest version of 7-zip <a href="http://www.7-zip.org" class="exlinks" onclick="this.target='_blank';">http://www.7-zip.org</a>?)<br>
+— HDD fault<br>
+<br>
+This hardly goes in line with:
+<blockquote class="uncited"><div>My game has several visual glitches and errors, for example, when I try open the config in the title screen, and then I go back to menu, the screen turns entirely black.</div></blockquote>
+But now that we reexamined the screenshots, all of them have missing textures and not even one corrupted/distorted image.<br>
+Could you please verify a few files, whether they open, their sizes, and maybe hashes. For example:
+<div class="codebox"><p>Code:</p><pre><code>backgrounds/mlib_1b_bg.png, 93 392 bytes, md5 e9f080b0e1aa565ec83ad1deb0c352f8
+backgrounds/mlib_1b.png, 3 748 405 bytes, md5 c5c9ce23fd4c328d54c1c8a14b399bf8
+sprites/kin/1/kin_a11_defo1.png, 534 633 bytes, md5 396ee45f91174871a86dd12a0d67a081</code></pre></div>
+
+Firstly it is worth trying to open these files, since they are all plain png images, they should open with any image viewer with no issue. Secondly, you could check the size in file properties. Then, to calculate md5 hashes you could use <a href="http://implbits.com/products/hashtab/" class="exlinks" onclick="this.target='_blank';">http://implbits.com/products/hashtab/</a>. If you have any issue or have doubts that everything went right, you may just upload these files here.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2158">
+	<div class="info">
+		<p class="poster">Bernkastel77</p>
+		<p class="dt">2017-09-13 16:15:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">First of all, well, I must say that a big fucking misunderstanding occurred between me, you and AMD hahahaha. <br>
+Actually, my GPU isn't a real AMD, but a Gigabyte with AMD chipsets.<br>
+The specific model is GVR726X, and apparently there is no driver update for this version. If you access the gigabyte website, the only driver you will find will be my current one. So you're right, maybe it has nothing to do with GPU. And no, I didn't use 7zip, I used the old WinRar.<br>
+<br>
+I'll check the files.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2159">
+	<div class="info">
+		<p class="poster">Bernkastel77</p>
+		<p class="dt">2017-09-13 16:20:26</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Btw, when I install the game in my friend's pc I used the WinRar as well.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2160">
+	<div class="info">
+		<p class="poster">Bernkastel77</p>
+		<p class="dt">2017-09-13 16:55:51</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">It's all OK....... i guess<br>
+<a href="https://imgur.com/a/xEBl4" class="exlinks" onclick="this.target='_blank';">https://imgur.com/a/xEBl4</a><br>
+<a href="https://imgur.com/a/3NK3Q" class="exlinks" onclick="this.target='_blank';">https://imgur.com/a/3NK3Q</a><br>
+<a href="https://imgur.com/a/XpXCN" class="exlinks" onclick="this.target='_blank';">https://imgur.com/a/XpXCN</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2161">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-09-13 17:14:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The sizes look good, but do the files open fine though? The thing is old WinRAR had serious issues with our archives, so better to check MD5 hashes really.<br>
+<br>
+Now that you say it, I got very confused indeed. Whatever the model is, a desktop discrete graphics card should be able to use the original AMD drivers, and the supplied ones should not really be any different. Notably I found that the latest gigabyte-supplied driver available is 14.4: <a href="https://www.gigabyte.com/Graphics-Card/GV-R726XWF2-2GD-rev-10#support-dl" class="exlinks" onclick="this.target='_blank';">https://www.gigabyte.com/Graphics-Card/ ... support-dl</a> Might it be worth trying?<br>
+<br>
+On the forums the GPU appears to be reasonably problematic, there even are recommendations to reflash its vbios @_@. Let me know how it goes, and next we will see where could we get.<br>
+<br>
+Given all that strange stuff regarding the hardware, could you make a report with AIDA64 extreme or something? <a href="http://www.aida64.com/downloads" class="exlinks" onclick="this.target='_blank';">http://www.aida64.com/downloads</a><br>
+I am also interested in what your friends' hardware is. (See PM if you need a key).</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2162">
+	<div class="info">
+		<p class="poster">Bernkastel77</p>
+		<p class="dt">2017-09-13 17:45:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I forgot to say, but when i said "my current one" i meant the 14.4.<br>
+Actually I had updated to 14.4. <br>
+So I really think the problem isn't in the GPU.<br>
+<br>
+Also my friend's GPU is a GTX 765M (he has a notebook).<br>
+<br>
+Curiosly, when i was testing the game on his computer, i found the exactly same errors. Both us PC show the same errors. No exceptions.<br>
+So I think the error is due to Winrar indeed.<br>
+Should I try reinstall the game with 7zip?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2163">
+	<div class="info">
+		<p class="poster">Bernkastel77</p>
+		<p class="dt">2017-09-13 17:50:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">And... I can't acess the aida64 website.<br>
+"Your connection is not private"</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2164">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-09-13 17:52:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Exactly the same errors sounds very worrying. If it does not hurt too much, please reinstall with 7-zip.<br>
+Let's wait for this before taking any further steps, perhaps it could be the culprit.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2165">
+	<div class="info">
+		<p class="poster">Bernkastel77</p>
+		<p class="dt">2017-09-13 18:15:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Just to be sure.<br>
+Nothing was missing, right?<br>
+Need a specific order to extract the files?<br>
+<br>
+<a href="https://imgur.com/a/czxPK" class="exlinks" onclick="this.target='_blank';">https://imgur.com/a/czxPK</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2166">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-09-13 18:17:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">This is correct. The only exception is to always extract extra, scripts, and onscripter after everything else.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2167">
+	<div class="info">
+		<p class="poster">Bernkastel77</p>
+		<p class="dt">2017-09-13 19:00:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Sorry for the delay.<br>
+Well... didn't work. \=<br>
+The errors remained.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2168">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-09-13 19:09:28</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"> Okay.<br>
+<br>
+Firstly, please could you confirm that you continue to get this exact issue at this exact scene in ep1 prologue <a href="https://imgur.com/a/rPdoC" class="exlinks" onclick="this.target='_blank';">https://imgur.com/a/rPdoC</a> over the game restarts. And it never shows Kinzo sprite/library background.<br>
+Next please ensure md5 checksums match (see this post: <a href="/6/206#p2157" class="loclinks" onclick="this.target='_blank';">Visual glitches.</a>).<br>
+<br>
+If you are not fully positive about it, simply <a href="https://forum.umineko-project.org/posting.php?mode=reply&amp;f=6&amp;t=206" class="loclinks" onclick="this.target='_blank';">attach</a> the files (backgrounds/mlib_1b_bg.png, backgrounds/mlib_1b.png, sprites/kin/1/kin_a11_defo1.png) to the forum. This probably will be the most definite way to conclude that there is nothing wrong with the files.<br>
+<br>
+Then additionally create a report with AIDA64 and attach it here as well (there is Reports → Create report menu). You will need to create a zip/rar archive first. Use this direct link for downloading, it will work fine: <a href="http://download.aida64.com/aida64extreme592.zip" class="exlinks zip-link" onclick="this.target='_blank';">http://download.aida64.com/aida64extreme592.zip</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2169">
+	<div class="info">
+		<p class="poster">Bernkastel77</p>
+		<p class="dt">2017-09-13 20:52:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I just attached the images.<br>
+<br>
+I can't attach the report here, so I uploaded the file on mega.<br>
+&gt; <a href="https://mega.nz/#!HhRkUZKa!PJp558SNRTdFtmtUkmA7iEe4gmvwT-Abq_PZybwwYmc" class="exlinks" onclick="this.target='_blank';">https://mega.nz/#!HhRkUZKa!PJp558SNRTdF ... _PZybwwYmc</a><br>
+<br>
+(wtf, this report is fucking enourmous hahaha)<br>
+
+<dl class="codebox"><dt><a href="javascript:void%280%29;" onclick="var el = this.parentNode.parentNode.getElementsByTagName('dd')[0]; var v = el.style.display != 'none'; el.style.display = v ? 'none' : 'block'; this.innerHTML = (v ? '[+]' : '[−]') + ' Spoiler'; ">[+] Spoiler </a></dt><dd style="display:none"><div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="kin_a11_defo1.png" class="postimage" alt="kin_a11_defo1.png" onclick="viewableArea(this);"></dt>
+						<dd>kin_a11_defo1.png (522.1 KiB) Viewed 13683 times</dd>
+		</dl>
+		
+		
+			</div><div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="mlib_1b_bg.png" class="postimage" alt="mlib_1b_bg.png" onclick="viewableArea(this);"></dt>
+						<dd>mlib_1b_bg.png (91.2 KiB) Viewed 13683 times</dd>
+		</dl>
+		
+		
+			</div><div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="mlib_1b.png" class="postimage" alt="mlib_1b.png" onclick="viewableArea(this);"></dt>
+						<dd>mlib_1b.png (3.57 MiB) Viewed 13683 times</dd>
+		</dl>
+		
+		
+			</div></dd></dl></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2170">
+	<div class="info">
+		<p class="poster">Bernkastel77</p>
+		<p class="dt">2017-09-13 20:53:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Also sorry for being late (again). I had to leave for a while.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2171">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-09-13 21:03:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Alright, the good thing is that now we can be certain that the files are not corrupted. I am currently studying the system report, and I think we are reaching the step where we will need to get some debugging info from the engine.<br>
+<br>
+I made some changes that might help to give us some insight on the problem. If you are lucky, there is a slight chance the behaviour would change, if not for you, then at least for your friend. It will be nice, if you could test it later on your friend's PC as well.<br>
+<br>
+Unfortunately I don't have Windows nearby, so we will have to wait for about an hour until the system builds a new engine for us.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2172">
+	<div class="info">
+		<p class="poster">Bernkastel77</p>
+		<p class="dt">2017-09-13 21:08:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I see. Then i'll wait.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2173">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-09-13 22:17:53</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Alright, I have just sent you a PM with a new engine.<br>
+<br>
+What I would like you to try is extracting the onscripter-ru_win_r2835.exe and ons.cfg file to the game directory, and running the new onscripter-ru_win_r2835.exe. Once the game launches you will see a console window with certain text output.<br>
+<br>
+Please play a little, reach a couple of places where the bug happens, and then save the text printed to the console window and post it here.<br>
+In order to be able to select the text you will have to right-click the console window, and then choose Edit → Select All.<br>
+<br>
+Ideally you do the same on your friend's PC if you can (sooner or later). Let me know, if anything changes.<br>
+Also, I would like you to compare very carefully whether there are any differences between:<br>
+1. Two game launches on the same PC in a row<br>
+2. Two game launches on the same PC with a reboot in between<br>
+3. Two game launches on different PCs (e.g. your and your friend's)<br>
+<br>
+The thing is, even a minor difference might give us a better understanding of what is going on. For example, on all your screenshots the images were missing. And none of the textures was corrupted (i.e. displayed partially). What is most important to know is whether it is the same all the time and is it the same for your friend's PC?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2174">
+	<div class="info">
+		<p class="poster">Bernkastel77</p>
+		<p class="dt">2017-09-13 22:31:27</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">All i have to do is play? I run some dialogues but nothing has changed within the console window.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2175">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-09-13 22:38:13</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">If it did not change, it is still a result, and if you do see a glitch, it is enough. You may stop now. All that means is that one of the issues we suspected is not happening (at least on <em class="text-italics">your</em> pc). I would still like to get the log though, since it would still have certain useful stuff in the beginning.<br>
+I would also like to get all the possible answers to my previous questions as well =)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2176">
+	<div class="info">
+		<p class="poster">Bernkastel77</p>
+		<p class="dt">2017-09-13 22:45:26</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Sorry, i hadn't seen your question. Yes, all the time. Same about my friend's pc.<br>
+Btw, he is testing on his pc by right now, we are on skype.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2177">
+	<div class="info">
+		<p class="poster">Bernkastel77</p>
+		<p class="dt">2017-09-13 22:47:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hey! He found a issue!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2178">
+	<div class="info">
+		<p class="poster">Bernkastel77</p>
+		<p class="dt">2017-09-13 22:47:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><a href="https://puu.sh/xz64G.png" class="exlinks img-link" onclick="this.target='_blank';">https://puu.sh/xz64G.png</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2179">
+	<div class="info">
+		<p class="poster">Bernkastel77</p>
+		<p class="dt">2017-09-13 22:51:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The same errors occurs in my game.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2180">
+	<div class="info">
+		<p class="poster">Bernkastel77</p>
+		<p class="dt">2017-09-13 23:00:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">More and more erros <a href="https://puu.sh/xz6GA.png" class="exlinks img-link" onclick="this.target='_blank';">https://puu.sh/xz6GA.png</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2181">
+	<div class="info">
+		<p class="poster">Bernkastel77</p>
+		<p class="dt">2017-09-13 23:02:30</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">(same errors in both PCS)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2182">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-09-13 23:02:51</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Please note that you are running <strong class="text-strong">onscripter-ru_win_r2531.exe</strong> and not <strong class="text-strong"><span style="text-decoration:underline">onscripter-ru_win_r2835.exe</span></strong> I sent you. Unfortunately it is not that easy. Both getram and gamepad_button warnings are harmless (and expected). And all the other messages are not errors/warnings at all, they are good debug output. If you had r2835, you would not have seen getram warning.<br>
+<br>
+Either way. Please make sure that you run a correct executable now, use this ons.cfg file, and report with the log.<br>
+<br>
+The good news is that at this step I am 99% confident that the issue is in the drivers. What I currently cannot understand is how your friend's PC that has a completely different GPU (i.e. NVIDIA) has the same bug. I suspect that the bug is similar but completely different in its cause. Needs to be thought about why.<br>
+<br>
+Please try this config file first, and if it fails, I think I have an idea on how to install the latest drivers…</div>
+<dl class="attachbox">
+					<dt>
+						Attachments
+					</dt>
+											<dd>
+			
+		
+		
+				<dl class="file">
+			<dt><span class="imageset icon_topic_attach"></span> <a class="postlink" href="test_onscfg_a2.zip">test_onscfg_a2.zip</a></dt>
+						<dd>(617 Bytes) Downloaded 810 times</dd>
+		</dl>
+		
+			</dd>
+									</dl>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2183">
+	<div class="info">
+		<p class="poster">Bernkastel77</p>
+		<p class="dt">2017-09-13 23:12:48</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">WORKED!!!!!!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2184">
+	<div class="info">
+		<p class="poster">Bernkastel77</p>
+		<p class="dt">2017-09-13 23:13:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">This ons.cfg worked! The errors are gone! (lol)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2185">
+	<div class="info">
+		<p class="poster">Bernkastel77</p>
+		<p class="dt">2017-09-13 23:15:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Btw, the prints are from my friend's pc. This idiot had opened 2531, but I was with 2835 for sure.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2186">
+	<div class="info">
+		<p class="poster">Bernkastel77</p>
+		<p class="dt">2017-09-13 23:18:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I'm speechless. Everything is working fine now. LOL.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2187">
+	<div class="info">
+		<p class="poster">Bernkastel77</p>
+		<p class="dt">2017-09-13 23:20:53</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">It worked for my friend too.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2188">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-09-13 23:22:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Alright, but I would like to explore the problem a little deeper if possible. While this is great to hear, I added no-texture-reuse flag, and this flag causes reasonably serious performance drain. So while it usually works, often it is an overkill, and so far we only thought it is only needed on Windows.<br>
+<br>
+1. Could you confirm that 2835 and a <em class="text-italics">previous</em> ons.cfg file did NOT fix the problem for your friend? (I expected r2835 to be enough for him to be honest)<br>
+2. Could you try this third ons.cfg file, whether it fixes the problem for you?<br>
+3. Could your friend try this third ons.cfg file, whether it fixes the problem for him?</div>
+<dl class="attachbox">
+					<dt>
+						Attachments
+					</dt>
+											<dd>
+			
+		
+		
+				<dl class="file">
+			<dt><span class="imageset icon_topic_attach"></span> <a class="postlink" href="test_onscfg_a3.zip">test_onscfg_a3.zip</a></dt>
+						<dd>(612 Bytes) Downloaded 881 times</dd>
+		</dl>
+		
+			</dd>
+									</dl>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2189">
+	<div class="info">
+		<p class="poster">Bernkastel77</p>
+		<p class="dt">2017-09-13 23:36:27</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">1. It seems to solve the problem for him. This donkey had not opened before, but now that he opened it all was settled. Yes, the ons.cfg 1 worked for him.<br>
+2. Yes. It works for me.<br>
+3. Work for him too.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2190">
+	<div class="info">
+		<p class="poster">Bernkastel77</p>
+		<p class="dt">2017-09-13 23:40:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Now that everything has been solved, how can i get rid of this screen?<br>
+Whenever I start the game, this app comes together.<br>
+<a href="https://imgur.com/a/JsxJL" class="exlinks" onclick="this.target='_blank';">https://imgur.com/a/JsxJL</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2191">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-09-13 23:46:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Nice to hear. All in all you had separate bugs, thanks to the tests we at least were able to create a builtin fix for nvidia. For AMD this is not possible, and you have to specify no-glclear manually into your ons.cfg file. We will update our Known issues page with more details in the nearest future.<br>
+<br>
+To get rid of the console window just open ons.cfg with Notepad and remove "use-console" line.<br>
+And as for your friend, he could use r2835 engine and delete this ons.cfg file so that the new default file gets created. It was the engine that fixed the problem for him, not the ons.cfg file.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2192">
+	<div class="info">
+		<p class="poster">Bernkastel77</p>
+		<p class="dt">2017-09-13 23:55:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">"you have to specify no-glclear manually into your ons.cfg file"<br>
+<br>
+What do I have to do? What I write?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2193">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-09-13 23:56:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">That's what I have already done for you. If you open ons.cfg with Notepad (Right click → Open with → Choose program → Notepad), you will see that it has a line no-glclear.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2194">
+	<div class="info">
+		<p class="poster">Bernkastel77</p>
+		<p class="dt">2017-09-14 00:01:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Okay. Thank you very much, bro. I'm really glad that i can enjoy Umi in its best version hehehe ^_^</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2195">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-09-14 00:07:35</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">You are welcome</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

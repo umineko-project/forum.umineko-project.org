@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>XMPP Communication - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+
+<h1>XMPP Communication</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=276">https://forum.umineko-project.org/viewtopic.php?t=276</a>
+-->
+
+<div class="post" id="p2974">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2018-07-31 14:34:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">As some of you are already aware that we run a XMPP server for faster communication, I decided to post an instruction for those in need.<br>
+<br>
+The details of the XMPP server are as follows:<br>
+<strong class="text-strong">Server</strong>: talk.umineko-project.org<br>
+<strong class="text-strong">Port</strong>: 5222<br>
+<strong class="text-strong">Proxy</strong>: none<br>
+<strong class="text-strong">TLS</strong>: yes<br>
+<strong class="text-strong">Web registration</strong>: <a href="https://talk.umineko-project.org:15280/register/" class="exlinks" onclick="this.target='_blank';">https://talk.umineko-project.org:15280/register/</a><br>
+<br>
+<strong class="text-strong">Known compatible clients</strong>:
+<ul><li>Pigin (<a href="https://www.pidgin.im/" class="exlinks" onclick="this.target='_blank';">https://www.pidgin.im/</a>) with <a href="https://github.com/gkdr/lurch/releases" class="exlinks" onclick="this.target='_blank';">OMEMO</a> or <a href="https://otr.cypherpunks.ca" class="exlinks" onclick="this.target='_blank';">OTR</a></li>
+<li>Adium (<a href="https://adium.im" class="exlinks" onclick="this.target='_blank';">https://adium.im</a>) with <a href="https://github.com/shtrom/Lurch4Adium/releases" class="exlinks" onclick="this.target='_blank';">OMEMO</a></li>
+<li>ChatSecure (<a href="https://chatsecure.org" class="exlinks" onclick="this.target='_blank';">https://chatsecure.org</a>)</li>
+<li>And obviously many others that support OTR and/or OMEMO</li></ul>
+
+For Pidgin the instruction is as follows:
+<ol style="list-style-type:decimal"><li>Register via the web interface for simplicity (registration from within the client also works). Follow <a href="https://talk.umineko-project.org:15280/register/new" class="exlinks" onclick="this.target='_blank';">this url</a> and fill the gaps:
+<div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="1.png" class="postimage" alt="1.png" onclick="viewableArea(this);"></dt>
+						<dd>1.png (93 KiB) Viewed 22346 times</dd>
+		</dl>
+		
+		
+			</div>
+Successful registration is confirmed by "Your Jabber account was successfully created." message after choosing submit.</li>
+<li>Install Pidgin and choose "Add" to add your account. Fill the gaps as follows:
+<div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="2.png" class="postimage" alt="2.png" onclick="viewableArea(this);"></dt>
+						<dd>2.png (250.78 KiB) Viewed 22346 times</dd>
+		</dl>
+		
+		
+			</div><div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="3.png" class="postimage" alt="3.png" onclick="viewableArea(this);"></dt>
+						<dd>3.png (35.17 KiB) Viewed 22346 times</dd>
+		</dl>
+		
+		
+			</div>
+Resource can be filled with arbitrary value to distinguish each device when multiple are connected.</li>
+<li>Afterwards you will see a contact interface with you being connected and contact (buddy) addition being available.
+<div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="4.png" class="postimage" alt="4.png" onclick="viewableArea(this);"></dt>
+						<dd>4.png (26.45 KiB) Viewed 22346 times</dd>
+		</dl>
+		
+		
+			</div>
+To add a contact fill the gaps as follows:
+<div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="5.png" class="postimage" alt="5.png" onclick="viewableArea(this);"></dt>
+						<dd>5.png (25.99 KiB) Viewed 22346 times</dd>
+		</dl>
+		
+		
+			</div>
+Note, that Pidgin hides unconfirmed offline accounts by default, so consider enabling "Buddies → Show → Offline Buddies".</li>
+<li>To enable OMEMO put the downloaded lurch-0.X.Y.dll from <a href="https://github.com/gkdr/lurch/releases" class="exlinks" onclick="this.target='_blank';">this page</a> to <em class="text-italics">C:\Program Files (x86)\Pidgin\plugins</em>. Also put libgcrypt-20.dll and libgpg-error-0.dll from <a href="https://eion.robbmob.com/lurch/" class="exlinks" onclick="this.target='_blank';">this page</a> to <em class="text-italics">C:\Program Files (x86)\Pidgin</em>. In case the link is down you may find the gpg and gcrypt libs in lurch dlls.zip attachment.<br>
+<br>
+After restarting Pidgin you will be able to<br>
+— enable OMEMO in plugins (Tools → Plugins → lurch)<br>
+— initiate End-to-End encryption in multichat users by typing /lurch enable (enabled by default in other chats)<br>
+More details can be found on the official documentation page (<a href="https://github.com/gkdr/lurch#usage" class="exlinks" onclick="this.target='_blank';">https://github.com/gkdr/lurch#usage</a>).</li>
+</ol></div>
+<dl class="attachbox">
+					<dt>
+						Attachments
+					</dt>
+											<dd>
+			
+		
+		
+				<dl class="file">
+			<dt><span class="imageset icon_topic_attach"></span> <a class="postlink" href="lurch%20dlls.zip">lurch dlls.zip</a></dt>
+						<dd>(310.71 KiB) Downloaded 1287 times</dd>
+		</dl>
+		
+			</dd>
+									</dl>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

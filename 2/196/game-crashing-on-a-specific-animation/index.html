@@ -1,0 +1,341 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game crashing on a specific animation - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+
+<h1>Game crashing on a specific animation</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=196">https://forum.umineko-project.org/viewtopic.php?t=196</a>
+-->
+
+<div class="post" id="p2045">
+	<div class="info">
+		<p class="poster">GBcrazy</p>
+		<p class="dt">2017-05-30 00:42:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hello there, after looking at the known issues page, couldn't find anything similar, but forgive me if this is commented somewhere.<br>
+<br>
+I'm getting a <strong class="text-strong">ONScripter-RU has stopped working</strong> error on the animation where a character sprite (generally Beatrice) is rebuilt from pieces. <br>
+<br>
+I just finished the first episode, had no issues, but in the Tea Party and ??? extras, there seems to be some special animation where Beatrice's sprite vanishes into pieces or is rebuilt from pieces (very first scene of the ???) and it oftens crash. It doesn't always happen but it's pretty common (I'd say 80% of the time), to the point where I can't finish the ??? extra because this animation do exist at various parts.<br>
+<br>
+When I'm pressing CTRL to fast forward this generally doesn't happen.<br>
+<br>
+<br>
+My ons.cfg file:<br>
+<br>
+window<br>
+game_script=en.file<br>
+window-width=1000<br>
+no-glclear<br>
+font-multiplier=b1:1.1,b2:1.1,b3:1.1,b4:1.1,b5:1.1,b6:1.1,b7:1.1,p0:6:1.1,p1:1:1.1,p1:2:1.1,p1:3:1.1,p1:4:1.1,p1:5:1.1,p1:7:1.1,p2:1:1.1,p2:2:1.1,p2:3:1.1,p2:4:1.1,p2:5:1.1,p2:7:1.1,p41:1:1.1,p41:2:1.1,p41:3:1.1,p41:4:1.1,p41:5:1.1,p41:7:1.1,p42:1:1.1,p42:2:1.1,p42:3:1.1,p42:4:1.1,p42:5:1.1,p42:7:1.1<br>
+<br>
+<br>
+Thanks in advance!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2046">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-05-30 01:47:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">There is a rpt file generated when the engine crashes (its name is equal to the engine, but the extension is rpt).<br>
+Please attach it here (you may need to archive it). If you have any ideas what might be triggering the crash, that would be helpful.<br>
+<br>
+Also we need to know know the GPU you have, the drivers you use, the amount of RAM, 32-bit or 64-bit OS, also anything you might find relevant configuration-wise.<br>
+If I remember correctly, you are using a private engine, could you confirm the issue with the public one as well?<br>
+<br>
+As a very temporary workaround you could try adding breakup=old or breakup=newintel to ons.cfg file. Please let us know if the crashes still happen in this case. Note, that this workaround uses a slower and less accurate effect implementation, and we actually need your input for a proper fix.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2047">
+	<div class="info">
+		<p class="poster">GBcrazy</p>
+		<p class="dt">2017-05-30 03:21:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thanks for the reply, so far with breakup=old everything seems perfect, I'm not even noticing anything slow<br>
+<br>
+About my hardware, I think everything you want is <a href="https://www.acer.com/datasheets/2014/4876/E1-572/NX.MEVAL.021.html" class="exlinks" onclick="this.target='_blank';">here</a> and <a href="https://www.acer.com/ac/pt/BR/content/support-product/4776?b=1" class="exlinks" onclick="this.target='_blank';">here</a>, I'm using all the defaults and Windows 8.1 64-bit.<br>
+<br>
+Not sure what you mean by private engine...I'm attaching the rpt file, please note that I had several crashes, but I do think they are all related to this particular issue.<br>
+<br>
+Nothing more relevant came into my mind right now but if you want me to test something just say it</div>
+<dl class="attachbox">
+					<dt>
+						Attachments
+					</dt>
+											<dd>
+			
+		
+		
+				<dl class="file">
+			<dt><span class="imageset icon_topic_attach"></span> <a class="postlink" href="report.zip">report.zip</a></dt>
+						<dd>(4.69 KiB) Downloaded 687 times</dd>
+		</dl>
+		
+			</dd>
+									</dl>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2048">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-05-30 08:22:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Alright, I checked the report out mhm, it is once again your GPU driver bug, I think it is fixed already in a newer version though.<br>
+You have 10.18.10.3355 and the latest is 15.36.33.4578. Please update by downloading and installing the new driver:<br>
+<a href="https://downloadcenter.intel.com/download/26544/Graphics-Intel-Graphics-Driver-for-Windows-7-8-1-15-36-" class="exlinks" onclick="this.target='_blank';">https://downloadcenter.intel.com/downlo ... 8-1-15-36-</a><br>
+Report if that fixes your issues.<br>
+<br>
+As for performance, breakup=old is pretty much a temporary solution, in chiru there are several effects going through the same code, and unlike breakup they don't have a fallback.<br>
+<br>
+Also, you will probably not need no-glclear after updating the driver.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2051">
+	<div class="info">
+		<p class="poster">GBcrazy</p>
+		<p class="dt">2017-05-30 21:59:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I've tried installing it, but the setup gave me a message that the driver isn't validated for this computer because the computer uses a custom driver or something like that. Looking at the compatibility list it says it supports i5-4200H but not i5-4200U which I use...<br>
+<br>
+There is still the possibility of manually installing with the zip file, but I wonder if there is any risk to that? I probably should just get something better to play it lol, but do you think it would work?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2052">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-05-30 22:16:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hmm, as for Intel compatibility list, if you scroll a little, you will see that your processor is supported:
+<dl class="codebox"><dt><a href="javascript:void%280%29;" onclick="var el = this.parentNode.parentNode.getElementsByTagName('dd')[0]; var v = el.style.display != 'none'; el.style.display = v ? 'none' : 'block'; this.innerHTML = (v ? '[+]' : '[−]') + ' Spoiler'; ">[+] Spoiler </a></dt><dd style="display:none"><blockquote class="uncited"><div>Intel® Core™ i5-4200H Processor (3M Cache, up to 3.40 GHz)<br>
+Intel® Core™ i5-4250U Processor (3M Cache, up to 2.60 GHz)<br>
+Intel® Core™ i5-4260U Processor (3M Cache, up to 2.70 GHz)<br>
+Intel® Core™ i5-4350U Processor (3M Cache, up to 2.90 GHz)<br>
+Intel® Core™ i5-4360U Processor (3M Cache, up to 3.00 GHz)<br>
+Intel® Core™ i5-4430 Processor (6M Cache, up to 3.20 GHz)<br>
+Intel® Core™ i5-4430S Processor (6M Cache, up to 3.20 GHz)<br>
+Intel® Core™ i5-4440 Processor (6M Cache, up to 3.30 GHz)<br>
+Intel® Core™ i5-4440S Processor (6M Cache, up to 3.30 GHz)<br>
+Intel® Core™ i5-4570 Processor (6M Cache, up to 3.60 GHz)<br>
+Intel® Core™ i5-4570S Processor (6M Cache, up to 3.60 GHz)<br>
+Intel® Core™ i5-4570T Processor (4M Cache, up to 3.60 GHz)<br>
+Intel® Core™ i5-4670 Processor (6M Cache, up to 3.80 GHz)<br>
+Intel® Core™ i5-4670K Processor (6M Cache, up to 3.80 GHz)<br>
+Intel® Core™ i5-4670S Processor (6M Cache, up to 3.80 GHz)<br>
+Intel® Core™ i5-4670T Processor (6M Cache, up to 3.30 GHz)<br>
+Intel® Core™ i3-4000M Processor (3M Cache, 2.40 GHz)<br>
+Intel® Core™ i3-4005U Processor (3M Cache, 1.70 GHz)<br>
+Intel® Core™ i3-4010U Processor (3M Cache, 1.70 GHz)<br>
+Intel® Core™ i3-4100U Processor (3M Cache, 1.80 GHz)<br>
+Intel® Core™ i7-4550U Processor (4M Cache, up to 3.00 GHz)<br>
+Intel® Core™ i7-4650U Processor (4M Cache, up to 3.30 GHz)<br>
+Intel® Core™ i7-4700HQ Processor (6M Cache, up to 3.40 GHz)<br>
+Intel® Core™ i7-4700MQ Processor (6M Cache, up to 3.40 GHz)<br>
+Intel® Core™ i7-4702HQ Processor (6M Cache, up to 3.20 GHz)<br>
+Intel® Core™ i7-4702MQ Processor (6M Cache, up to 3.20 GHz)<br>
+Intel® Core™ i7-4765T Processor (8M Cache, up to 3.00 GHz)<br>
+Intel® Core™ i7-4770 Processor (8M Cache, up to 3.90 GHz)<br>
+Intel® Core™ i7-4770K Processor (8M Cache, up to 3.90 GHz)<br>
+Intel® Core™ i7-4770S Processor (8M Cache, up to 3.90 GHz)<br>
+Intel® Core™ i7-4770T Processor (8M Cache, up to 3.70 GHz)<br>
+Intel® Core™ i7-4800MQ Processor (6M Cache, up to 3.70 GHz)<br>
+Intel® Core™ i7-4900MQ Processor (8M Cache, up to 3.80 GHz)<br>
+Intel® Core™ i7-4930MX Processor Extreme Edition (8M Cache, up to 3.90 GHz)<br>
+<strong class="text-strong">Intel® Core™ i5-4200U Processor (3M Cache, up to 2.60 GHz)</strong><br>
+Intel® Core™ i7-4500U Processor (4M Cache, up to 3.00 GHz)<br>
+Intel® Celeron® Processor 2955U (2M Cache, 1.40 GHz)<br>
+Intel® Core™ i5-4200Y Processor (3M Cache, up to 1.90 GHz)<br>
+Intel® Core™ i3-4010Y Processor (3M Cache, 1.30 GHz)<br>
+Intel® Core™ i3-4158U Processor (3M Cache, 2.00 GHz)<br>
+Intel® Core™ i5-4258U Processor (3M Cache, up to 2.90 GHz)<br>
+Intel® Core™ i5-4288U Processor (3M Cache, up to 3.10 GHz)<br>
+Intel® Core™ i7-4558U Processor (4M Cache, up to 3.30 GHz)<br>
+Intel® Core™ i7-4950HQ Processor (6M Cache, up to 3.60 GHz)<br>
+Intel® Core™ i7-4850HQ Processor (6M Cache, up to 3.50 GHz)<br>
+Intel® Core™ i7-4750HQ Processor (6M Cache, up to 3.20 GHz)<br>
+Intel® Core™ i7-4960HQ Processor (6M Cache, up to 3.80 GHz)<br>
+Intel® Core™ i7-4860HQ Processor (6M Cache, up to 3.60 GHz)<br>
+Intel® Core™ i7-4760HQ Processor (6M Cache, up to 3.30 GHz)<br>
+Intel® Core™ i5-4300U Processor (3M Cache, up to 2.90 GHz)<br>
+Intel® Core™ i3-4100M Processor (3M Cache, 2.50 GHz)<br>
+Intel® Core™ i5-4300M Processor (3M Cache, up to 3.30 GHz)<br>
+Intel® Core™ i5-4200M Processor (3M Cache, up to 3.10 GHz)<br>
+Intel® Core™ i7-4600M Processor (4M Cache, up to 3.60 GHz)<br>
+Intel® Core™ i3-4012Y Processor (3M Cache, 1.50 GHz)<br>
+Intel® Core™ i3-4020Y Processor (3M Cache, 1.50 GHz)<br>
+Intel® Core™ i5-4202Y Processor (3M Cache, up to 2.00 GHz)<br>
+Intel® Core™ i5-4210Y Processor (3M Cache, up to 1.90 GHz)<br>
+Intel® Core™ i5-4300Y Processor (3M Cache, up to 2.30 GHz)<br>
+Intel® Core™ i5-4302Y Processor (3M Cache, up to 2.30 GHz)<br>
+Intel® Core™ i7-4600U Processor (4M Cache, up to 3.30 GHz)<br>
+Intel® Core™ i7-4610Y Processor (4M Cache, up to 2.90 GHz)<br>
+Intel® Celeron® Processor 2980U (2M Cache, 1.60 GHz)<br>
+Intel® Pentium® Processor 3556U (2M Cache, 1.70 GHz)<br>
+Intel® Pentium® Processor 3560Y (2M Cache, 1.20 GHz)<br>
+Intel® Core™ i5-4570R Processor (4M Cache, up to 3.20 GHz)<br>
+Intel® Core™ i5-4670R Processor (4M Cache, up to 3.70 GHz)<br>
+Intel® Core™ i7-4770R Processor (6M Cache, up to 3.90 GHz)<br>
+Intel® Core™ i5-4330M Processor (3M Cache, up to 3.50 GHz)<br>
+Intel® Celeron® Processor 2950M (2M Cache, 2.00 GHz)<br>
+Intel® Pentium® Processor 3550M (2M Cache, 2.30 GHz)<br>
+Intel® Core™ i3-4130 Processor (3M Cache, 3.40 GHz)<br>
+Intel® Core™ i3-4130T Processor (3M Cache, 2.90 GHz)<br>
+Intel® Core™ i3-4110M Processor (3M Cache, 2.60 GHz)<br>
+Intel® Core™ i3-4150 Processor (3M Cache, 3.50 GHz)<br>
+Intel® Core™ i3-4150T Processor (3M Cache, 3.00 GHz)<br>
+Intel® Core™ i3-4160 Processor (3M Cache, 3.60 GHz)<br>
+Intel® Core™ i3-4160T Processor (3M Cache, 3.10 GHz)<br>
+Intel® Core™ i3-4170 Processor (3M Cache, 3.70 GHz)<br>
+Intel® Core™ i3-4350 Processor (4M Cache, 3.60 GHz)<br>
+Intel® Core™ i3-4350T Processor (4M Cache, 3.10 GHz)<br>
+Intel® Core™ i3-4360 Processor (4M Cache, 3.70 GHz)<br>
+Intel® Core™ i3-4360T Processor (4M Cache, 3.20 GHz)<br>
+Intel® Core™ i3-4370 Processor (4M Cache, 3.80 GHz)<br>
+Intel® Core™ i7-4771 Processor (8M Cache, up to 3.90 GHz)<br>
+Intel® Core™ i3-4330 Processor (4M Cache, 3.50 GHz)<br>
+Intel® Core™ i3-4330T Processor (4M Cache, 3.00 GHz)<br>
+Intel® Core™ i3-4340 Processor (4M Cache, 3.60 GHz)<br>
+Intel® Pentium® Processor G3220 (3M Cache, 3.00 GHz)<br>
+Intel® Pentium® Processor G3220T (3M Cache, 2.60 GHz)<br>
+Intel® Pentium® Processor G3420 (3M Cache, 3.20 GHz)<br>
+Intel® Pentium® Processor G3420T (3M Cache, 2.70 GHz)<br>
+Intel® Pentium® Processor G3430 (3M Cache, 3.30 GHz)<br>
+Intel® Core™ i5-4460T Processor (6M Cache, up to 2.70 GHz)<br>
+Intel® Core™ i5-4590T Processor (6M Cache, up to 3.00 GHz)<br>
+Intel® Core™ i5-4210H Processor (3M Cache, up to 3.50 GHz)<br>
+Intel® Core™ i7-4710HQ Processor (6M Cache, up to 3.50 GHz)<br>
+Intel® Core™ i7-4710MQ Processor (6M Cache, up to 3.50 GHz)<br>
+Intel® Core™ i7-4712HQ Processor (6M Cache, up to 3.30 GHz)<br>
+Intel® Core™ i7-4712MQ Processor (6M Cache, up to 3.30 GHz)<br>
+Intel® Core™ i7-4720HQ Processor (6M Cache, up to 3.60 GHz)<br>
+Intel® Core™ i7-4722HQ Processor (6M Cache, up to 3.40 GHz)<br>
+Intel® Core™ i7-4810MQ Processor (6M Cache, up to 3.80 GHz)<br>
+Intel® Core™ i7-4910MQ Processor (8M Cache, up to 3.90 GHz)<br>
+Intel® Core™ i7-4940MX Processor Extreme Edition (8M Cache, up to 4.00 GHz)<br>
+Intel® Celeron® Processor 2957U (2M Cache, 1.40 GHz)<br>
+Intel® Celeron® Processor 2961Y (2M Cache, 1.10 GHz)<br>
+Intel® Celeron® Processor 2981U (2M Cache, 1.60 GHz)<br>
+Intel® Pentium® Processor 3558U (2M Cache, 1.70 GHz)<br>
+Intel® Pentium® Processor 3561Y (2M Cache, 1.20 GHz)<br>
+Intel® Celeron® Processor G1830 (2M Cache, 2.80 GHz)<br>
+Intel® Celeron® Processor G1820 (2M Cache, 2.70 GHz)<br>
+Intel® Celeron® Processor G1820T (2M Cache, 2.40 GHz)<br>
+Intel® Core™ i5-4310U Processor (3M Cache, up to 3.00 GHz)<br>
+Intel® Core™ i5-4340M Processor (3M Cache, up to 3.60 GHz)<br>
+Intel® Core™ i7-4610M Processor (4M Cache, up to 3.70 GHz)<br>
+Intel® Core™ i5-4310M Processor (3M Cache, up to 3.40 GHz)<br>
+Intel® Pentium® Processor G3450 (3M Cache, 3.40 GHz)<br>
+Intel® Pentium® Processor G3450T (3M Cache, 2.90 GHz)<br>
+Intel® Pentium® Processor G3440 (3M Cache, 3.30 GHz)<br>
+Intel® Pentium® Processor G3440T (3M Cache, 2.80 GHz)<br>
+Intel® Pentium® Processor G3240 (3M Cache, 3.10 GHz)<br>
+Intel® Pentium® Processor G3240T (3M Cache, 2.70 GHz)<br>
+Intel® Celeron® Processor G1850 (2M Cache, 2.90 GHz)<br>
+Intel® Celeron® Processor G1840 (2M Cache, 2.80 GHz)<br>
+Intel® Celeron® Processor G1840T (2M Cache, 2.50 GHz)<br>
+Intel® Core™ i7-4790 Processor (8M Cache, up to 4.00 GHz)<br>
+Intel® Core™ i7-4790K Processor (8M Cache, up to 4.40 GHz)<br>
+Intel® Core™ i7-4790S Processor (8M Cache, up to 4.00 GHz)<br>
+Intel® Core™ i7-4790T Processor (8M Cache, up to 3.90 GHz)<br>
+Intel® Core™ i5-4690 Processor (6M Cache, up to 3.90 GHz)<br>
+Intel® Core™ i5-4690K Processor (6M Cache, up to 3.90 GHz)<br>
+Intel® Core™ i5-4690S Processor (6M Cache, up to 3.90 GHz)<br>
+Intel® Core™ i5-4690T Processor (6M Cache, up to 3.50 GHz)<br>
+Intel® Core™ i7-4785T Processor (8M Cache, up to 3.20 GHz)<br>
+Intel® Core™ i5-4590 Processor (6M Cache, up to 3.70 GHz)<br>
+Intel® Core™ i5-4590S Processor (6M Cache, up to 3.70 GHz)<br>
+Intel® Core™ i5-4460 Processor (6M Cache, up to 3.40 GHz)<br>
+Intel® Core™ i5-4460S Processor (6M Cache, up to 3.40 GHz)<br>
+Intel® Core™ i5-4210M Processor (3M Cache, up to 3.20 GHz)<br>
+Intel® Pentium® Processor 3560M (2M Cache, 2.40 GHz)<br>
+Intel® Celeron® Processor 2970M (2M Cache, 2.20 GHz)<br>
+Intel® Core™ i7-4510U Processor (4M Cache, up to 3.10 GHz)<br>
+Intel® Core™ i5-4210U Processor (3M Cache, up to 2.70 GHz)<br>
+Intel® Core™ i3-4120U Processor (3M Cache, 2.00 GHz)<br>
+Intel® Core™ i3-4030U Processor (3M Cache, 1.90 GHz)<br>
+Intel® Core™ i3-4025U Processor (3M Cache, 1.90 GHz)<br>
+Intel® Core™ i5-4220Y Processor (3M Cache, up to 2.00 GHz)<br>
+Intel® Core™ i3-4030Y Processor (3M Cache, 1.60 GHz)<br>
+Intel® Core™ i3-4370T Processor (4M Cache, 3.30 GHz)<br>
+Intel® Core™ i3-4170T Processor (3M Cache, 3.20 GHz)<br>
+Intel® Iris™ Pro Graphics 5200<br>
+Intel® Iris™ Graphics 5100<br>
+Intel® HD Graphics 5000<br>
+Intel® HD Graphics 4600<br>
+Intel® HD Graphics 4400<br>
+Intel® HD Graphics 4200<br>
+Intel® Pentium® Processor G3258 (3M Cache, 3.20 GHz)<br>
+Intel® Pentium® Processor G3460 (3M Cache, 3.50 GHz)<br>
+Intel® Pentium® Processor G3460T (3M Cache, 3.00 GHz)<br>
+Intel® Core™ i7-4980HQ Processor (6M Cache, up to 4.00 GHz)<br>
+Intel® Core™ i7-4870HQ Processor (6M Cache, up to 3.70 GHz)<br>
+Intel® Core™ i7-4770HQ Processor (6M Cache, up to 3.40 GHz)<br>
+Intel® Core™ i7-4578U Processor (4M Cache, up to 3.50 GHz)<br>
+Intel® Core™ i5-4308U Processor (3M Cache, up to 3.30 GHz)<br>
+Intel® Core™ i5-4278U Processor (3M Cache, up to 3.10 GHz)<br>
+Intel® Pentium® Processor G3250 (3M Cache, 3.20 GHz)<br>
+Intel® Pentium® Processor G3250T (3M Cache, 2.80 GHz)<br>
+Intel® Pentium® Processor 3805U (2M Cache, 1.90 GHz)<br>
+Intel® Pentium® Processor 3825U (2M Cache, 1.90 GHz)<br>
+Intel® Pentium® Processor G3260 (3M Cache, 3.30 GHz)<br>
+Intel® Pentium® Processor G3260T (3M Cache, 2.90 GHz)<br>
+Intel® Pentium® Processor G3470 (3M Cache, 3.60 GHz)</div></blockquote></dd></dl>
+The issue with the installation is that Acer signed the drivers with their own signature and marked the official Intel drivers as "incompatible". While this is not true, it creates a number of obstacles when installing a newer driver just as you noticed. There is a broader explanation with an instruction <a href="https://steamcommunity.com/app/233250/discussions/2/558749190911446231/" class="exlinks" onclick="this.target='_blank';">here</a>.<br>
+<br>
+As far as I know the latest driver does not have this issue. At least we did make some tests with HD 4600 previously, which is quite similar, and it runs smoothly.<br>
+<br>
+As for whether to try the update or not, well, I do think it is harmless and I also do know that ep5-ep8 will crash due to the same issue, but I cannot make you decide of course <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается">.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2053">
+	<div class="info">
+		<p class="poster">GBcrazy</p>
+		<p class="dt">2017-06-03 07:39:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thanks for the input!<br>
+<br>
+Forgot to update this: I've found another effect (not the breakup) that caused a crash in the beggining episode 2 of ???. So I stopped being lazy and installed the driver update, everything works fine now.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2054">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-06-03 08:19:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thanks for letting us know, nice to hear driver update worked.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

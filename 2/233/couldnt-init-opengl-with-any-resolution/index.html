@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Couldn't init OpenGL with any resolution - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+
+<h1>Couldn't init OpenGL with any resolution</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=233">https://forum.umineko-project.org/viewtopic.php?t=233</a>
+-->
+
+<div class="post" id="p2658">
+	<div class="info">
+		<p class="poster">Striker</p>
+		<p class="dt">2018-01-18 03:28:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I have a laptop with an Intel Graphics HD 3000 as GPU and if I try to run it an error like this happens.<br>
+<br>
+<img src="https://i.imgur.com/pgTdd2z.png" class="postimage" alt="Image"><br>
+<br>
+I tried messing around with the config files and changing window-width to other sizes but the same error also happens, only the numbers change. This issue isn't in the known issues page so I decided to ask for help here.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2659">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2018-01-18 08:22:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hello,<br>
+<br>
+This issue means that you have no OpenGL drivers installed on your laptop. Sometimes it is not easy to do due to OEM providers forgetting to update them. In the latest alpha version we added basic DirectX support, so it may be a reasonable workaround. Would you like to wait or perhaps try an alpha?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2660">
+	<div class="info">
+		<p class="poster">Striker</p>
+		<p class="dt">2018-01-18 17:55:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I'd like to try an alpha if possible. Also, can anyone ask for access to this alpha? I know another person who's having the same problem right now.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2661">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2018-01-18 17:59:26</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"> Ok. Everyone may ask, though I pretty much forgot to close alpha-access requests thread recently. As for now I added you to the list of alpha-testers, and as for your friend, if he has the same issue, he may request it here too as an exception. Follow the <a href="https://forum.umineko-project.org/viewtopic.php?t=173" class="loclinks" onclick="this.target='_blank';">Getting game files / Получение игровых файлов</a> instructions for more details.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3406">
+	<div class="info">
+		<p class="poster">FakeSadi</p>
+		<p class="dt">2019-01-30 05:49:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I have OpenGL installed with version 4 and I am still having this problem.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3407">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2019-01-30 11:22:27</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Too little information about your hardware and software. I am afraid you do not have the drivers.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3410">
+	<div class="info">
+		<p class="poster">FakeSadi</p>
+		<p class="dt">2019-01-31 18:15:28</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Computer<br>
+Hewlett-Packard HP ProBook 4440s<br>
+<br>
+Operating System<br>
+Microsoft Windows 10 Pro (64-bit)<br>
+<br>
+Processor<br>
+Intel® Core™ i5-3210M CPU @ 2.50GHz<br>
+<br>
+Graphics<br>
+Intel® HD Graphics 4000<br>
+<br>
+Memory<br>
+4 GB<br>
+<br>
+OpenGL<br>
+<br>
+version 4.0 <br>
+driver version: 9.17.10.4229(.dll) 26-May-15 (According to OpenGL Extensions Viewer 5.1.4)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3414">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2019-02-01 17:10:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Your driver version appears to be quite outdated, as Intel offers a much newer version for your GPU — 15.33.47.5059:<br>
+<a href="https://www.intel.com/content/www/us/en/support/products/81499/graphics-drivers/graphics-for-3rd-generation-intel-processors/intel-hd-graphics-4000.html?_ga=2.163533371.645426194.1549040680-932984271.1541963328" class="exlinks" onclick="this.target='_blank';">https://www.intel.com/content/www/us/en ... 1541963328</a><br>
+<br>
+Please consider installing it first.<br>
+<br>
+Also, we have a DirectX fallback, which generally works much slower, yet is still available. If the driver update does not work for you, you could try forcing the use of ANGLE2 / ANGLE3 renderer by adding one the following lines to ons.cfg:
+<div class="codebox"><p>Code:</p><pre><code>prefer-renderer=ANGLE2</code></pre></div>
+or
+<div class="codebox"><p>Code:</p><pre><code>prefer-renderer=ANGLE3</code></pre></div></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

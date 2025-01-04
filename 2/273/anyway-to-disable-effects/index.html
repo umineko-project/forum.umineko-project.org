@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Anyway to disable effects? - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+
+<h1>Anyway to disable effects?</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=273">https://forum.umineko-project.org/viewtopic.php?t=273</a>
+-->
+
+<div class="post" id="p3111">
+	<div class="info">
+		<p class="poster">helpinghand</p>
+		<p class="dt">2018-10-27 07:36:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hello again, I got a question, is there anyway to disable the special effects of the game?<br>
+I don't mind most of them but the one that happens when you are inside the boat and the screen keeps shaking from one side to another makes me sick (literally) and the scenes are pretty long, at this pace I wont be able to finish the game or I will need to skip them...<br>
+Anyway to disable that annoying effect?<br>
+<br>
+Thanks in advance</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3113">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2018-10-27 17:27:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hello,<br>
+<br>
+This is pretty much how it was on PS3, but we very well understand the issue. We tried experimenting a little, and came up with an option to mostly disable such effects. Please update to the following engine:<br>
+<br>
+And then edit your ons.cfg file to include the following line:
+<div class="codebox"><p>Code:</p><pre><code>reduce-motion</code></pre></div>
+<a href="https://besplsoft.org/xtova/out.php?proj=onscripter-win32&amp;btype=release&amp;hash=a99eb7b990e2c0483e72783bc177b7a91f9c77a5385da4a44ec5663d682ddcb1" class="exlinks" onclick="this.target='_blank';">https://besplsoft.org/xtova/out.php?pro ... 3d682ddcb1</a><br>
+<br>
+Hopefully it works well for you. We plan to support this option in EP7 alpha out of the box. For the time being new engine binaries will be available on request.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3114">
+	<div class="info">
+		<p class="poster">helpinghand</p>
+		<p class="dt">2018-10-27 21:58:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hello, thanks for the help however it did not work <img class="smilies" src="../../../images/smilies/icon_e_sad.gif" width="15" height="17" alt=":(" title="Грустный"> I also understand that this is not your fault still what a bad design decision from the developers <img class="smilies" src="../../../images/smilies/icon_redface.gif" width="15" height="17" alt=":oops:" title="Смущён"> <br>
+<br>
+The ons.cfg looks like this: ( and I'm using the new .exe provided)<br>
+
+<div class="codebox"><p>Code:</p><pre><code>scale 
+game-script=en.file 
+prefer-renderer=ANGLE2 
+fullscreen 
+window-width=1280 
+reduce-motion</code></pre></div>
+
+(even if I choose in game another render mode it goes to angle2 by default)<br>
+<br>
+EDIT: I might just play my normal version of the game for the boat parts and just skip them in this ps3 port since I dont want to keep bothering you vit9696 and this is a feature that is not yet fully implemented or tested it might take me a while to make it work. I still appreciate all the help</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3115">
+	<div class="info">
+		<p class="poster">Knox</p>
+		<p class="dt">2018-10-28 14:31:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">It definitely works.<br>
+<br>
+My guess is that you loaded a save file to try it out? Unfortunately, it won't work that way. Your previous save file contains data that says boat shaking was running when you saved, and loading that data will override our change. After loading, you can use log jump to jump back to before that boat scene starts, and it should be fine the next time you encounter it. Or you can start the game without loading using chapter jump (witchcraft).<br>
+<br>
+If that isn't it... then maybe you made the change to ons.cfg but forgot to save... or something? This isn't the kind of change that should depend on hardware or platform or anything. It should just work.<br>
+<br>
+I tested it by going from the main menu to Episode 1, using witchcraft chapter jump to jump to Episode 1's "Arrival at Niijima Airport", and skipping forward using ctrl to just before they all board the boat for the first time, just before Rudolf's line "Hey, Battler, maybe you should just swim to the island."</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3116">
+	<div class="info">
+		<p class="poster">helpinghand</p>
+		<p class="dt">2018-10-28 20:30:48</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hello again, ooh I see. I did try it out by loading in the boat scene and not the method you tell me here, I will try it to confirm that it works. I will be editing this message to say if it worked or not. <br>
+Thanks again for all the support <img class="smilies" src="../../../images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Очень доволен"><br>
+<br>
+EDIT:<br>
+It worked, after loading a part that didnt start with the boat or the same chapter. Thanks a lot!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

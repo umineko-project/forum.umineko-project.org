@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>[EN/RU] BackLog after loading gamesave / Лог сообщений после загрузки сохраненной игры - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+
+<h1>[EN/RU] BackLog after loading gamesave / Лог сообщений после загрузки сохраненной игры</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=339">https://forum.umineko-project.org/viewtopic.php?t=339</a>
+-->
+
+<div class="post" id="p4056">
+	<div class="info">
+		<p class="poster">skyh1ghby</p>
+		<p class="dt">2020-03-27 13:36:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Problem description: Start New Game-&gt;BackLog working as intended(show last readed messages)-&gt;Save game at any point in begginig of Chapter 1-&gt;Exit game-&gt;Launch game-&gt;Loading saved game-&gt;BackLog long loaded and then show <strong class="text-strong">FULL TEXT OF ENTIRE CHAPTER</strong>, not only readed one.<br>
+<br>
+Описание проблемы: Начинаю новую игру-&gt;Лог сообщений работает как надо(показывает последние прочитанные сообщения)-&gt;Сохраняюсь в начале 1 главы(в любом месте)-&gt;Выхожу из игры-&gt;Запускаю снова-&gt;Загружаю игру-&gt; Лог сообщений долго загружается и в итоге показывает <strong class="text-strong">ВЕСЬ ТЕКСТ ГЛАВЫ</strong> до самой последней строчки, не зависимо от количества прочитанного.<br>
+<br>
+Fresh game installation, engine folder cleared (ProgramData/ONScripter-RU/), all files checked, problems not found.<br>
+Свежая установка игры, папка движка очищена (ProgramData/ONScripter-RU/), все файлы проверены, проблем нет. <br>
+<br>
+Engine version: onscripter-ru_win_r3552.<br>
+Script version: umineko-main-scripts_r3520.<br>
+i5-3570k/Nvidia GTX1060 6gb/24gb RAM/Windows 10 1909</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4057">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2020-03-28 07:25:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Добрый день,<br>
+<br>
+Действительно, возникла ошибка. Проблема исправлена в актуальной версии игрового движка <a href="https://github.com/umineko-project/onscripter-ru/commit/a12e3bef8999b9760b986fba7723a88106f46ac0" class="exlinks" onclick="this.target='_blank';"><strong class="text-strong">r3563</strong></a>. Когда данная версия соберётся, я рекомендую обновиться до актуальной альфа-версии: <a href="https://github.com/umineko-project/umineko-scripting/releases/latest" class="exlinks" onclick="this.target='_blank';">Umineko Scripts r3548</a> и <a href="https://github.com/umineko-project/onscripter-ru/releases/latest" class="exlinks" onclick="this.target='_blank';">ONScripter-RU r3563</a>. На сборку может потребоваться пара часов.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4058">
+	<div class="info">
+		<p class="poster">hattymikune</p>
+		<p class="dt">2020-03-28 15:01:23</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote cite="./viewtopic.php?p=4057&amp;sid=1c64b6fb9a901cf8ff816db37719e363#p4057"><div><cite>vit9696 wrote: <a href="./viewtopic.php?p=4057&amp;sid=1c64b6fb9a901cf8ff816db37719e363#p4057" data-post-id="4057" onclick="if(document.getElementById(hash.substr(1)))href=hash" class="loclinks">↑</a><span class="responsive-hide">28 Mar 2020, 10:25</span></cite>
+Добрый день,<br>
+<br>
+Действительно, возникла ошибка. Проблема исправлена в актуальной версии игрового движка <a href="https://github.com/umineko-project/onscripter-ru/commit/a12e3bef8999b9760b986fba7723a88106f46ac0" class="exlinks" onclick="this.target='_blank';"><strong class="text-strong">r3563</strong></a>. Когда данная версия соберётся, я рекомендую обновиться до актуальной альфа-версии: <a href="https://github.com/umineko-project/umineko-scripting/releases/latest" class="exlinks" onclick="this.target='_blank';">Umineko Scripts r3548</a> и <a href="https://github.com/umineko-project/onscripter-ru/releases/latest" class="exlinks" onclick="this.target='_blank';">ONScripter-RU r3563</a>. На сборку может потребоваться пара часов.
+</div></blockquote>
+
+Thank you for the update, a friend was having the same issue and I gave him the link to the alpha build.<br>
+Now that the bug is fixed is there a file he can delete or something to reset the backlog and clear the unread portions?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4059">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2020-03-28 15:02:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I am not sure this will work properly, so please back up your saves first. However, you can try deleting readlbl.sav.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Encoding (?) problems while trying to make my own translation - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+
+<h1>Encoding (?) problems while trying to make my own translation</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=357">https://forum.umineko-project.org/viewtopic.php?t=357</a>
+-->
+
+<div class="post" id="p4189">
+	<div class="info">
+		<p class="poster">GBcrazy</p>
+		<p class="dt">2020-08-10 22:06:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hello!<br>
+<br>
+So here's the thing, I was wondering if I could create my own translation for portuguese (Portugal's portuguese instead of brazilian portuguese which knox is working on) and started trying stuff. I'm currently using Knox's translation as a base (let me know if I shouldn't be doing that).<br>
+<br>
+Anyway, here onto the technical issue:<br>
+<br>
+- First I got the the Knox Translation working on my umineko on android, all good.<br>
+- Then I cloned the umineko-scripting repo, and ran the update-manager.php to create a new pt.txt and pt.file (dscript and script commands)<br>
+- Then I replaced pt.file on my phone<br>
+- This happened:<br>
+<br>
+<img src="https://i.imgur.com/poHo42C.png" class="postimage" alt="Image"><br>
+<br>
+So...I'm guessing there is an encoding issue happening somewhere? I'm running the update-manager on Windows 10, I've already tried with php 5.6 and php 7, same issue (the size of pt.file changes a bit tho). Everything else is fine, voice lines and etc, I've tested and I can change the order of scenes as well so my .file is functional. I've also tried making sure pt.txt is using linux line endings and UTF-8 without bom before generating the .file but still no luck.<br>
+<br>
+Any help is appreciated! Not sure if this is the best place but couldn't find any docs on this</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4190">
+	<div class="info">
+		<p class="poster">GBcrazy</p>
+		<p class="dt">2020-08-12 02:21:30</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Just a quick update, it seems I got it working while running the update-manager on linux.<br>
+<br>
+It's the dscript command which is making the difference, while running it on windows it's not replacing all the japanese chars, did that happen with anyone else? Anyway, got it working - will try debugging it later just for curiosity.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

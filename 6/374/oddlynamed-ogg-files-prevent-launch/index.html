@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Oddly-named .ogg files prevent launch - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+
+<h1>Oddly-named .ogg files prevent launch</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=374">https://forum.umineko-project.org/viewtopic.php?t=374</a>
+-->
+
+<div class="post" id="p4317">
+	<div class="info">
+		<p class="poster">WonderDingo</p>
+		<p class="dt">2021-02-07 00:30:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi everyone, apologies if this is the wrong section for this kind of tech support.<br>
+<br>
+<a href="https://ibb.co/JdntQXT" class="exlinks" onclick="this.target='_blank';">https://ibb.co/JdntQXT</a><br>
+<br>
+When I unpacked the project files on my Android phone, a few errors popped up relating to these .ogg files and they were apparently not unpacked along with the rest of the other sound files. I've tried moving the specific .ogg files from my PC to my phone, but they don't actually successfully copy when I try it and I get the same error message when launching ONScripter-RU. My first thought is that Android 11 has some specific restriction that doesn't allow files of whatever character that is to exist, but truly, I'm pretty stumped as to how to solve this. I have an Asus Zenfone 6 with a Snapdragon 855, if that matters.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4322">
+	<div class="info">
+		<p class="poster">ndgnuh</p>
+		<p class="dt">2021-03-04 14:17:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I fixed this one using this script: <a href="https://drive.google.com/file/d/14dobgquDZk1IdVHoHySU_D6AIlBP1JQi/view?usp=sharing" class="exlinks" onclick="this.target='_blank';">https://drive.google.com/file/d/14dobgq ... sp=sharing</a><br>
+<br>
+If you know basic posix shell you can put the script in the root of the game directory and use Termux to run it there (current directory must be the root of the game). The script content is just this:
+<div class="codebox"><p>Code:</p><pre><code>cp sound/voice/05/3100012%7F3.ogg sound/voice/05/31000123.ogg
+cp sound/voice/18/1180017%7F2.ogg sound/voice/18/11800172.ogg
+cp sound/voice/11/4200132%7F8.ogg sound/voice/11/42001328.ogg
+cp sound/voice/34/3100012%7F3.ogg sound/voice/34/31000123.ogg
+cp sound/voice/13/4040024%7F5.ogg sound/voice/13/40400245.ogg
+cp sound/voice/09/1130003%7F9.ogg sound/voice/09/11300039.ogg
+</code></pre></div>
+Here's the script content, I put the script on here because I'm afraid the special character is going to be loss when copying from/to the web some how. You can copy the file name from the above (the one that doesn't have '%' in its name, eg <div class="codebox"><p>Code:</p><pre><code>sound/voice/05/31000123.ogg</code></pre></div>) and manually rename the files. Note that the special character won't be displayed.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

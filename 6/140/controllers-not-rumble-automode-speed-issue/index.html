@@ -1,0 +1,549 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Controllers not rumble; Automode speed issue - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+
+<h1>Controllers not rumble; Automode speed issue</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=140">https://forum.umineko-project.org/viewtopic.php?t=140</a>
+-->
+
+<div class="post" id="p1493">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2016-07-12 00:28:28</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi,<br>
+<br>
+A few days into the wonderful game greatly improved in this Project, Using the B-release (Episode 3), I came across two issues and wonder if I could get more insights here:<br>
+<br>
+1. I tried both my Dual Shock 3 and Xbox One controller on both Windows 8.1 and 10. Both work more or less the same with the gameplay. No issues except that neither of them get any rumbling even though I already the rumbling is set to maximum strength. I also tried x360ce.exe but got the same result. The Dual Shock 3 has worked fine with my PS3. And the Xbox One controller also functions well with other PC games. Does the rumbling function fully operate in the latest B-release?<br>
+<br>
+2. I also notice that while the automode speed setting can slow down the speed at which one non-dialogue passage jumps to another, but cannot really delay the dialogue. Regardless of the automode speed setting, the dialogue would almost instantly shift to the next passage whenever it comes to the last line. Could you consider introduce some delay between the passages of the dialogue depending on the automode speed setting? I myself have no problem with the current speed, but when I introduce the game to my family, they said they wished the dialogue could slow down a bit so that they could capture the last line every time...<br>
+<br>
+Many, many thanks again!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1494">
+	<div class="info">
+		<p class="poster">Knox</p>
+		<p class="dt">2016-07-12 03:34:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>YNagato wrote:</cite>1. I tried both my Dual Shock 3 and Xbox One controller on both Windows 8.1 and 10. Both work more or less the same with the gameplay. No issues except that neither of them get any rumbling even though I already the rumbling is set to maximum strength. I also tried x360ce.exe but got the same result. The Dual Shock 3 has worked fine with my PS3. And the Xbox One controller also functions well with other PC games. Does the rumbling function fully operate in the latest B-release?</div></blockquote>It does, but it doesn't surprise me to hear that it works spottily. We don't have a lot of controllers around to test. <br>
+<br>
+I have not tried x360ce -- I use ScpServer for Dual Shock 3, which seems to work fine. The latest version looks to be <a href="http://forums.pcsx2.net/Thread-ScpToolkit-XInput-Wrapper-aka-ScpServer-Reloaded" class="exlinks" onclick="this.target='_blank';">here</a> -- maybe try this out instead?<br>
+
+<blockquote><div><cite>YNagato wrote:</cite>2. I also notice that while the automode speed setting can slow down the speed at which one non-dialogue passage jumps to another, but can really delay the dialogue. Regardless of the automode speed setting, the dialogue would almost instantly shift to the next passage whenever it comes to the last line. Could you consider introduce some delay between the passages of the dialogue depending on the automode speed setting? I myself have no problem with the current speed, but when I introduce the game to my family, they said they wished the dialogue could slow down a bit so that they could capture the last line every time...</div></blockquote>You could try an option like this in ons.cfg:<div class="codebox"><p>Code:</p><pre><code>voicedelay-time=3000</code></pre></div>It is meant to add the given time (in ms) after every voiced dialogue file in automode, but as I test it now, it seems to be working kind of inconsistently. The implementation might be broken... I will have a look tomorrow.<br>
+Let me know if you meant something completely different to this <img class="smilies" src="../../../images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Очень доволен"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1495">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2016-07-12 06:05:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Many thanks for your prompt reply. I actually used the same ScpServer to set up the Dual Shock 3. Only after it didn't produce the rumbling effect of the game did I try the X360ce.exe, to make the controller behave like a Xbox 360 controller. Either way, there is no rumbling.<br>
+<br>
+The voicedelay setting is very useful. Thanks for pointing it out and offering to look into it further. What I meant is close but not exactly the same. After experimenting with it a bit, I found that since voicedelay introduces gaps between voice files, it might interrupt the flow of sentences, especially when a voice file contains only a couple of words. If the delay is introduced not at the end of each voice file but just at the end of one paragraph defined by each textbox, that would be even better.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1496">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-07-12 11:01:23</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ah, that's what you meant. Actually, I may imagine discussing that. Will definitely be low-pri if we agree on implementing it, but given that it is not going to be hard to implemnt, there is a good chance for such a feature to appear.<br>
+<br>
+As for DS3, it is quite strange. Mostly because Knox would have eaten me if I left his precious windows without the vibrations. I guess your gamepad is pretty much the original one, so it should work. Last time I tried it on Windows it only workd in xinput mode for me. Let me try some thoughts that could be of some help.<br>
+— Are you sure your chosen mode is xinput? (it is easy to check by adding use-console to ons.cfg and then seeing how it names your gamepad)<br>
+— For wired DS3 and SteamPad connections we also support direct calls, which means that if you connect DS3 over USB, and it shoukd rumble regardless of the driver. Did you try that instead of bluetooth?<br>
+— I think Knox uses an old version of ScpServer (1.2.0.160, if I remember correctly), might be worth trying it? I think he has no bluetooth support on his PC as well.<br>
+— As for myself I used MotioninJoy with BetterDS3 for a test. I think in xinput mode it worked for me even over the bluetooth. Might be worth trying it as a last option?<br>
+<br>
+In any case, Knox should have more experience, and if none of the above works we should still be able to find a solution sooner or later.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1497">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2016-07-12 20:04:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I always use the USB connection. I don't remember I deliberately chose the Xinput Mode. I just assumed it's Xinput by default. I can't find the option in ScpServer. Did I miss something?<br>
+<br>
+I added "use-console" to the configuration file as instructed, and got the following diagnosis:<br>
+<br>
+"DS3Controller::Initialising DualShock 3<br>
+Initialising joystick(0 -&gt; 0): XInput Controller #1, haptic: maybe supported"<br>
+<br>
+So does it mean it recognizes my controller in Xinput mode? I attach the complete copy of the diagnosis below. (Also wondering why so many usb errors at the beginning.)<br>
+<br>
+I will try out MotioninJoy with BetterDS3 for the last resort after hearing your interpretation of this diagnosis. Thanks!<br>
+<br>
+<br>
+Adding path: C:\Users\lingh\Downloads\GG\Umineko HD\<br>
+Adding path: .<br>
+Adding path: ..<br>
+Adding path: C:\Users\lingh\Downloads\GG\Umineko HD\;.\;..\<br>
+Script found: C:\Users\lingh\Downloads\GG\Umineko HD\en.file<br>
+Failed to use the iCloud storage.<br>
+Falling back to Application Support folder.<br>
+Adding path: C:\ProgramData\ONScripter-RU\UminekoPS3ficationEn\<br>
+Adding path: C:\Users\lingh\Downloads\GG\Umineko HD\;.\;..\<br>
+libusb: error [init_device] device '\\.\USB#VID_03F0&amp;PID_3817&amp;MI_01#7&amp;1AECE864&amp;7&amp;0001' is no longer connected!<br>
+libusb: warning [windows_get_device_list] could not retrieve port number for device '\\.\USB#VID_045E&amp;PID_028E&amp;IG_00#2&amp;9C6DEB5&amp;0&amp;00', skipping: [13] The data is invalid.<br>
+libusb: error [init_device] program assertion failed: device address collision with root hub<br>
+libusb: warning [windows_get_device_list] '\\.\USB#VID_045E&amp;PID_028E#0000001' was only detected in late pass (newly connected device?) - ignoring<br>
+libusb: error [init_device] device '\\.\USB#VID_03F0&amp;PID_3817&amp;MI_01#7&amp;1AECE864&amp;7&amp;0001' is no longer connected!<br>
+libusb: warning [windows_get_device_list] could not retrieve port number for device '\\.\USB#VID_045E&amp;PID_028E&amp;IG_00#2&amp;9C6DEB5&amp;0&amp;00', skipping: [13] The data is invalid.<br>
+libusb: error [init_device] program assertion failed: device address collision with root hub<br>
+libusb: warning [windows_get_device_list] '\\.\USB#VID_045E&amp;PID_028E#0000001' was only detected in late pass (newly connected device?) - ignoring<br>
+libusb: error [init_device] device '\\.\USB#VID_03F0&amp;PID_3817&amp;MI_01#7&amp;1AECE864&amp;7&amp;0001' is no longer connected!<br>
+libusb: warning [windows_get_device_list] could not retrieve port number for device '\\.\USB#VID_045E&amp;PID_028E&amp;IG_00#2&amp;9C6DEB5&amp;0&amp;00', skipping: [13] The data is invalid.<br>
+libusb: error [init_device] program assertion failed: device address collision with root hub<br>
+libusb: warning [windows_get_device_list] '\\.\USB#VID_045E&amp;PID_028E#0000001' was only detected in late pass (newly connected device?) - ignoring<br>
+DS3Controller::Initialising DualShock 3<br>
+Initialising joystick(0 -&gt; 0): XInput Controller #1, haptic: maybe supported<br>
+filename 'breakup.frag', extension 'frag'.<br>
+filename 'breakup-cellforms.png', extension 'png'.<br>
+filename 'blendByMask.frag', extension 'frag'.<br>
+filename 'colorModification.frag', extension 'frag'.<br>
+filename 'mergeAlpha.frag', extension 'frag'.<br>
+filename 'multiplyAlpha.frag', extension 'frag'.<br>
+filename 'glyphGradient.frag', extension 'frag'.<br>
+filename 'effectWarp.frag', extension 'frag'.<br>
+filename 'effectWhirl.frag', extension 'frag'.<br>
+filename 'effectTrvswave.frag', extension 'frag'.<br>
+filename 'cropByMask.frag', extension 'frag'.<br>
+filename 'blurH.frag', extension 'frag'.<br>
+filename 'blurV.frag', extension 'frag'.<br>
+filename 'textFade.frag', extension 'frag'.<br>
+filename 'pixelate.frag', extension 'frag'.<br>
+Maximum texture size is 16384<br>
+Setup layer effect for 'fall.dll'.<br>
+Setup layer effect for 'fall.dll'.<br>
+Setup layer effect for 'fall.dll'.<br>
+Setup layer effect for 'fall.dll'.<br>
+Setup layer effect for 'fall.dll'.<br>
+Setup layer effect for 'fall.dll'.<br>
+Setup layer effect for 'fall.dll'.<br>
+Setup layer effect for 'fall.dll'.<br>
+Setup layer effect for 'ass.dll'.<br>
+Setup layer effect for 'video.dll'.<br>
+setup a sprite for layer 10<br>
+libass [4]: Shaper: FriBidi 0.19.7 (SIMPLE) HarfBuzz-ng 1.2.4 (COMPLEX)<br>
+libass [4]: Added subtitle file: 'C:\Users\lingh\Downloads\GG\Umineko HD\video\sub\eng.ass' (3 styles, 13 events)<br>
+Detected framerate is 29.97, vfr 0, corrupted 0<br>
+libass [2]: fontselect: Using default font: (Arno Pro, 400, 0) -&gt; C:\Users\lingh\Downloads\GG\Umineko HD\fonts/font1.otf, 0, (none)<br>
+libass [4]: fontselect: (Arno Pro, 400, 0) -&gt; C:\Users\lingh\Downloads\GG\Umineko HD\fonts/font1.otf, 0, (none)<br>
+ ***[Warning] I/O Issue at line 191436 (*title_loading:70) - can't find file [graphics\menu_en\title\chiru\title1_text_ep5.png] ***<br>
+ ***[Warning] I/O Issue at line 191437 (*title_loading:71) - can't find file [graphics\menu_en\title\chiru\title1_text_ep6.png] ***<br>
+ ***[Warning] I/O Issue at line 191438 (*title_loading:72) - can't find file [graphics\menu_en\title\chiru\title1_text_ep7.png] ***<br>
+ ***[Warning] I/O Issue at line 191439 (*title_loading:73) - can't find file [graphics\menu_en\title\chiru\title1_text_ep8.png] ***</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1498">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-07-12 20:52:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The log does look healthy, and your controller is indeed detected as an Xinput controller.<br>
+According to "haptic maybe supported" line it seems that rumble may well work, this is also the correct behaviour… <br>
+<br>
+libusb errors are probably ok, although I wonder what happens if you reconnect the gamepad right after starting the game.<br>
+Also, could you show the log after rumbling a little? Go to preferences and change rumble power, it should be reflected on the device. I wonder what error are we going to get.<br>
+<br>
+Also, is there a chance of a driver conflict? I mean, did you try anything before that?<br>
+Also, is Win 10 your only Windows? Maybe something broke in it…</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1499">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2016-07-12 22:36:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Finally I got rumbling! I have to either plug in the controller or reconnect it as you suggest only AFTER starting the game. Then it rumbles well. It won't rumble at all if it is connected beforehand. So it still has to do with the dubious libusb errors?<br>
+<br>
+By the way, no error log is generated even if it doesn't rumble in the configuration of the rumbling strength. Again, it rumbles a little in that context when I connect the gamepad after the game starts.<br>
+<br>
+As for the possibility of driver conflicts, I did install the Xbox One controller first before I tried the DualShock 3. But Windows 10 always has the Xbox One controller driver ready. I just plugged it in only and it automatically finished the installation.<br>
+<br>
+Another thing I tried is X360ce.exe, after both X1 controller and DS3 failed to rumble. But I already deleted the X360ce files.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1500">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-07-12 22:59:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Wow, that's something. Glad that we got this far.<br>
+<br>
+I have just checked the source code, and it seems that the rumble errors are only displayed after you add:
+<div class="codebox"><p>Code:</p><pre><code>debug</code></pre></div>
+line to ons.cfg, could you retry please with the gamepad initially plugged in and with a reconnect (i.e. not working and working rumble). I'd like to have a complete log and see what it actually utilises in either case. They might be long, so use a spoiler tag ^^;<br>
+<br>
+I <em class="text-italics">expect</em> the issue to be libusb sending the command improperly but assuming it was ok. As a result we get rumble success and do not try the native API. Perhaps a better approach will be to propioritise the API over direct libusb calls. We will try to verify the idea but might still need more of help. Thanks for patience.<br>
+<br>
+By the way, Knox added final-voicedelay-time ons.cfg option which actually adds an additional delay at the end of every voiced dialogue overriding the last delay set by voicedelay-time option. This will be included and tested in the next alpha build (close to the weekends, I think). Unfortunately our alpha is not going to move to beta right away, yet we have to polish things, and just sending you the updated engine won't work either due to incompatible script changes. Perhaps, you would like to have an access to our bleeding edge updates?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1501">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2016-07-12 23:51:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I added "debug" to the cfg and got the following log. Please notice that when I plug in the DS3 before the game starts, the no-rumbling error doesn't show in the log. But when I reconnect the DS3 in the middle of the game, the rumbling functions well, but it ironically starts to generate the following error log:<br>
+<br>
+"libusb: error [windows_transfer_callback] detected I/O error 170: [170] The requested resource is in use."<br>
+<br>
+It's somewhat counterintuitive... So whenever you see this log, it means it rumbles well actually!<br>
+<br>
+P.S.: Another scenario is: if I plug in the DS3 only after the game starts rather than un-plug and re-plug it, then no error log is generated when it rumbles.<br>
+<br>
+Actually without adding "debug" to cfg, I have seen these patterns before in the past logs. So the debug doesn't show me any new revelation of the no-rumbling error. Strange..<br>
+<br>
+And many thanks for adding the final-voicedelay-time function! Yes, I would love to access the alpha testing version!<br>
+
+<dl class="codebox"><dt><a href="javascript:void%280%29;" onclick="var el = this.parentNode.parentNode.getElementsByTagName('dd')[0]; var v = el.style.display != 'none'; el.style.display = v ? 'none' : 'block'; this.innerHTML = (v ? '[+]' : '[−]') + ' Spoiler'; ">[+] Spoiler </a></dt><dd style="display:none">Adding path: C:\Users\lingh\Downloads\GG\Umineko HD\<br>
+Adding path: .<br>
+Adding path: ..<br>
+Adding path: C:\Users\lingh\Downloads\GG\Umineko HD\;.\;..\<br>
+Script found: C:\Users\lingh\Downloads\GG\Umineko HD\en.file<br>
+humanpos: 480,960,1440; underline: 1079<br>
+Failed to use the iCloud storage.<br>
+Falling back to Application Support folder.<br>
+Adding path: C:\ProgramData\ONScripter-RU\UminekoPS3ficationEn\<br>
+Adding path: C:\Users\lingh\Downloads\GG\Umineko HD\;.\;..\<br>
+libusb: error [init_device] device '\\.\USB#VID_03F0&amp;PID_3817&amp;MI_01#7&amp;1AECE864&amp;7&amp;0001' is no longer connected!<br>
+libusb: warning [windows_get_device_list] could not retrieve port number for device '\\.\USB#VID_045E&amp;PID_028E&amp;IG_00#2&amp;9C6DEB5&amp;0&amp;00', skipping: [13] The data is invalid.<br>
+libusb: error [init_device] program assertion failed: device address collision with root hub<br>
+libusb: warning [windows_get_device_list] '\\.\USB#VID_045E&amp;PID_028E#0000001' was only detected in late pass (newly connected device?) - ignoring<br>
+libusb: error [init_device] device '\\.\USB#VID_03F0&amp;PID_3817&amp;MI_01#7&amp;1AECE864&amp;7&amp;0001' is no longer connected!<br>
+libusb: warning [windows_get_device_list] could not retrieve port number for device '\\.\USB#VID_045E&amp;PID_028E&amp;IG_00#2&amp;9C6DEB5&amp;0&amp;00', skipping: [13] The data is invalid.<br>
+libusb: error [init_device] program assertion failed: device address collision with root hub<br>
+libusb: warning [windows_get_device_list] '\\.\USB#VID_045E&amp;PID_028E#0000001' was only detected in late pass (newly connected device?) - ignoring<br>
+libusb: error [init_device] device '\\.\USB#VID_03F0&amp;PID_3817&amp;MI_01#7&amp;1AECE864&amp;7&amp;0001' is no longer connected!<br>
+libusb: warning [windows_get_device_list] could not retrieve port number for device '\\.\USB#VID_045E&amp;PID_028E&amp;IG_00#2&amp;9C6DEB5&amp;0&amp;00', skipping: [13] The data is invalid.<br>
+libusb: error [init_device] program assertion failed: device address collision with root hub<br>
+libusb: warning [windows_get_device_list] '\\.\USB#VID_045E&amp;PID_028E#0000001' was only detected in late pass (newly connected device?) - ignoring<br>
+DS3Controller::Initialising DualShock 3<br>
+Initialising joystick(0 -&gt; 0): XInput Controller #1, haptic: maybe supported<br>
+GUID: 0x78, 0x69, 0x6E, 0x70, 0x75, 0x74, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00<br>
+filename 'breakup.frag', extension 'frag'.<br>
+filename 'breakup-cellforms.png', extension 'png'.<br>
+filename 'blendByMask.frag', extension 'frag'.<br>
+filename 'colorModification.frag', extension 'frag'.<br>
+filename 'mergeAlpha.frag', extension 'frag'.<br>
+filename 'multiplyAlpha.frag', extension 'frag'.<br>
+filename 'glyphGradient.frag', extension 'frag'.<br>
+filename 'effectWarp.frag', extension 'frag'.<br>
+filename 'effectWhirl.frag', extension 'frag'.<br>
+filename 'effectTrvswave.frag', extension 'frag'.<br>
+filename 'cropByMask.frag', extension 'frag'.<br>
+filename 'blurH.frag', extension 'frag'.<br>
+filename 'blurV.frag', extension 'frag'.<br>
+filename 'textFade.frag', extension 'frag'.<br>
+filename 'pixelate.frag', extension 'frag'.<br>
+Maximum texture size is 16384<br>
+Setup layer effect for 'fall.dll'.<br>
+Setup layer effect for 'fall.dll'.<br>
+Setup layer effect for 'fall.dll'.<br>
+Setup layer effect for 'fall.dll'.<br>
+Setup layer effect for 'fall.dll'.<br>
+Setup layer effect for 'fall.dll'.<br>
+Setup layer effect for 'fall.dll'.<br>
+Setup layer effect for 'fall.dll'.<br>
+Setup layer effect for 'ass.dll'.<br>
+Setup layer effect for 'video.dll'.<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+ ***[Warning] I/O Issue at line 191436 (*title_loading:70) - can't find file [graphics\menu_en\title\chiru\title1_text_ep5.png] ***<br>
+ ***[Warning] I/O Issue at line 191437 (*title_loading:71) - can't find file [graphics\menu_en\title\chiru\title1_text_ep6.png] ***<br>
+ ***[Warning] I/O Issue at line 191438 (*title_loading:72) - can't find file [graphics\menu_en\title\chiru\title1_text_ep7.png] ***<br>
+ ***[Warning] I/O Issue at line 191439 (*title_loading:73) - can't find file [graphics\menu_en\title\chiru\title1_text_ep8.png] ***<br>
+Gamepad event, hat move: 4<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, hat move: 4<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, button: 0<br>
+Gamepad event, button: 0<br>
+Gamepad event, hat move: 4<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+ ***[Warning] I/O Issue at line 201732 (*settings_elems:6) - can't find file [graphics\menu_en\config\gamepad_buttons.png] ***<br>
+Gamepad event, hat move: 2<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 2<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, hat move: 1<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 4<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 4<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 4<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, hat move: 4<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 4<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, hat move: 4<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 1<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 1<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 1<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 1<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+libusb: error [windows_transfer_callback] detected I/O error 170: [170] The requested resource is in use.<br>
+DS3Controller::Command error -1<br>
+Gamepad event, hat move: 1<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 1<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+libusb: error [windows_transfer_callback] detected I/O error 170: [170] The requested resource is in use.<br>
+DS3Controller::Command error -1<br>
+Gamepad event, hat move: 1<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 1<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 1<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 4<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+libusb: error [windows_transfer_callback] detected I/O error 170: [170] The requested resource is in use.<br>
+DS3Controller::Command error -1<br>
+Gamepad event, hat move: 4<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 4<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 4<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 4<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 4<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 4<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 4<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 4<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 4<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+libusb: error [windows_transfer_callback] detected I/O error 170: [170] The requested resource is in use.<br>
+DS3Controller::Command error -1<br>
+Gamepad event, hat move: 1<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+libusb: error [windows_transfer_callback] detected I/O error 170: [170] The requested resource is in use.<br>
+DS3Controller::Command error -1<br>
+Gamepad event, hat move: 4<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+libusb: error [windows_transfer_callback] detected I/O error 170: [170] The requested resource is in use.<br>
+DS3Controller::Command error -1<br>
+Gamepad event, hat move: 4<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 4<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 4<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 1<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 1<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 1<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 1<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 1<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+libusb: error [windows_transfer_callback] detected I/O error 170: [170] The requested resource is in use.<br>
+DS3Controller::Command error -1<br>
+Gamepad event, hat move: 4<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 4<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+libusb: error [windows_transfer_callback] detected I/O error 170: [170] The requested resource is in use.<br>
+DS3Controller::Command error -1<br>
+Gamepad event, button: 0<br>
+Gamepad event, button: 0<br>
+ ***[Warning] I/O Issue at line 191436 (*title_loading:70) - can't find file [graphics\menu_en\title\chiru\title1_text_ep5.png] ***<br>
+ ***[Warning] I/O Issue at line 191437 (*title_loading:71) - can't find file [graphics\menu_en\title\chiru\title1_text_ep6.png] ***<br>
+ ***[Warning] I/O Issue at line 191438 (*title_loading:72) - can't find file [graphics\menu_en\title\chiru\title1_text_ep7.png] ***<br>
+ ***[Warning] I/O Issue at line 191439 (*title_loading:73) - can't find file [graphics\menu_en\title\chiru\title1_text_ep8.png] ***<br>
+Gamepad event, hat move: 1<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 4<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 4<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, hat move: 1<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 1<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 4<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 4<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, hat move: 4<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, hat move: 1<br>
+Gamepad event, hat move: 0<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+libusb: error [windows_transfer_callback] detected I/O error 170: [170] The requested resource is in use.<br>
+DS3Controller::Command error -1<br>
+libusb: error [windows_transfer_callback] detected I/O error 170: [170] The requested resource is in use.<br>
+DS3Controller::Command error -1<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+libusb: error [windows_transfer_callback] detected I/O error 170: [170] The requested resource is in use.<br>
+DS3Controller::Command error -1<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1<br>
+Gamepad event, button: 1</dd></dl></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1502">
+	<div class="info">
+		<p class="poster">Knox</p>
+		<p class="dt">2016-07-13 00:09:58</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">OK, I think we've got an idea of how to make rumbling more reliable now. Will give it a try.<br>
+<br>
+I added you to private alpha, but the changes for this and final-voicedelay-time are not in there yet, so please wait for the next update <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1503">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2016-07-13 18:51:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thanks for adding me to private alpha. I look forward to the next update!<br>
+<br>
+Just to complete my report on the rumbling issue:<br>
+1. I checked out another system of mine, which runs Windows 8.1. All findings are the same as in Windows 10. DS3 doesn't rumble if initially connected before the game starts, but will rumble well if reconnected afterward.<br>
+<br>
+2. I went back to my Xbox One controller. Surprisingly, now it works perfectly with the game. It rumbles well whether it's connected before or after the game starts on both Windows 8.1 and 10.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1505">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2016-07-15 22:00:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Lastly (I think), I just tested the wireless connection for DS3 and Xbox One controller.<br>
+<br>
+3. DS3 wireless connection (on both Windows 8.1 and 10) yields perfect results. It rumbles well whether connected before or after the game starts. While DS3 will turn off automatically in the middle of the game after left idle for a period of time, it fully functions after being turned on again without issues.<br>
+<br>
+4. Xbox One controller's wireless connection (only available on Windows 10) yields less ideal results. It works fine only if connected before the game starts. It won't work at all (not to mention rumbling) if it's connected only after the game starts. The more serious problem arises when the gamepad turns off automatically in the middle of the game after left idle for 15 minutes and it will not work at all even after being turned on again. I have to re-start the game to make the gamepad work. This makes the autoplay mode + gamepad wireless connection almost impossible for this game.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1507">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-07-16 07:15:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Well, we have never really intended to support non-sony gamepads, honestly.<br>
+SteamPad, several rumblepads, xbox, fusa and several others are supported as they are… <br>
+Nice to hear ds3 works perfectly in wireless. I think we fixed all the arising wired issues in trunk, and they should no longer appear in the next alpha release.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

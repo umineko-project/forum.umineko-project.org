@@ -1,0 +1,488 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Краш игры после 3 омаке - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+
+<h1>Краш игры после 3 омаке</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=250">https://forum.umineko-project.org/viewtopic.php?t=250</a>
+-->
+
+<div class="post" id="p2845">
+	<div class="info">
+		<p class="poster">Warettel</p>
+		<p class="dt">2018-05-14 15:11:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">В интерактивном уровне после 3 омаке происходит краш при нажатии лкм на некоторых фонах. <br>
+Например - <a href="https://imgur.com/a/DdnZV3o" class="exlinks" onclick="this.target='_blank';">https://imgur.com/a/DdnZV3o</a> (красным отмечены триггеры, которые вызывают краш)<br>
+Скрин консоли на момент краша - <a href="https://imgur.com/a/HLihXUV" class="exlinks" onclick="this.target='_blank';">https://imgur.com/a/HLihXUV</a><br>
+Содержание репорт файла:
+<dl class="codebox"><dt><a href="javascript:void%280%29;" onclick="var el = this.parentNode.parentNode.getElementsByTagName('dd')[0]; var v = el.style.display != 'none'; el.style.display = v ? 'none' : 'block'; this.innerHTML = (v ? '[+]' : '[−]') + ' Spoiler'; ">[+] Spoiler </a></dt><dd style="display:none">-------------------<br>
+<br>
+Error occured on Monday, May 14, 2018 at 17:24:49.<br>
+<br>
+onscripter-ru_win_r2981.exe caused an Access Violation at location 0045CCD0 in module onscripter-ru_win_r2981.exe Reading from location 00000008.<br>
+<br>
+Registers:<br>
+eax=00000000 ebx=1666ae18 ecx=9c40f3ff edx=00ccf000 esi=00000000 edi=00000209<br>
+eip=0045ccd0 esp=0141f950 ebp=2a533860 iopl=0         nv up ei pl zr na po nc<br>
+cs=0023  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00210246<br>
+<br>
+AddrPC   Params<br>
+0045CCD0 0000001D 22182EE8 00000400  onscripter-ru_win_r2981.exe!SDL_main<br>
+7763F570 03BC0000 00000000 74B57084  ntdll.dll!_RtlFreeHeap@12<br>
+74B57065 22182EE8 00000038 03BC0584  msvcrt.dll!_free<br>
+<br>
+onscripter-ru_win_r2981.exe	2017.10.4.0<br>
+ntdll.dll   	6.2.16299.402<br>
+KERNEL32.DLL	6.2.16299.431<br>
+KERNELBASE.dll	6.2.16299.402<br>
+ADVAPI32.dll	6.2.16299.371<br>
+msvcrt.dll  	7.0.16299.125<br>
+sechost.dll 	6.2.16299.15<br>
+RPCRT4.dll  	6.2.16299.371<br>
+SspiCli.dll 	6.2.16299.98<br>
+CRYPTBASE.dll	6.2.16299.15<br>
+bcryptPrimitives.dll	6.2.16299.98<br>
+GDI32.dll   	6.2.16299.15<br>
+gdi32full.dll	6.2.16299.402<br>
+msvcp_win.dll	6.2.16299.248<br>
+ucrtbase.dll	6.2.16299.248<br>
+USER32.dll  	6.2.16299.125<br>
+win32u.dll  	6.2.16299.15<br>
+IMM32.DLL   	6.2.16299.15<br>
+combase.dll 	6.2.16299.402<br>
+ole32.dll   	6.2.16299.371<br>
+OLEAUT32.dll	6.2.16299.431<br>
+SHELL32.dll 	6.2.16299.431<br>
+cfgmgr32.dll	6.2.16299.15<br>
+shcore.dll  	6.2.16299.15<br>
+windows.storage.dll	6.2.16299.431<br>
+shlwapi.dll 	6.2.16299.402<br>
+kernel.appcore.dll	6.2.16299.15<br>
+powrprof.dll	6.2.16299.15<br>
+profapi.dll 	6.2.16299.15<br>
+WINMM.DLL   	6.2.16299.15<br>
+VERSION.dll 	6.2.16299.15<br>
+winmmbase.dll	6.2.16299.15<br>
+exchndl.dll 	0.8.0.0<br>
+PSAPI.DLL   	6.2.16299.15<br>
+mgwhelp.dll 	0.8.0.0<br>
+dbghelp.dll 	6.3.9600.17029<br>
+uxtheme.dll 	6.2.16299.15<br>
+clbcatq.dll 	2001.12.10941.16384<br>
+MMDevApi.dll	6.2.16299.15<br>
+PROPSYS.dll 	7.0.16299.334<br>
+DEVOBJ.dll  	6.2.16299.15<br>
+avrt.dll    	6.2.16299.15<br>
+OPENGL32.DLL	6.2.16299.15<br>
+GLU32.dll   	6.2.16299.15<br>
+MSCTF.dll   	6.2.16299.402<br>
+nvoglv32.DLL	23.21.13.8813<br>
+SETUPAPI.dll	6.2.16299.248<br>
+WTSAPI32.dll	6.2.16299.15<br>
+WINTRUST.dll	6.2.16299.431<br>
+MSASN1.dll  	6.2.16299.15<br>
+CRYPT32.dll 	6.2.16299.402<br>
+ntmarta.dll 	6.2.16299.15<br>
+dwmapi.dll  	6.2.16299.15<br>
+WINSTA.dll  	6.2.16299.15<br>
+TextInputFramework.dll	6.2.16299.15<br>
+CoreUIComponents.dll	6.2.16299.15<br>
+CoreMessaging.dll	6.2.16299.371<br>
+wintypes.dll	6.2.16299.402<br>
+WinUSB.DLL  	6.2.16299.15<br>
+hid.DLL     	6.2.16299.15<br>
+dinput8.dll 	6.2.16299.15<br>
+inputhost.dll<br>
+XInput1_4.dll	6.2.16299.15<br>
+AUDIOSES.DLL	6.2.16299.248<br>
+speedhack-i386.dll<br>
+WS2_32.dll  	6.2.16299.15<br>
+WININET.dll 	11.0.16299.431<br>
+iertutil.dll	11.0.16299.431<br>
+ondemandconnroutehelper.dll	6.2.16299.15<br>
+IPHLPAPI.DLL	6.2.16299.15<br>
+winhttp.dll 	6.2.16299.371<br>
+mswsock.dll 	6.2.16299.15<br>
+NSI.dll     	6.2.16299.15<br>
+WINNSI.DLL  	6.2.16299.15<br>
+urlmon.dll  	11.0.16299.431<br>
+imagehlp.dll	6.2.16299.15<br>
+msiso.dll   	11.0.16299.371<br>
+DNSAPI.dll  	6.2.16299.334<br>
+mdnsNSP.dll 	3.1.0.1<br>
+rasadhlp.dll	6.2.16299.15<br>
+fwpuclnt.dll	6.2.16299.15<br>
+bcrypt.dll  	6.2.16299.125<br>
+schannel.dll	6.2.16299.402<br>
+mskeyprotect.dll	6.2.16299.15<br>
+ncrypt.dll  	6.2.16299.15<br>
+NTASN1.dll  	6.2.16299.15<br>
+DPAPI.DLL   	6.2.16299.15<br>
+CRYPTSP.dll 	6.2.16299.15<br>
+rsaenh.dll  	6.2.16299.15<br>
+cryptnet.dll	6.2.16299.15<br>
+ncryptsslp.dll	6.2.16299.15<br>
+<br>
+Windows 6.2.9200<br>
+DrMingw 0.8.0<br>
+<br>
+-------------------<br>
+<br>
+Error occured on Monday, May 14, 2018 at 17:43:00.<br>
+<br>
+onscripter-ru_win_r2981.exe caused an Access Violation at location 0045CCD0 in module onscripter-ru_win_r2981.exe Reading from location 00000008.<br>
+<br>
+Registers:<br>
+eax=00000000 ebx=06dbadb8 ecx=ace8f4d4 edx=00ccf000 esi=00000000 edi=000002aa<br>
+eip=0045ccd0 esp=0141f950 ebp=17cbbee0 iopl=0         nv up ei pl zr na po nc<br>
+cs=0023  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00210246<br>
+<br>
+AddrPC   Params<br>
+0045CCD0 0000001D 1748FAC0 00000400  onscripter-ru_win_r2981.exe!SDL_main<br>
+7763F570 03DF0000 00000000 74B57084  ntdll.dll!_RtlFreeHeap@12<br>
+74B57065 1748FAC0 00000038 03DF0584  msvcrt.dll!_free<br>
+<br>
+onscripter-ru_win_r2981.exe	2017.10.4.0<br>
+ntdll.dll   	6.2.16299.402<br>
+KERNEL32.DLL	6.2.16299.431<br>
+KERNELBASE.dll	6.2.16299.402<br>
+ADVAPI32.dll	6.2.16299.371<br>
+msvcrt.dll  	7.0.16299.125<br>
+sechost.dll 	6.2.16299.15<br>
+RPCRT4.dll  	6.2.16299.371<br>
+SspiCli.dll 	6.2.16299.98<br>
+CRYPTBASE.dll	6.2.16299.15<br>
+bcryptPrimitives.dll	6.2.16299.98<br>
+GDI32.dll   	6.2.16299.15<br>
+gdi32full.dll	6.2.16299.402<br>
+msvcp_win.dll	6.2.16299.248<br>
+ucrtbase.dll	6.2.16299.248<br>
+USER32.dll  	6.2.16299.125<br>
+win32u.dll  	6.2.16299.15<br>
+IMM32.DLL   	6.2.16299.15<br>
+combase.dll 	6.2.16299.402<br>
+ole32.dll   	6.2.16299.371<br>
+OLEAUT32.dll	6.2.16299.431<br>
+SHELL32.dll 	6.2.16299.431<br>
+cfgmgr32.dll	6.2.16299.15<br>
+shcore.dll  	6.2.16299.15<br>
+windows.storage.dll	6.2.16299.431<br>
+shlwapi.dll 	6.2.16299.402<br>
+kernel.appcore.dll	6.2.16299.15<br>
+powrprof.dll	6.2.16299.15<br>
+profapi.dll 	6.2.16299.15<br>
+VERSION.dll 	6.2.16299.15<br>
+WINMM.DLL   	6.2.16299.15<br>
+WINMMBASE.dll	6.2.16299.15<br>
+exchndl.dll 	0.8.0.0<br>
+PSAPI.DLL   	6.2.16299.15<br>
+mgwhelp.dll 	0.8.0.0<br>
+dbghelp.dll 	6.3.9600.17029<br>
+uxtheme.dll 	6.2.16299.15<br>
+clbcatq.dll 	2001.12.10941.16384<br>
+MMDevApi.dll	6.2.16299.15<br>
+PROPSYS.dll 	7.0.16299.334<br>
+DEVOBJ.dll  	6.2.16299.15<br>
+avrt.dll    	6.2.16299.15<br>
+OPENGL32.DLL	6.2.16299.15<br>
+GLU32.dll   	6.2.16299.15<br>
+MSCTF.dll   	6.2.16299.402<br>
+nvoglv32.DLL	23.21.13.8813<br>
+SETUPAPI.dll	6.2.16299.248<br>
+WTSAPI32.dll	6.2.16299.15<br>
+WINTRUST.dll	6.2.16299.431<br>
+MSASN1.dll  	6.2.16299.15<br>
+CRYPT32.dll 	6.2.16299.402<br>
+ntmarta.dll 	6.2.16299.15<br>
+dwmapi.dll  	6.2.16299.15<br>
+WINSTA.dll  	6.2.16299.15<br>
+TextInputFramework.dll	6.2.16299.15<br>
+CoreUIComponents.dll	6.2.16299.15<br>
+CoreMessaging.dll	6.2.16299.371<br>
+wintypes.dll	6.2.16299.402<br>
+WinUSB.DLL  	6.2.16299.15<br>
+hid.DLL     	6.2.16299.15<br>
+dinput8.dll 	6.2.16299.15<br>
+inputhost.dll<br>
+XInput1_4.dll	6.2.16299.15<br>
+AUDIOSES.DLL	6.2.16299.248<br>
+speedhack-i386.dll<br>
+WS2_32.dll  	6.2.16299.15<br>
+WININET.dll 	11.0.16299.431<br>
+iertutil.dll	11.0.16299.431<br>
+ondemandconnroutehelper.dll	6.2.16299.15<br>
+IPHLPAPI.DLL	6.2.16299.15<br>
+winhttp.dll 	6.2.16299.371<br>
+mswsock.dll 	6.2.16299.15<br>
+NSI.dll     	6.2.16299.15<br>
+WINNSI.DLL  	6.2.16299.15<br>
+urlmon.dll  	11.0.16299.431<br>
+imagehlp.dll	6.2.16299.15<br>
+msiso.dll   	11.0.16299.371<br>
+DNSAPI.dll  	6.2.16299.334<br>
+mdnsNSP.dll 	3.1.0.1<br>
+rasadhlp.dll	6.2.16299.15<br>
+fwpuclnt.dll	6.2.16299.15<br>
+bcrypt.dll  	6.2.16299.125<br>
+<br>
+Windows 6.2.9200<br>
+DrMingw 0.8.0<br>
+<br>
+-------------------<br>
+<br>
+Error occured on Monday, May 14, 2018 at 17:47:43.<br>
+<br>
+onscripter-ru_win_r2981.exe caused an Access Violation at location 0045CCD0 in module onscripter-ru_win_r2981.exe Reading from location 00000008.<br>
+<br>
+Registers:<br>
+eax=00000000 ebx=1658e848 ecx=36a5116e edx=00ccf000 esi=00000000 edi=000001e4<br>
+eip=0045ccd0 esp=0141f950 ebp=17af4fb8 iopl=0         nv up ei pl zr na po nc<br>
+cs=0023  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00210246<br>
+<br>
+AddrPC   Params<br>
+0045CCD0 0000001D 17899A60 00000400  onscripter-ru_win_r2981.exe!SDL_main<br>
+7763F570 03E20000 00000000 74B57084  ntdll.dll!_RtlFreeHeap@12<br>
+74B57065 17899A60 00000038 03E20584  msvcrt.dll!_free<br>
+<br>
+onscripter-ru_win_r2981.exe	2017.10.4.0<br>
+ntdll.dll   	6.2.16299.402<br>
+KERNEL32.DLL	6.2.16299.431<br>
+KERNELBASE.dll	6.2.16299.402<br>
+ADVAPI32.dll	6.2.16299.371<br>
+msvcrt.dll  	7.0.16299.125<br>
+sechost.dll 	6.2.16299.15<br>
+RPCRT4.dll  	6.2.16299.371<br>
+SspiCli.dll 	6.2.16299.98<br>
+CRYPTBASE.dll	6.2.16299.15<br>
+bcryptPrimitives.dll	6.2.16299.98<br>
+GDI32.dll   	6.2.16299.15<br>
+gdi32full.dll	6.2.16299.402<br>
+msvcp_win.dll	6.2.16299.248<br>
+ucrtbase.dll	6.2.16299.248<br>
+USER32.dll  	6.2.16299.125<br>
+win32u.dll  	6.2.16299.15<br>
+IMM32.DLL   	6.2.16299.15<br>
+combase.dll 	6.2.16299.402<br>
+ole32.dll   	6.2.16299.371<br>
+OLEAUT32.dll	6.2.16299.431<br>
+SHELL32.dll 	6.2.16299.431<br>
+cfgmgr32.dll	6.2.16299.15<br>
+shcore.dll  	6.2.16299.15<br>
+windows.storage.dll	6.2.16299.431<br>
+shlwapi.dll 	6.2.16299.402<br>
+kernel.appcore.dll	6.2.16299.15<br>
+powrprof.dll	6.2.16299.15<br>
+profapi.dll 	6.2.16299.15<br>
+WINMM.DLL   	6.2.16299.15<br>
+VERSION.dll 	6.2.16299.15<br>
+winmmbase.dll	6.2.16299.15<br>
+exchndl.dll 	0.8.0.0<br>
+PSAPI.DLL   	6.2.16299.15<br>
+mgwhelp.dll 	0.8.0.0<br>
+dbghelp.dll 	6.3.9600.17029<br>
+uxtheme.dll 	6.2.16299.15<br>
+clbcatq.dll 	2001.12.10941.16384<br>
+MMDevApi.dll	6.2.16299.15<br>
+PROPSYS.dll 	7.0.16299.334<br>
+DEVOBJ.dll  	6.2.16299.15<br>
+avrt.dll    	6.2.16299.15<br>
+OPENGL32.DLL	6.2.16299.15<br>
+GLU32.dll   	6.2.16299.15<br>
+MSCTF.dll   	6.2.16299.402<br>
+nvoglv32.DLL	23.21.13.8813<br>
+SETUPAPI.dll	6.2.16299.248<br>
+WTSAPI32.dll	6.2.16299.15<br>
+WINTRUST.dll	6.2.16299.431<br>
+MSASN1.dll  	6.2.16299.15<br>
+CRYPT32.dll 	6.2.16299.402<br>
+ntmarta.dll 	6.2.16299.15<br>
+dwmapi.dll  	6.2.16299.15<br>
+WINSTA.dll  	6.2.16299.15<br>
+TextInputFramework.dll	6.2.16299.15<br>
+CoreMessaging.dll	6.2.16299.371<br>
+CoreUIComponents.dll	6.2.16299.15<br>
+wintypes.dll	6.2.16299.402<br>
+WinUSB.DLL  	6.2.16299.15<br>
+hid.DLL     	6.2.16299.15<br>
+dinput8.dll 	6.2.16299.15<br>
+inputhost.dll<br>
+XInput1_4.dll	6.2.16299.15<br>
+AUDIOSES.DLL	6.2.16299.248<br>
+speedhack-i386.dll<br>
+WS2_32.dll  	6.2.16299.15<br>
+WININET.dll 	11.0.16299.431<br>
+iertutil.dll	11.0.16299.431<br>
+ondemandconnroutehelper.dll	6.2.16299.15<br>
+IPHLPAPI.DLL	6.2.16299.15<br>
+winhttp.dll 	6.2.16299.371<br>
+mswsock.dll 	6.2.16299.15<br>
+NSI.dll     	6.2.16299.15<br>
+WINNSI.DLL  	6.2.16299.15<br>
+urlmon.dll  	11.0.16299.431<br>
+imagehlp.dll	6.2.16299.15<br>
+msiso.dll   	11.0.16299.371<br>
+DNSAPI.dll  	6.2.16299.334<br>
+mdnsNSP.dll 	3.1.0.1<br>
+rasadhlp.dll	6.2.16299.15<br>
+fwpuclnt.dll	6.2.16299.15<br>
+bcrypt.dll  	6.2.16299.125<br>
+<br>
+Windows 6.2.9200<br>
+DrMingw 0.8.0<br>
+<br>
+-------------------<br>
+<br>
+Error occured on Monday, May 14, 2018 at 17:53:26.<br>
+<br>
+onscripter-ru_win_r2981.exe caused an Access Violation at location 0045CCD0 in module onscripter-ru_win_r2981.exe Reading from location 00000008.<br>
+<br>
+Registers:<br>
+eax=00000000 ebx=169a4ea0 ecx=1c396782 edx=00ccf000 esi=00000000 edi=000002b4<br>
+eip=0045ccd0 esp=0141f950 ebp=08402600 iopl=0         nv up ei pl zr na po nc<br>
+cs=0023  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00210246<br>
+<br>
+AddrPC   Params<br>
+0045CCD0 0000001D 17858898 00000400  onscripter-ru_win_r2981.exe!SDL_main<br>
+7763F570 03540000 00000000 74B57084  ntdll.dll!_RtlFreeHeap@12<br>
+74B57065 17858898 0141F9B0 0141FAE8  msvcrt.dll!_free<br>
+<br>
+onscripter-ru_win_r2981.exe	2017.10.4.0<br>
+ntdll.dll   	6.2.16299.402<br>
+KERNEL32.DLL	6.2.16299.431<br>
+KERNELBASE.dll	6.2.16299.402<br>
+ADVAPI32.dll	6.2.16299.371<br>
+msvcrt.dll  	7.0.16299.125<br>
+sechost.dll 	6.2.16299.15<br>
+RPCRT4.dll  	6.2.16299.371<br>
+SspiCli.dll 	6.2.16299.98<br>
+CRYPTBASE.dll	6.2.16299.15<br>
+bcryptPrimitives.dll	6.2.16299.98<br>
+GDI32.dll   	6.2.16299.15<br>
+gdi32full.dll	6.2.16299.402<br>
+msvcp_win.dll	6.2.16299.248<br>
+ucrtbase.dll	6.2.16299.248<br>
+USER32.dll  	6.2.16299.125<br>
+win32u.dll  	6.2.16299.15<br>
+IMM32.DLL   	6.2.16299.15<br>
+combase.dll 	6.2.16299.402<br>
+ole32.dll   	6.2.16299.371<br>
+OLEAUT32.dll	6.2.16299.431<br>
+SHELL32.dll 	6.2.16299.431<br>
+cfgmgr32.dll	6.2.16299.15<br>
+shcore.dll  	6.2.16299.15<br>
+windows.storage.dll	6.2.16299.431<br>
+shlwapi.dll 	6.2.16299.402<br>
+kernel.appcore.dll	6.2.16299.15<br>
+powrprof.dll	6.2.16299.15<br>
+profapi.dll 	6.2.16299.15<br>
+VERSION.dll 	6.2.16299.15<br>
+WINMM.DLL   	6.2.16299.15<br>
+WINMMBASE.dll	6.2.16299.15<br>
+exchndl.dll 	0.8.0.0<br>
+PSAPI.DLL   	6.2.16299.15<br>
+mgwhelp.dll 	0.8.0.0<br>
+dbghelp.dll 	6.3.9600.17029<br>
+uxtheme.dll 	6.2.16299.15<br>
+clbcatq.dll 	2001.12.10941.16384<br>
+MMDevApi.dll	6.2.16299.15<br>
+DEVOBJ.dll  	6.2.16299.15<br>
+PROPSYS.dll 	7.0.16299.334<br>
+avrt.dll    	6.2.16299.15<br>
+OPENGL32.DLL	6.2.16299.15<br>
+GLU32.dll   	6.2.16299.15<br>
+MSCTF.dll   	6.2.16299.402<br>
+nvoglv32.DLL	23.21.13.8813<br>
+SETUPAPI.dll	6.2.16299.248<br>
+WTSAPI32.dll	6.2.16299.15<br>
+WINTRUST.dll	6.2.16299.431<br>
+MSASN1.dll  	6.2.16299.15<br>
+CRYPT32.dll 	6.2.16299.402<br>
+ntmarta.dll 	6.2.16299.15<br>
+dwmapi.dll  	6.2.16299.15<br>
+WINSTA.dll  	6.2.16299.15<br>
+TextInputFramework.dll	6.2.16299.15<br>
+CoreMessaging.dll	6.2.16299.371<br>
+CoreUIComponents.dll	6.2.16299.15<br>
+wintypes.dll	6.2.16299.402<br>
+WinUSB.DLL  	6.2.16299.15<br>
+hid.DLL     	6.2.16299.15<br>
+dinput8.dll 	6.2.16299.15<br>
+inputhost.dll<br>
+XInput1_4.dll	6.2.16299.15<br>
+AUDIOSES.DLL	6.2.16299.248<br>
+speedhack-i386.dll<br>
+WS2_32.dll  	6.2.16299.15<br>
+WININET.dll 	11.0.16299.431<br>
+iertutil.dll	11.0.16299.431<br>
+ondemandconnroutehelper.dll	6.2.16299.15<br>
+IPHLPAPI.DLL	6.2.16299.15<br>
+winhttp.dll 	6.2.16299.371<br>
+mswsock.dll 	6.2.16299.15<br>
+NSI.dll     	6.2.16299.15<br>
+WINNSI.DLL  	6.2.16299.15<br>
+urlmon.dll  	11.0.16299.431<br>
+imagehlp.dll	6.2.16299.15<br>
+msiso.dll   	11.0.16299.371<br>
+DNSAPI.dll  	6.2.16299.334<br>
+mdnsNSP.dll 	3.1.0.1<br>
+rasadhlp.dll	6.2.16299.15<br>
+fwpuclnt.dll	6.2.16299.15<br>
+bcrypt.dll  	6.2.16299.125<br>
+<br>
+Windows 6.2.9200<br>
+DrMingw 0.8.0</dd></dl>
+
+UPD: Часть триггеров не вызывают краш. Из того что я видел - комната с чиестами, комнаты с омаке, комната с опенингами и комната с трейлером Chiru <br>
+Краш происходит на всех 3 графических API - OpenGL, Angle2 и Angle3</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2846">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2018-05-14 15:42:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Привет, у тебя там часть файлов отсутствует в игре. Как минимум эти:<br>
+graphics/omake/m1f_p1br_omake.png<br>
+graphics/omake/m1f_p2br_omake.png<br>
+graphics/omake/ment_1br_omake.png<br>
+graphics/omake/mhal_1ar_omake.png<br>
+graphics/omake/mhal_2ar_omake.png<br>
+graphics/omake/mhal_2br_omake.png<br>
+graphics/omake/mhal_2cr_omake.png<br>
+<br>
+И/или движок старый, последний r3014 (<a href="https://umineko-project.org/ru/%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8/" class="loclinks" onclick="this.target='_blank';">https://umineko-project.org/ru/загрузки/</a>).</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2847">
+	<div class="info">
+		<p class="poster">Warettel</p>
+		<p class="dt">2018-05-14 15:47:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Точно, версия движка старая. Спасибо)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

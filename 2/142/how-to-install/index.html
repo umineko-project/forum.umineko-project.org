@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>How to Install? - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+
+<h1>How to Install?</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=142">https://forum.umineko-project.org/viewtopic.php?t=142</a>
+-->
+
+<div class="post" id="p1513">
+	<div class="info">
+		<p class="poster">Tavon</p>
+		<p class="dt">2016-07-21 04:13:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hello, I've downloaded everything in the download links and was able to extract the zipped files, but after that I'm not really sure what to do?  I don't know what to click to make the game run so I just have all of these files sitting with no idea what to do with them.  I couldn't find any instructions so I'm sorry if I'm missing something, I'm not very advanced at this.  (I am a huge fan of Umineko though)<br>
+<br>
+How do you install this?<br>
+<br>
+Thanks</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1514">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-07-21 07:35:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hello,<br>
+Your game folder shoukd contain the following folders:
+<ul><li>backgrounds</li>
+<li>sprites</li>
+<li>sound</li>
+<li>graphics</li>
+<li>video</li></ul>
+and files:
+<ul><li>chiru.file</li>
+<li>en.file</li>
+<li>ru.file</li>
+<li>default.cfg</li>
+<li>oncripter-ru_win_rXXXX.exe</li></ul>
+(there could be more of them).<br>
+To launch the game you need to double-click on oncripter-ru_win_rXXXX.exe you can download from engine section <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"><br>
+Good luck <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1522">
+	<div class="info">
+		<p class="poster">Tavon</p>
+		<p class="dt">2016-07-21 20:14:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Your post helped me figure it out, thank you for the quick response!<br>
+(I'm getting that weird stuttering sound thing but I'm just going to move the game off of my laptop to my desktop and hopefully that'll fix it).<br>
+Other than that it works though, thank you!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1523">
+	<div class="info">
+		<p class="poster">numberonefan</p>
+		<p class="dt">2016-07-21 21:32:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote class="uncited"><div>I'm getting that weird stuttering sound thing</div></blockquote>
+
+Is it stuttering during video (e.g. opening) playback or the actual gameplay? If it's the former, then there is not much we can do, unfortunately. The latter would be a worrisome sign for us, though.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1691">
+	<div class="info">
+		<p class="poster">Tavon</p>
+		<p class="dt">2016-08-15 18:19:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">It's the latter, the sound in the actual game like the voices and such sounds like it's crackling to me.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1693">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-08-15 19:11:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hmm… Could you try adding 
+<div class="codebox"><p>Code:</p><pre><code>waveout-audio</code></pre></div>
+line to your ons.cfg file? I am afraid your sound card fails to properly play 48 KHz audio, and we can hardly do anything in this case. Does the issue reproduce on both computers? We might need as much details as possible. There seem to be other users with this issue (<a href="/2/133#p1431" class="loclinks" onclick="this.target='_blank';">[EN] Sound crackling</a>), and all use Windows 7. Perhaps you could try following the suggestions I wrote in the other topic? I wonder if some update/driver update is missing, because from what we can tell the original Windows 7 with all updates does not have this issue.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1747">
+	<div class="info">
+		<p class="poster">Tavon</p>
+		<p class="dt">2016-08-21 18:59:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">i can check, but im not super knowledgeable about this stuff--my desktop is windows 10, while my laptop is windows 7.  both have the issue</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1750">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-08-21 20:21:13</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hmm… We carefully analysed what could cause this, and certainly it is very unlikely that drivers or system prefs could make it on two different computers.<br>
+Our suspect is that you obtained old sound files (by either not updating them or overwriting them with an incorrect extraction order) that were encoded with 44.1 KHz frequency, and used them with a new engine demanding 48 KHz ones. Could you try to redownload everything to a fresh folder? I guess we could just go with the sound, extra, onscripter and scripts, but we are not fully sure whether anything else may be corrupted, and in the days of unlimited internet it is not much of a problem to get everything, right?<br>
+<br>
+That will include the following files:
+<ul><li>backgrounds_03.08.16.7z.001</li>
+<li>backgrounds_03.08.16.7z.002</li>
+<li>graphics_03.08.16.7z.001</li>
+<li>graphics_03.08.16.7z.002</li>
+<li>sound_09.08.16.7z.001</li>
+<li>sound_09.08.16.7z.002</li>
+<li>sprites_03.08.16.7z.001</li>
+<li>video_03.08.16.7z.001</li>
+<li>extra_09.08.16.7z.001</li>
+<li>scripts_17.08.16.7z</li>
+<li>onscripter-ru_win_r2290.7z (Windows XP SP3+ 32-bit)</li></ul>
+
+I really hope it helps. If not, let us know the specs of both of your computers. We would like to know:<br>
+— Laptop model / Motherboard model;<br>
+— CPU model and frequency;<br>
+— Amount of RAM installed;<br>
+— GPU model;<br>
+— HDD or SSD used with the game.<br>
+If you have any trouble finding this you could just go with <a href="https://www.getsysteminfo.com" class="exlinks" onclick="this.target='_blank';">https://www.getsysteminfo.com</a> tool and send me a personal message with a zip file generated by it (will take about 5 minutes).</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

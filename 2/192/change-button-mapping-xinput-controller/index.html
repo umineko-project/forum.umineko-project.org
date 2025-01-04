@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Change button mapping xinput controller - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+
+<h1>Change button mapping xinput controller</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=192">https://forum.umineko-project.org/viewtopic.php?t=192</a>
+-->
+
+<div class="post" id="p1993">
+	<div class="info">
+		<p class="poster">gaspard</p>
+		<p class="dt">2017-02-04 10:11:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Is there a way to reconfigure the button mapping that the game automatically gives you for xinput controllers? I tried with the "pad-map" command on the ons.cfg but it didn't do anything.<br>
+Thanks</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1994">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-02-04 20:05:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Of course there is, and pad-map should actually do the trick. Could you tell me how you tried using pad-map?<br>
+So far I do not see a reason why would it fail unfortunately.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1995">
+	<div class="info">
+		<p class="poster">gaspard</p>
+		<p class="dt">2017-02-04 22:23:48</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Well at first I just tried:<br>
+pad-map=-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1<br>
+or just giving value to a few buttons at time.<br>
+<br>
+But strangely enough I just tried again and it suddenly started working, even though I thought I did the same thing before!  <img class="smilies" src="../../../images/smilies/icon_e_confused.gif" width="15" height="17" alt=":?" title="Озадачен"> <br>
+<br>
+However with the example above while it disables the non-directional buttons successfully, it still recognizes the d-pad and the analog sticks (I want to disable all controls to use the JoyToKey program instead, while keeping the rumble).</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1996">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-02-04 22:33:51</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Well, this is by design, because the analogue buttons cannot be remapped without losing data. And for sure they are not meant to be mapped anywhere else. <br>
+<br>
+More importantly is why would you need anything like JoyToKey. Of course we do not try to prevent users from using weird stuff like that but it is certainly not supported. Feels like <a href="http://xyproblem.info" class="exlinks" onclick="this.target='_blank';">http://xyproblem.info</a> to me.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1997">
+	<div class="info">
+		<p class="poster">gaspard</p>
+		<p class="dt">2017-02-04 23:34:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yeah I know it seems weird, I guess it needs a little clarification. It is to bypass the automode turn off on click (which I asked in the <a href="/2/191" class="loclinks" onclick="this.target='_blank';">previous thread</a>) by mapping the mouse wheel (which preserves automode) to the controller using JoyToKey.<br>
+<br>
+This workaround seems to be good enough for now as long as I don't touch the D-pad (which could not be disabled) or analog sticks on automode. When the update comes with the ons.cfg option to make clicks preserve automode that Knox mentioned in the other thread then JoyToKey will no longer be necessary, but for now I guess I'll have to stick with it  <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="17" alt=":lol:" title="Смеётся"><br>
+<br>
+Ps. I also wanted to change some mappings so my original question was valid at first, even though it somehow resolved by itself</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1998">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-02-05 09:40:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ah, I see now. Makes sense for me. We might consider providing mapping for hats and d-pad in the future (as extra number pad-map), but I am not too sure at the moment.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1999">
+	<div class="info">
+		<p class="poster">gaspard</p>
+		<p class="dt">2017-02-05 10:54:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Cool, eagerly awaiting next releases, thanks for your help! <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

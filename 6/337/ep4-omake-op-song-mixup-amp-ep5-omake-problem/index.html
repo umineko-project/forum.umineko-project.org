@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>EP4 Omake op song mixup &amp; EP5 Omake problem - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+
+<h1>EP4 Omake op song mixup &amp; EP5 Omake problem</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=337">https://forum.umineko-project.org/viewtopic.php?t=337</a>
+-->
+
+<div class="post" id="p4046">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2020-03-22 00:53:39</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">1. Hi! It's a minor detail but should still count as a bug.<br>
+<br>
+If in ons.cfg we set "env[legacy_op]=true", it will play the legacy op at the beginning of the game. But that will also affect the song played in the EP4 Omake. Instead of playing the PS3 op as intended, the Omake will play the legacy op instead.<br>
+<br>
+Can we make a minor update to avoid this bug?<br>
+<br>
+2. Beside, the Chinese team is translating the Omake, the final part of the whole adaptation, but for some reason we have difficulty getting the Golden Bullet in EP5's Omake. Even though we set the game and retried, still we only ran into the big rain without seeing the golden butterfly. Any clue?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4047">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2020-03-22 01:11:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi!<br>
+<br>
+1. I am pretty sure this is not the case. EP4 omake uses op_new as an argument to pam command, so it should force new op playback:<br>
+<a href="https://github.com/umineko-project/umineko-scripting/blob/b13cb24/game/omake/umio4.txt#L32" class="exlinks pdf-link" onclick="this.target='_blank';">https://github.com/umineko-project/umin ... o4.txt#L32</a><br>
+<br>
+2. To see the butterfly you need to complete EP5 ura party (i.e. reach its end).</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4048">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2020-03-22 15:33:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">1. Oh, yes, the person who reported this issue mixed up the two OPs. Now it's all clarified. False alarm.<br>
+<br>
+2. Thanks for the hint! We thought unlocking EP6 will do. Now we got the golden bullet by running through the ura party.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

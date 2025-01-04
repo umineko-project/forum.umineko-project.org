@@ -1,0 +1,349 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>[EN] Crash after Ep2 Tea Party credits in windowed mode - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+
+<h1>[EN] Crash after Ep2 Tea Party credits in windowed mode</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=119">https://forum.umineko-project.org/viewtopic.php?t=119</a>
+-->
+
+<div class="post" id="p1279">
+	<div class="info">
+		<p class="poster">whitehelm</p>
+		<p class="dt">2016-03-17 21:07:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The game crashes right at the end of the EP2 staff credits instead of returning to the main menu. After trying a couple times I changed to full screen and got past it, so it only happens in windowed mode. The forum doesn't want to let me attach the RPT file so I'll just copy-paste the log in spoiler tags. I don't remember if I was playing in windowed or full screen when I got the Ep1 credits, but I know I was playing windowed when I finished the main episode and got the Ep2 Game Results.<br>
+
+<dl class="codebox"><dt><a href="javascript:void%280%29;" onclick="var el = this.parentNode.parentNode.getElementsByTagName('dd')[0]; var v = el.style.display != 'none'; el.style.display = v ? 'none' : 'block'; this.innerHTML = (v ? '[+]' : '[−]') + ' Spoiler'; ">[+] Spoiler </a></dt><dd style="display:none">Error occured on Thursday, March 17, 2016 at 10:48:24.<br>
+<br>
+onscripter-ru_win_r1955.exe caused an Access Violation at location 0045364D in module onscripter-ru_win_r1955.exe Reading from location 0000060A.<br>
+<br>
+Loading symbols... done.<br>
+<br>
+Registers:<br>
+eax=00000602 ebx=00000001 ecx=00000000 edx=00000001 esi=0148f624 edi=0148f580<br>
+eip=0045364d esp=0148f510 ebp=0148f598 iopl=0         nv up ei pl nz na pe nc<br>
+cs=0023  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00210202<br>
+<br>
+AddrPC   Params<br>
+0045364D 0FE40C74 0148F640 00000000  onscripter-ru_win_r1955.exe!0x5364d<br>
+0043BA8F 03FA2530 0FB9BBA8 00000061  onscripter-ru_win_r1955.exe!0x3ba8f<br>
+0043EB8B 03FA2530 0FB9BBA8 00000061  onscripter-ru_win_r1955.exe!0x3eb8b<br>
+<br>
+onscripter-ru_win_r1955.exe	2016.1.1.0<br>
+ntdll.dll   	10.0.10586.122<br>
+KERNEL32.DLL	10.0.10586.0<br>
+KERNELBASE.dll	10.0.10586.162<br>
+ADVAPI32.dll	10.0.10586.63<br>
+msvcrt.dll  	7.0.10586.0<br>
+sechost.dll 	10.0.10586.0<br>
+RPCRT4.dll  	10.0.10586.0<br>
+SspiCli.dll 	10.0.10586.0<br>
+CRYPTBASE.dll	10.0.10586.0<br>
+bcryptPrimitives.dll	10.0.10586.0<br>
+GDI32.dll   	10.0.10586.63<br>
+USER32.dll  	10.0.10586.20<br>
+IMM32.DLL   	10.0.10586.0<br>
+ole32.dll   	10.0.10586.162<br>
+combase.dll 	10.0.10586.103<br>
+OLEAUT32.dll	10.0.10586.0<br>
+SHELL32.dll 	10.0.10586.122<br>
+cfgmgr32.dll	10.0.10586.0<br>
+OPENGL32.DLL	10.0.10586.0<br>
+windows.storage.dll	10.0.10586.162<br>
+shlwapi.dll 	10.0.10586.0<br>
+kernel.appcore.dll	10.0.10586.0<br>
+shcore.dll  	10.0.10586.0<br>
+powrprof.dll	10.0.10586.0<br>
+profapi.dll 	10.0.10586.0<br>
+WS2_32.dll  	10.0.10586.0<br>
+VERSION.dll 	10.0.10586.0<br>
+WINMM.DLL   	10.0.10586.0<br>
+WINMMBASE.dll	10.0.10586.0<br>
+DDRAW.dll   	10.0.10586.0<br>
+GLU32.dll   	10.0.10586.0<br>
+DCIMAN32.dll	10.0.10586.3<br>
+exchndl.dll 	0.7.7.0<br>
+PSAPI.DLL   	10.0.10586.0<br>
+mgwhelp.dll 	0.7.7.0<br>
+dbghelp.dll 	6.3.9600.17029<br>
+DSOUND.DLL  	10.0.10586.0<br>
+MMDevAPI.DLL	10.0.10586.0<br>
+PROPSYS.dll 	7.0.10586.0<br>
+DEVOBJ.dll  	10.0.10586.0<br>
+wdmaud.drv  	10.0.10586.0<br>
+ksuser.dll  	10.0.10586.0<br>
+AVRT.dll    	10.0.10586.0<br>
+AUDIOSES.DLL	10.0.10586.71<br>
+wintypes.dll	10.0.10586.103<br>
+msacm32.drv 	10.0.10586.0<br>
+MSACM32.dll 	10.0.10586.0<br>
+midimap.dll 	10.0.10586.0<br>
+clbcatq.dll 	2001.12.10941.16384<br>
+uxtheme.dll 	10.0.10586.0<br>
+MSCTF.dll   	10.0.10586.71<br>
+dwmapi.dll  	10.0.10586.0<br>
+nvoglv32.DLL	10.18.13.6451<br>
+SETUPAPI.dll	10.0.10586.0<br>
+WTSAPI32.dll	10.0.10586.0<br>
+WINTRUST.dll	10.0.10586.0<br>
+MSASN1.dll  	10.0.10586.0<br>
+CRYPT32.dll 	10.0.10586.0<br>
+ntmarta.dll 	10.0.10586.0<br>
+WINSTA.dll  	10.0.10586.0<br>
+WinUSB.DLL  	10.0.10586.0<br>
+hid.dll     	10.0.10586.0<br>
+dinput8.dll 	10.0.10586.0<br>
+XInput1_4.dll	10.0.10586.0<br>
+dxgi.dll    	10.0.10586.162<br>
+d3d11.dll   	10.0.10586.122<br>
+nvwgf2um.dll	10.18.13.6451<br>
+bcrypt.dll  	10.0.10586.0<br>
+nvspcap.dll 	2.9.1.22<br>
+WINHTTP.dll 	10.0.10586.71<br>
+nvapi.dll   	10.18.13.6451<br>
+WHook.dll   	6.0.5353.0<br>
+OLEACC.dll  	7.2.10586.0<br>
+WININET.dll 	11.0.10586.122<br>
+iertutil.dll	11.0.10586.122<br>
+ondemandconnroutehelper.dll	10.0.10586.0<br>
+IPHLPAPI.DLL	10.0.10586.0<br>
+mswsock.dll 	10.0.10586.0<br>
+NSI.dll     	10.0.10586.0<br>
+WINNSI.DLL  	10.0.10586.0<br>
+DNSAPI.dll  	10.0.10586.0<br>
+urlmon.dll  	11.0.10586.122<br>
+mdnsNSP.dll 	3.1.0.1<br>
+rasadhlp.dll	10.0.10586.71<br>
+fwpuclnt.dll	10.0.10586.0<br>
+Cabinet.dll 	10.0.10586.0<br>
+<br>
+Windows 10.0.10586<br>
+DrMingw 0.7.7</dd></dl></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1280">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-03-17 21:24:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi,<br>
+<br>
+The good news is that we were able to identify the crash, which was actually noticed about a month ago <img class="smilies" src="../../../images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Очень доволен">, and the bad news is that we did not fix it due to being unable to properly localise the cause. I think with the report you provided I should be able to write a working solution. <br>
+<br>
+I have just sent you a testing engine version in a PM. Could you try to reproduce the issue with it? It might actually fix the crash for you.<br>
+Please report the results in this topic. Good luck <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1281">
+	<div class="info">
+		<p class="poster">whitehelm</p>
+		<p class="dt">2016-03-18 22:38:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The testing engine doesn't crash, however there's a small glitch where after the credits finish, it jumps back to a point in the middle of the credits before doing the "door opening" transition.<br>
+<br>
+Edit: Well, never mind. I replayed the credits to get a screenshot of the glitch, but this time it crashed again.
+<dl class="codebox"><dt><a href="javascript:void%280%29;" onclick="var el = this.parentNode.parentNode.getElementsByTagName('dd')[0]; var v = el.style.display != 'none'; el.style.display = v ? 'none' : 'block'; this.innerHTML = (v ? '[+]' : '[−]') + ' Spoiler'; ">[+] Spoiler </a></dt><dd style="display:none">Error occured on Friday, March 18, 2016 at 15:48:14.<br>
+<br>
+onscripter-ru_win_r1955_whitehelm1.exe caused an Access Violation at location 0045365D in module onscripter-ru_win_r1955_whitehelm1.exe Reading from location 00000008.<br>
+<br>
+Loading symbols... done.<br>
+<br>
+Registers:<br>
+eax=00000000 ebx=00000001 ecx=00000000 edx=00000001 esi=0148f624 edi=0148f570<br>
+eip=0045365d esp=0148f500 ebp=0148f588 iopl=0         nv up ei pl nz na pe nc<br>
+cs=0023  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00210202<br>
+<br>
+AddrPC   Params<br>
+0045365D 1CD78B54 03F8CE38 03F8CE38  onscripter-ru_win_r1955_whitehelm1.exe!0x5365d<br>
+0043BA8F 03F8BB18 1CD78AC0 00000061  onscripter-ru_win_r1955_whitehelm1.exe!0x3ba8f<br>
+0043EB8B 03F8BB18 1CD78AC0 00000061  onscripter-ru_win_r1955_whitehelm1.exe!0x3eb8b<br>
+<br>
+onscripter-ru_win_r1955_whitehelm1.exe	2016.1.1.0<br>
+ntdll.dll   	10.0.10586.122<br>
+KERNEL32.DLL	10.0.10586.0<br>
+KERNELBASE.dll	10.0.10586.162<br>
+ADVAPI32.dll	10.0.10586.63<br>
+msvcrt.dll  	7.0.10586.0<br>
+sechost.dll 	10.0.10586.0<br>
+RPCRT4.dll  	10.0.10586.0<br>
+SspiCli.dll 	10.0.10586.0<br>
+CRYPTBASE.dll	10.0.10586.0<br>
+bcryptPrimitives.dll	10.0.10586.0<br>
+GDI32.dll   	10.0.10586.63<br>
+USER32.dll  	10.0.10586.20<br>
+IMM32.DLL   	10.0.10586.0<br>
+ole32.dll   	10.0.10586.162<br>
+combase.dll 	10.0.10586.103<br>
+OLEAUT32.dll	10.0.10586.0<br>
+SHELL32.dll 	10.0.10586.122<br>
+cfgmgr32.dll	10.0.10586.0<br>
+OPENGL32.DLL	10.0.10586.0<br>
+windows.storage.dll	10.0.10586.162<br>
+shlwapi.dll 	10.0.10586.0<br>
+kernel.appcore.dll	10.0.10586.0<br>
+GLU32.dll   	10.0.10586.0<br>
+DDRAW.dll   	10.0.10586.0<br>
+shcore.dll  	10.0.10586.0<br>
+powrprof.dll	10.0.10586.0<br>
+profapi.dll 	10.0.10586.0<br>
+WS2_32.dll  	10.0.10586.0<br>
+DCIMAN32.dll	10.0.10586.3<br>
+VERSION.dll 	10.0.10586.0<br>
+WINMM.DLL   	10.0.10586.0<br>
+WINMMBASE.dll	10.0.10586.0<br>
+exchndl.dll 	0.7.7.0<br>
+PSAPI.DLL   	10.0.10586.0<br>
+mgwhelp.dll 	0.7.7.0<br>
+dbghelp.dll 	6.3.9600.17029<br>
+DSOUND.DLL  	10.0.10586.0<br>
+MMDevAPI.DLL	10.0.10586.0<br>
+DEVOBJ.dll  	10.0.10586.0<br>
+PROPSYS.dll 	7.0.10586.0<br>
+wdmaud.drv  	10.0.10586.0<br>
+ksuser.dll  	10.0.10586.0<br>
+AVRT.dll    	10.0.10586.0<br>
+AUDIOSES.DLL	10.0.10586.71<br>
+wintypes.dll	10.0.10586.103<br>
+msacm32.drv 	10.0.10586.0<br>
+MSACM32.dll 	10.0.10586.0<br>
+midimap.dll 	10.0.10586.0<br>
+clbcatq.dll 	2001.12.10941.16384<br>
+uxtheme.dll 	10.0.10586.0<br>
+MSCTF.dll   	10.0.10586.71<br>
+dwmapi.dll  	10.0.10586.0<br>
+ig75icd32.dll	10.18.15.4256<br>
+igdusc32.dll	10.18.15.4256<br>
+WTSAPI32.dll	10.0.10586.0<br>
+SetupAPI.dll	10.0.10586.0<br>
+WinUSB.DLL  	10.0.10586.0<br>
+hid.dll     	10.0.10586.0<br>
+WINTRUST.dll	10.0.10586.0<br>
+MSASN1.dll  	10.0.10586.0<br>
+CRYPT32.dll 	10.0.10586.0<br>
+dinput8.dll 	10.0.10586.0<br>
+XInput1_4.dll	10.0.10586.0<br>
+WHook.dll   	6.0.5353.0<br>
+OLEACC.dll  	7.2.10586.0<br>
+WININET.dll 	11.0.10586.122<br>
+iertutil.dll	11.0.10586.122<br>
+ondemandconnroutehelper.dll	10.0.10586.0<br>
+IPHLPAPI.DLL	10.0.10586.0<br>
+winhttp.dll 	10.0.10586.71<br>
+mswsock.dll 	10.0.10586.0<br>
+NSI.dll     	10.0.10586.0<br>
+WINNSI.DLL  	10.0.10586.0<br>
+DNSAPI.dll  	10.0.10586.0<br>
+urlmon.dll  	11.0.10586.122<br>
+mdnsNSP.dll 	3.1.0.1<br>
+rasadhlp.dll	10.0.10586.71<br>
+fwpuclnt.dll	10.0.10586.0<br>
+bcrypt.dll  	10.0.10586.0<br>
+<br>
+Windows 10.0.10586<br>
+DrMingw 0.7.7</dd></dl></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1282">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-03-19 09:01:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Grrr, this is unpleasant. The crash happened in pretty much the same place as before.<br>
+We were somewhat able to reproduce the crash but are currently a bit at a loss.<br>
+Could you tell us what GPU do you have? Interested in your GL_MAX_TEXTURE_SIZE value <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"><br>
+Also, what screen resolution/game resolution do you use? It is very strange that such an issue happens in windowed mode only.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1283">
+	<div class="info">
+		<p class="poster">whitehelm</p>
+		<p class="dt">2016-03-19 11:19:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I have a dual-GPU, Intel HD Graphics 4600 and Nvidia GeForce GTX 850M. Umineko uses the Intel GPU by default but I can force it to use Nvidia and the same problem happens. My screen res is 1920x1080 and the game was running at 1440x810. I tried lowering the resolution to 1280x720 and it didn't crash. In case it's relevant I've never had the black rectangles/missing textures mentioned on the Known Issues page.<br>
+<br>
+Higher resolutions (haven't tried these before) cause a new problem in which the game is forced into fullscreen but the game is too big to fit.<br>
+I've attached screenshots of the menu at 1600x900 (note the top left corner) and 1920x1080 (spoilered because large files).
+<dl class="codebox"><dt><a href="javascript:void%280%29;" onclick="var el = this.parentNode.parentNode.getElementsByTagName('dd')[0]; var v = el.style.display != 'none'; el.style.display = v ? 'none' : 'block'; this.innerHTML = (v ? '[+]' : '[−]') + ' Spoiler'; ">[+] Spoiler </a></dt><dd style="display:none"><div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="1600900window.png" class="postimage" alt="1600900window.png" onclick="viewableArea(this);"></dt>
+						<dd>1600900window.png (3.04 MiB) Viewed 11499 times</dd>
+		</dl>
+		
+		
+			</div>
+<div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="19201080window.png" class="postimage" alt="19201080window.png" onclick="viewableArea(this);"></dt>
+						<dd>19201080window.png (4.39 MiB) Viewed 11499 times</dd>
+		</dl>
+		
+		
+			</div></dd></dl>
+
+Edit: I just tried running it actually set to fullscreen with the higher resolutions. The game screen still doesn't fit but it's lined up on the upper left instead of the center (so Trophies is visible but the menu is even more cut off). I was going to try running the credits but the Tea Party option is now completely offscreen.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1284">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-03-19 18:31:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Alright, we are pretty certain that the issue is fixed now.<br>
+Could you check your mailbox and give it a try?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1285">
+	<div class="info">
+		<p class="poster">whitehelm</p>
+		<p class="dt">2016-03-19 22:41:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">It appears to be ok now. I ran it twice without any problems.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1286">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-03-19 22:44:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I am quite pleased to hear that. I think we will push a silent update fixing that crash in the next couple of days, the files and revisions (r1963) will be the same you got, so no need to redownload anything.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

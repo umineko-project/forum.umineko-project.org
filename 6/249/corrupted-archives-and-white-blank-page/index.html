@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Corrupted archives and white blank page? - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+
+<h1>Corrupted archives and white blank page?</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=249">https://forum.umineko-project.org/viewtopic.php?t=249</a>
+-->
+
+<div class="post" id="p2824">
+	<div class="info">
+		<p class="poster">tjuhola3</p>
+		<p class="dt">2018-05-04 11:54:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hello there. I am having a problem here with Chiru archives. <br>
+So I have tried many times download chiru archives, but they all come up as white blank pages files that cannot be opened, except the first one comes as normal looking archive file, but it always comes corrupted. I use the mega link for them.<br>
+<br>
+I thank for any help or suggestions I can get.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2825">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2018-05-04 14:22:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi,<br>
+<br>
+First of all, make sure you use the latest 7-zip archiver as the previous versions are unfortunately known to awkward failures. You can get one from their site: <a href="https://www.7-zip.org" class="exlinks" onclick="this.target='_blank';">https://www.7-zip.org</a>.<br>
+<br>
+Next, please note that the Chiru archives (just like all the other archives in fact) are multipart archives. All you need is to open the first file (chiru_01.07.17.7z.001), and all the subsequent files will be implicitly read by 7-zip itself during the extraction. That means, that all the parts (chiru_01.07.17.7z.002, chiru_01.07.17.7z.003, …) must be correctly named and put to the same directory as the 7z.001 part. If they are not, you will get the corrupted error just like you did above.<br>
+<br>
+Last but not least, there always is a small chance for a download error, which is hard to notice when there are 6 files. Just in case, all the files but the last part (chiru_01.07.17.7z.001—chiru_01.07.17.7z.005) are 1072693248 bytes in length and chiru_01.07.17.7z.006 is 282676430 bytes. You could check file length in file properties.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2834">
+	<div class="info">
+		<p class="poster">tjuhola3</p>
+		<p class="dt">2018-05-05 02:08:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Once again I need to thank you for helping dummy like me out. Honestly this being a solution I should have realized myself just shows how much little I know about these things.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2835">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2018-05-05 02:13:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Glad to hear it worked for you <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

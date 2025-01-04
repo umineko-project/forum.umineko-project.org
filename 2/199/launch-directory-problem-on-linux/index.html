@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>launch directory problem on linux - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+
+<h1>launch directory problem on linux</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=199">https://forum.umineko-project.org/viewtopic.php?t=199</a>
+-->
+
+<div class="post" id="p2070">
+	<div class="info">
+		<p class="poster">mzn928</p>
+		<p class="dt">2017-06-29 01:39:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi,<br>
+I have a problem with launching on arch linux<br>
+no matter how i try to execute the onscripter binary on linux, i get the same error message saying :
+<div class="codebox"><p>Code:</p><pre><code>Cannot obtain selfpath, run onscripter-ru from terminal! Exiting...
+</code></pre></div>
+i have tried running it from terminal with ./onscripter-ru but i got the same error message. i also tried to move the directory from my home folder but i get the same error everytime. all the directories i tried looked normal and none of them had any special symbol or spaces in them. i also tried running the windows version with wine but i get the same error:
+<div class="codebox"><p>Code:</p><pre><code>Invalid launch directory! Exiting...
+</code></pre></div>
+kernel info:
+<div class="codebox"><p>Code:</p><pre><code>linux 4.10.6-1-ARCH #1 SMP PREEMPT Mon Mar 27 08:28:22 CEST 2017 x86_64 GNU/Linux
+</code></pre></div>
+as far as i know all the libraries mentioned in the download page exist on my system but here is the ldd output:
+<div class="codebox"><p>Code:</p><pre><code>	linux-vdso.so.1 (0x00007ffebc2e3000)
+	libdl.so.2 =&gt; /usr/lib/libdl.so.2 (0x00007fd784bb4000)
+	libpthread.so.0 =&gt; /usr/lib/libpthread.so.0 (0x00007fd784996000)
+	librt.so.1 =&gt; /usr/lib/librt.so.1 (0x00007fd78478e000)
+	libm.so.6 =&gt; /usr/lib/libm.so.6 (0x00007fd78447b000)
+	libGL.so.1 =&gt; /usr/lib/libGL.so.1 (0x00007fd7841f0000)
+	libudev.so.1 =&gt; /usr/lib/libudev.so.1 (0x00007fd784f7a000)
+	libc.so.6 =&gt; /usr/lib/libc.so.6 (0x00007fd783e4c000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007fd784db8000)
+	libGLX.so.0 =&gt; /usr/lib/libGLX.so.0 (0x00007fd783c1a000)
+	libX11.so.6 =&gt; /usr/lib/libX11.so.6 (0x00007fd7838db000)
+	libXext.so.6 =&gt; /usr/lib/libXext.so.6 (0x00007fd7836c9000)
+	libGLdispatch.so.0 =&gt; /usr/lib/libGLdispatch.so.0 (0x00007fd783413000)
+	libresolv.so.2 =&gt; /usr/lib/libresolv.so.2 (0x00007fd7831fd000)
+	libcap.so.2 =&gt; /usr/lib/libcap.so.2 (0x00007fd782ff9000)
+	libxcb.so.1 =&gt; /usr/lib/libxcb.so.1 (0x00007fd782dd0000)
+	libXau.so.6 =&gt; /usr/lib/libXau.so.6 (0x00007fd782bcc000)
+	libXdmcp.so.6 =&gt; /usr/lib/libXdmcp.so.6 (0x00007fd7829c6000)
+</code></pre></div>
+
+i'm using 64bit archlinux, any help would be appreciated</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2071">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-06-29 01:49:23</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi,<br>
+There were a couple of issues with Linux startup that I fixed some time ago, but none should really prevent you from launching the game. Unless it is on a samba share, but it is not the case…  Try manually specifying the game directory, this should work regardless:
+<div class="codebox"><p>Code:</p><pre><code>./onscripter-ru -r /path/to/game</code></pre></div>
+/path/to/game should contain files and directories like en.file, ru.file, default.cfg, backgrounds, fonts, etc.<br>
+<br>
+If it works, then it will be nice to try the private binary and see if the issue is resolved.<br>
+If it does not, maybe some file failed to download or extract?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2072">
+	<div class="info">
+		<p class="poster">mzn928</p>
+		<p class="dt">2017-06-29 02:01:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hello,<br>
+Thanks for the quick response. that solved my issue and now i can launch the game with linux binary.<br>
+thank you !</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2073">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-06-29 02:10:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Nice to hear, but it is quite strange that it did not work the usual way.<br>
+Generally it is enough to simply double-click the binary in the game-dir.<br>
+I sent you a PM with a recent engine, could you please check it out?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2074">
+	<div class="info">
+		<p class="poster">mzn928</p>
+		<p class="dt">2017-06-29 02:22:48</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">i tested it, it launches the game without the need of mentioning the directory manually with -r<br>
+if there is anything else you need me  to do please let me know and i will help. also if you need testing on linux in the future feel free to message me and i'll gladly help</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2075">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-06-29 02:26:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Great! I don't think there is anything specific, just let me know if you have any issues with this binary.<br>
+Comparably soon we will open chiru testing, and you will be welcome, subscribe to our RSS or this topc: <a href="/2/64" class="loclinks" onclick="this.target='_blank';">Episode 4 Private Alpha Early Access Request Thread</a> <img class="smilies" src="../../../images/smilies/icon_e_wink.gif" width="15" height="17" alt=";)" title="Подмигивает"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

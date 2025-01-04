@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>How can I change the font to something without a gradient? - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+
+<h1>How can I change the font to something without a gradient?</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=386">https://forum.umineko-project.org/viewtopic.php?t=386</a>
+-->
+
+<div class="post" id="p4376">
+	<div class="info">
+		<p class="poster">TRandomControl</p>
+		<p class="dt">2021-05-21 10:07:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The textbox font and the gradient make it difficult for me to read at my usual speed. <br>
+<br>
+<img src="https://i.imgur.com/UR2mTkC.jpeg" class="postimage" alt="Image"><br>
+<br>
+I tried increasing the font size but it's not helping, is there any way to <strong class="text-strong">change the font</strong> and eliminate that<strong class="text-strong"> grey gradient</strong> that the font has? I also noticed that the <strong class="text-strong">space between words</strong> is a bit more narrow than usual, which also doesn't help.<br>
+<br>
+I want something similar to what this other guy from another post shared<br>
+<img src="https://i.imgur.com/NKKMH7p.jpeg" class="postimage" alt="Image"><br>
+<br>
+But I have no idea how to do it, even though there seem to be a way— judging from this comment on the faq:
+<blockquote class="uncited"><div>There currently aren’t easy-to-use ways to change the game fonts. We do have some interface that lets you customise any game font in the game, but it requires some technical knowledge and patience. Feel free to contact us on the forum to get the details.</div></blockquote>
+
+I already try to running the "onscripter-ru.exe --font-override" from console, but it doesn't show me anything, it just opens the game normally. I'm guessing it needs some parameters I don't know?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4378">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2021-05-21 10:59:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">There is not really a way to configure it now, but you can replace enable_gradients 1 with enable_gradients 0 in the script code and rebuild the game script: <a href="https://github.com/umineko-project/umineko-scripting/blob/master/script/umi_hdr.txt#L2931" class="exlinks pdf-link" onclick="this.target='_blank';">https://github.com/umineko-project/umin ... .txt#L2931</a>. Compilation script is in <a href="https://github.com/umineko-project/umineko-scripting/blob/master/.github/workflows/main.yml" class="exlinks" onclick="this.target='_blank';">https://github.com/umineko-project/umin ... s/main.yml</a>. Sorry for inconvenience.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4379">
+	<div class="info">
+		<p class="poster">TRandomControl</p>
+		<p class="dt">2021-05-21 16:42:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote cite="./viewtopic.php?p=4378&amp;sid=d03863f65274ee36941de9161052fa81#p4378"><div><cite>vit9696 wrote: <a href="./viewtopic.php?p=4378&amp;sid=d03863f65274ee36941de9161052fa81#p4378" data-post-id="4378" onclick="if(document.getElementById(hash.substr(1)))href=hash" class="loclinks">↑</a><span class="responsive-hide">21 May 2021, 13:59</span></cite>
+There is not really a way to configure it now, but you can replace enable_gradients 1 with enable_gradients 0 in the script code and rebuild the game script: <a href="https://github.com/umineko-project/umineko-scripting/blob/master/script/umi_hdr.txt#L2931" class="exlinks pdf-link" onclick="this.target='_blank';">https://github.com/umineko-project/umin ... .txt#L2931</a>. Compilation script is in <a href="https://github.com/umineko-project/umineko-scripting/blob/master/.github/workflows/main.yml" class="exlinks" onclick="this.target='_blank';">https://github.com/umineko-project/umin ... s/main.yml</a>. Sorry for inconvenience.
+</div></blockquote>
+
+So do I need to clone the project, change that specific line and then compile the code. Could you give me an outline on how to do this myself? or should I just leave it at that? I don't really have much knowledge of how to do these things.<br>
+<br>
+And about the font, you guys mentioned on the FAQ that the font had an internal interface for customization, maybe I can just do that, change it for a bolder font, and that way the gradient wouldn't bother me that much. Or is this not available at the moment?<br>
+<br>
+Thanks for your answer <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4380">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2021-05-21 20:21:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Correct. The compilation commands are listed in the file I linked you to. Internal font customisation API does not allow you do much, sorry.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4405">
+	<div class="info">
+		<p class="poster">ImportTaste</p>
+		<p class="dt">2021-10-15 01:32:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I went ahead and compiled it here. Be advised that my save files still had gradient text, I had to start a new episode for it to take effect.<br>
+<a href="https://github.com/ImportTaste/umineko-scripting/releases" class="exlinks" onclick="this.target='_blank';">https://github.com/ImportTaste/umineko- ... g/releases</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

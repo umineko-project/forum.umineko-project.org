@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Музыка остается на заднем фоне - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+
+<h1>Музыка остается на заднем фоне</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=171">https://forum.umineko-project.org/viewtopic.php?t=171</a>
+-->
+
+<div class="post" id="p1765">
+	<div class="info">
+		<p class="poster">Coil</p>
+		<p class="dt">2016-08-25 15:24:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Перво-наперво, хочу поздравить команду Umineko Project с долгожданным выпуском всех четырех эпизодов Арки Вопросов. Смотрю и не нарадуюсь, порт ну очень качественный, словно Алхимики сами сподобились выпустить официальный порт на ПК. Спасибо за ваш труд, ребята! <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается">  <img class="smilies" src="../../../images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Очень доволен"> <br>
+<br>
+Теперь к делу. Я пока продвинулся недалеко, едва закончил читать 12-ю главу первого эпизода, и заметил что вот на этом месте <a href="https://httpsimage.com/img/UmiEP01-008.jpg" class="exlinks img-link" onclick="this.target='_blank';">https://httpsimage.com/img/UmiEP01-008.jpg</a><br>
+музыка не отключается как должна, а как бы остается играть на заднем фоне до самого конца главы. То же самое происходит в 11-ой, когда Мария рисует на бумаге оккультный круг, но там это не так диссонирует с происходящим.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1766">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-08-25 17:19:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Спасибо за поздравления, поздравляем и тебя с пойманной ачивкой!<br>
+Громкость поправили, косяк встречается в 17 местах во всей игре. Если коротко, то Алхимики криво сконвертировали кривой скрипт Рюю, и этот косяк из PS3 версии перекочевал в нашу <img class="smilies" src="../../../images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Очень доволен">.<br>
+<br>
+Если длинно… то проблема в японских "погромистах" в целам.<br>
+Перво-наперво Рюю пытался выучить школьную математику. Когда он писал функцию cross1, которая по задумке плавно повышает или понижает громкость эффектов до указанной и вдобавок выключает фоновую музыку, он сделал так:
+<div class="codebox"><p>Code:</p><pre><code>повторить 10 раз {
+   текущая_громкость = текущая_громкость - (текущая_громкость/10)
+   …
+   установить_громкость в текущая_громкость
+}
+установить_громкость в 0
+</code></pre></div>
+Если учесть, что диапазон громкости в игре от 0 до 100, то после 10 повторений в случае изначальной громкости было бы... 90, 81, 73, 66, 60, 54, 49, 45, 41, <strong class="text-strong"><span style="text-decoration:underline">37</span></strong> <img class="smilies" src="../../../images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Очень доволен"> (Так как в ПК движке целочисленное деление, то округление всегда в меньшую сторону). Очевидно, что Рюю хотел использовать при делении громкость до начала эффекта, но хотел — не значит сделал <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="17" alt=":lol:" title="Смеётся"> <br>
+<br>
+Затем пришли Алхимики. Они заметили косяк, поржали и исправили. Только в окончательном скрипте появилась строчка:
+<div class="codebox"><p>Code:</p><pre><code>BGM_VOLUME: to 17 over 180 frames (3.000000 secs)</code></pre></div>
+В итоге что в PS3, что у нас громкость уменьшается до 17 из 255 вместо 0. WTF?! Как?!! Продолжаем квест.<br>
+Алхимики во многом серьёзно исправили баланс громкости в игре, особенно с учётом добавленной озвучки. Большинство треков, играющих с максимальной громкостью в ПК версии, получили громкость 180 из 255. Более того, процент от этой изначальной громкости может выставить пользователь в настройках (как у нас). Это действительно прекрасно, но из-за такого преобразования… они местами были вынуждены производить магические округления в ту или иную сторону.<br>
+<br>
+В чём прикол? Ну… по всей видимости они немного накосячили с циклами. В коде Рюю было написано "повторить 10 раз", что в коде:
+<div class="codebox"><p>Code:</p><pre><code>for %Free8 = 1 to 10
+…
+next</code></pre></div>
+По всей видимости, японец, который писал конвертер, неправильно понял 1 to 10 и вместо [1, 10] написал [1, 10), исключая 9-е повторение  <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="17" alt=":lol:" title="Смеётся"> <br>
+180/10 = 18<br>
+180 - (9*18) = 18<br>
+Но это не 17!!! Вспоминаем про округления, которые они добавляли для преобразования шкал. Так как PS3 движок работает с дробями, а оригинал на ПК работает с целыми числами, почти наверняка они в конце дописали дополнительный -1, чтобы убедиться, что при получении числа 0 &lt; x &lt; 1 оно бы никак не стало 1.<br>
+<br>
+Ну вот что с такими делать <img class="smilies" src="../../../images/smilies/icon_rolleyes.gif" width="15" height="17" alt=":roll:" title="Закатывает глаза"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1767">
+	<div class="info">
+		<p class="poster">Coil</p>
+		<p class="dt">2016-08-25 18:22:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ничего себе развернутый ответ, не ожидал xD  Рад что помог выловить такое <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

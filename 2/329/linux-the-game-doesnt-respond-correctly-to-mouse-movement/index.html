@@ -1,0 +1,217 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Linux: the game doesn't respond correctly to mouse movement - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+
+<h1>Linux: the game doesn't respond correctly to mouse movement</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=329">https://forum.umineko-project.org/viewtopic.php?t=329</a>
+-->
+
+<div class="post" id="p3941">
+	<div class="info">
+		<p class="poster">frejohn</p>
+		<p class="dt">2020-01-03 14:16:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I'm on a HP notebook and on Manjaro (Arch-based distro) Linux. The game doesn't respond correctly to the touchpad/mouse movement, like you can see the cursor moving "correctly" but the game doesn't respond accordingly, e.g. if I try to start a new episode and move my cursor on 'start', the game instead buzzes off everywhere so I really can't do anything.<br>
+My <div class="codebox"><p>Code:</p><pre><code>ons.cfg</code></pre></div>:
+<div class="codebox"><p>Code:</p><pre><code>window-width=1366
+scale
+game-script=en.file
+env[bgm_volume]=90
+env[bgm_unlock]=8
+env[automode_hide_cursor]=true 
+env[cg_unlock]=8
+env[lipsync]=true
+env[complete_episode]=8
+env[video_resolution]=1080
+env[voice_volume]=100
+env[steam_conventions]=true
+env[verify]=none</code></pre></div>
+Command line output of <div class="codebox"><p>Code:</p><pre><code>./onscripter-ru</code></pre></div>:
+<div class="codebox"><p>Code:</p><pre><code>Parsing command-line options from 'ons.cfg'
+Couldn't open option file 'en.cfg'
+Available crash reporter features error code 0
+init:archive_path: "/home/john/VN/Umineko Project/:./:/home/john/VN/:../"
+save:archive_path: "/home/john/.onscripter/UminekoPS3ficationEn/:/home/john/VN/Umineko Project/:./:/home/john/VN/:../"
+Trying to initialise GL2 renderer
+Compiling shader: defaultVertex.vert
+Compiling shader: alphaOutsideTextures.frag
+Compiling shader: blendByMask.frag
+Compiling shader: blurH.frag
+Compiling shader: blurV.frag
+Compiling shader: breakup.frag
+Compiling shader: colorModification.frag
+Compiling shader: colourConversion.frag
+Compiling shader: cropByMask.frag
+Compiling shader: effectTrvswave.frag
+Compiling shader: effectWarp.frag
+Compiling shader: effectWhirl.frag
+Compiling shader: glassSmash.frag
+Compiling shader: glyphGradient.frag
+Compiling shader: mergeAlpha.frag
+Compiling shader: multiplyAlpha.frag
+Compiling shader: pixelate.frag
+Compiling shader: renderSubtitles.frag
+Compiling shader: textFade.frag
+Maximum texture size (set automatically) is 16384
+Maximum texture chunk size (set automatically) is 3211264
+Enabled GPU features: 0x1BDF
+Initialising joystick(0 -&gt; 0): SynPS/2 Synaptics TouchPad
+Haptic status: unsupported
+Gamepad GUID: 0x11, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x07, 0x00, 0x00, 0x00, 0xB1, 0x01, 0x00, 0x00
+Audio: 48000 Hz 32 bit float stereo
+turned on volume mute
+turned off volume mute
+turned on volume mute
+Setup layer effect for 'fall.dll'.
+Setup layer effect for 'fall.dll'.
+Setup layer effect for 'fall.dll'.
+Setup layer effect for 'fall.dll'.
+Setup layer effect for 'fall.dll'.
+Setup layer effect for 'fall.dll'.
+Setup layer effect for 'fall.dll'.
+Setup layer effect for 'fall.dll'.
+Setup layer effect for 'ass.dll'.
+Setup layer effect for 'snow.dll'.
+Setup layer effect for 'video.dll'.
+turned off volume mute
+Speech levels changed to 0.200000 0.600000
+turned on volume mute</code></pre></div>
+This is me, but I think the most important line, where the problem lies, are
+<div class="codebox"><p>Code:</p><pre><code>Initialising joystick(0 -&gt; 0): SynPS/2 Synaptics TouchPad
+Haptic status: unsupported</code></pre></div>
+Maybe the problem is there?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3942">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2020-01-03 15:22:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hello,<br>
+<br>
+Could you please provide more details on what happens? I am not sure I understood you properly.<br>
+— when you move the cursor in the game, it works normally?<br>
+— when you move the cursor over buttons, do they highlight and behave otherwise normally?<br>
+— when you click on the button, what exactly happens?<br>
+— can you control the game with your keyboard without issues?<br>
+<br>
+Considering the issue may exist be your touchpad being incorrectly detected as a gamepad, could you try remapping its buttons? For example, you could disable all the buttons by specifying -1 in all pad-map slots in ons.cfg. See "How can I configure my gamepad?" in our FAQ (<a href="https://umineko-project.org/en/frequently-asked-questions/" class="loclinks" onclick="this.target='_blank';">https://umineko-project.org/en/frequent ... questions/</a>).</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3943">
+	<div class="info">
+		<p class="poster">frejohn</p>
+		<p class="dt">2020-01-03 15:37:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote cite="./viewtopic.php?p=3942&amp;sid=10ab6ad5f6b69bc758b9297098e024a7#p3942"><div><cite>vit9696 wrote: <a href="./viewtopic.php?p=3942&amp;sid=10ab6ad5f6b69bc758b9297098e024a7#p3942" data-post-id="3942" onclick="if(document.getElementById(hash.substr(1)))href=hash" class="loclinks">↑</a><span class="responsive-hide">03 Jan 2020, 18:22</span></cite>
+Hello,<br>
+<br>
+Could you please provide more details on what happens? I am not sure I understood you properly.<br>
+— when you move the cursor in the game, it works normally?<br>
+— when you move the cursor over buttons, do they highlight and behave otherwise normally?<br>
+— when you click on the button, what exactly happens?<br>
+— can you control the game with your keyboard without issues?<br>
+<br>
+Considering the issue may exist be your touchpad being incorrectly detected as a gamepad, could you try remapping its buttons? For example, you could disable all the buttons by specifying -1 in all pad-map slots in ons.cfg. See "How can I configure my gamepad?" in our FAQ (<a href="https://umineko-project.org/en/frequently-asked-questions/" class="loclinks" onclick="this.target='_blank';">https://umineko-project.org/en/frequent ... questions/</a>).
+</div></blockquote>
+Sorry if I wasn't being clear enough. Now, the cursor per se moves correctly, but the game doesn't respond accordingly. If I try to move the cursor on a button, let's say 'config', the game will go basically "crazy" and highlight everything and so clicking what I want is impossible. I'll now try your method and update the situation. Thanks for the reply.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3944">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2020-01-03 15:50:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">If it highlights basically everything, most likely the issue is not in the controls, but in your graphics driver. This is easy to check by controlling the game with the keyboard (you can use arrow keys and enter). Consider checking render-self=no, no-glclear, and other graphics quirks from Known issues section (<a href="https://umineko-project.org/en/known-issues" class="loclinks" onclick="this.target='_blank';">https://umineko-project.org/en/known-issues</a>).</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3945">
+	<div class="info">
+		<p class="poster">frejohn</p>
+		<p class="dt">2020-01-03 15:53:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Update: tried your method and it didn't work<br>
+Here the GIF of what the problem is: <a href="https://makeagif.com/gif/umipro-linux-mouse-bug-yUOmrR" class="exlinks" onclick="this.target='_blank';">https://makeagif.com/gif/umipro-linux-mouse-bug-yUOmrR</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3946">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2020-01-03 15:58:26</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hmmm, from the gif it looks like cursor positioning is reported incorrectly to the game:<br>
+— Since only one button is highlighted, then the graphics driver should be fine.<br>
+— Also, since it happens at highlight level, gamepad is also unrelated.<br>
+<br>
+All in all that means that your operating system reports incorrect mouse positioning to the game, or at least SDL library we use misinterprets it. Is the issue any different in windowed and fullscreen modes (you can switch by pressing F key)?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3947">
+	<div class="info">
+		<p class="poster">frejohn</p>
+		<p class="dt">2020-01-03 16:07:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote cite="./viewtopic.php?p=3946&amp;sid=10ab6ad5f6b69bc758b9297098e024a7#p3946"><div><cite>vit9696 wrote: <a href="./viewtopic.php?p=3946&amp;sid=10ab6ad5f6b69bc758b9297098e024a7#p3946" data-post-id="3946" onclick="if(document.getElementById(hash.substr(1)))href=hash" class="loclinks">↑</a><span class="responsive-hide">03 Jan 2020, 18:58</span></cite>
+Hmmm, from the gif it looks like cursor positioning is reported incorrectly to the game:<br>
+— Since only one button is highlighted, then the graphics driver should be fine.<br>
+— Also, since it happens at highlight level, gamepad is also unrelated.<br>
+<br>
+All in all that means that your operating system reports incorrect mouse positioning to the game, or at least SDL library we use misinterprets it. Is the issue any different in windowed and fullscreen modes (you can switch by pressing F key)?
+</div></blockquote>
+
+It happens both in windowed and fullscreen mode. This didn't happen on Windows btw, even when it was the same notebook.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3948">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2020-01-03 16:33:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Mhm, I tried loading Linux, and it works fine for me on Debian 10 with LXQt. Unsure whether I can really help here. Try reducing window-width? Maybe it somehow confuses your window server.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3949">
+	<div class="info">
+		<p class="poster">frejohn</p>
+		<p class="dt">2020-01-04 21:58:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">At the end I went with playing the game on Wine. Works fine. Thanks for your help, though.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

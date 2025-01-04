@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Song subtitles during EP2 Tea Party credits don't display at native resolution - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+
+<h1>Song subtitles during EP2 Tea Party credits don't display at native resolution</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=120">https://forum.umineko-project.org/viewtopic.php?t=120</a>
+-->
+
+<div class="post" id="p1291">
+	<div class="info">
+		<p class="poster">MarisaKirisame</p>
+		<p class="dt">2016-03-28 23:01:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I don't really have a screenshot of it because every time I try to take one the image is broken (Linux please).<br>
+<br>
+It appears the karaoke subs display at some blurry low resolution (definitely not 720p, that wouldn't be so blurry).<br>
+<br>
+Might just be a Linux thing, I don't know.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1292">
+	<div class="info">
+		<p class="poster">Knox</p>
+		<p class="dt">2016-03-28 23:48:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">This one is an unfortunate optimization. We use software rendering for subtitles, which works well when rendering a video (OPs etc have 1080p subs), but unfortunately, it means that sub performance is actually lower when subtitles are used with the rest of the game's hardware-accelerated textures. We had to reduce the resolution to get acceptable performance without the video.<br>
+<br>
+If we can think of a way to fix it, we certainly will.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1293">
+	<div class="info">
+		<p class="poster">MarisaKirisame</p>
+		<p class="dt">2016-03-30 21:56:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">No HW rendering of subtitles? That's a shame.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

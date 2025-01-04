@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>OpenGL Error, PLEASE HELP - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+
+<h1>OpenGL Error, PLEASE HELP</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=377">https://forum.umineko-project.org/viewtopic.php?t=377</a>
+-->
+
+<div class="post" id="p4332">
+	<div class="info">
+		<p class="poster">Ame</p>
+		<p class="dt">2021-03-17 10:19:28</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I compiled Onscripter-RU from it's github because they didn't had executable for Linux 32 bit systems,<br>
+<br>
+And it showed this error in logs, (I even ran it in Wine, and it showed me exactly the same error)<br>
+
+<div class="codebox"><p>Code:</p><pre><code>Parsing command-line options from 'ons.cfg'
+set:archive_path: "/home/vansh/Umineko/"
+Available crash reporter features error code 0
+save:archive_path: "/home/vansh/.onscripter/ONScripter-e21d7/:/home/vansh/Umineko/"
+Trying to initialise GL2 renderer
+GPU_CreateTargetFromWindow: BACKEND ERROR - Renderer major version (2) is incompatible with the available OpenGL runtime library version (1).
+GPU_InitRendererByID: BACKEND ERROR - Renderer OpenGL 2 failed to initialize properly
+glDeleteFramebuffersNOOP: Unsupported operation
+ ***[Fatal] Init Error: Couldn't init OpenGL with 1920x1080 resolution ***</code></pre></div>
+
+As you can see, something is outdated<br>
+
+<div class="codebox"><p>Code:</p><pre><code>Renderer major version (2) is incompatible with the available OpenGL runtime library version (1).</code></pre></div>
+
+But I'm not exactly sure what should i do, i tried googling and all but no luck,<br>
+<br>
+OS : Debian 10, i386</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4333">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2021-03-17 10:37:39</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I think you may have missed mesa development packages when compiling the engine. As a result SDL was probably built without hardware acceleration support. The other possibility is that you have no hardware acceleration driver installed.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4335">
+	<div class="info">
+		<p class="poster">Ame</p>
+		<p class="dt">2021-03-17 10:51:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote cite="./viewtopic.php?p=4333&amp;sid=cbdccc8f5a3b56a9de7d0fafa2df5d27#p4333"><div><cite>vit9696 wrote: <a href="./viewtopic.php?p=4333&amp;sid=cbdccc8f5a3b56a9de7d0fafa2df5d27#p4333" data-post-id="4333" onclick="if(document.getElementById(hash.substr(1)))href=hash" class="loclinks">↑</a><span class="responsive-hide">17 Mar 2021, 13:37</span></cite>
+I think you may have missed mesa development packages when compiling the engine. As a result SDL was probably built without hardware acceleration support. The other possibility is that you have no hardware acceleration driver installed.
+</div></blockquote>
+
+Is hardware acceleration a must to run this game ?<br>
+I compiled the game engine exactly how the docs told me to, on github, are there any additional stuff i should be doing ?<br>
+<br>
+Is there anything i can do to run the game ?<br>
+Thanks a lot for the reply</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4337">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2021-03-20 11:41:51</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote class="uncited"><div>Is hardware acceleration a must to run this game ?</div></blockquote>
+Yes, you must have a driver supporting OpenGL 2.x.<br>
+
+<blockquote class="uncited"><div>I compiled the game engine exactly how the docs told me to, on github, are there any additional stuff i should be doing ?</div></blockquote>
+Like I said, it looks like you have some packages missing, but I cannot say the exact names as it varies from GPU to GPU.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

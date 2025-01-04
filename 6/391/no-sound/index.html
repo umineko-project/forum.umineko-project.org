@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>No Sound - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+
+<h1>No Sound</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=391">https://forum.umineko-project.org/viewtopic.php?t=391</a>
+-->
+
+<div class="post" id="p4407">
+	<div class="info">
+		<p class="poster">Gamer412021</p>
+		<p class="dt">2021-10-23 00:15:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">So I am episode 8, and I tried going back to a dialogue (scroll and middle click) but the game froze and I was forced to close it. Upon reopening, the game didn't have any sound (like not even in the menu or anywhere). I tried pressing M several times, but that didn't help either.<br>
+<br>
+Edit: Upon inspecting and messing with the saves, apparently deleting the envdata file fixes the problem, and upon comparing the newly generated file with the backup of the corrupted file, there is a one byte difference between the two.<br>
+<br>
+So the question would be, what is this file for, is deleting it like this fine?<br>
+<br>
+Edit 2: Apparently mute key is no longer M but alt + M, and this makes the sound return even on the old save file. Still, I wonder what envdata is exactly used for here.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4408">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2021-10-23 07:13:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Well, envdata stores mute flag?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4409">
+	<div class="info">
+		<p class="poster">Gamer412021</p>
+		<p class="dt">2021-10-23 18:24:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thanks for the response.<br>
+<br>
+Yeah, it seems to store game settings, but there also seems to be a backup, because even deleting it doesn't seem to reset all game settings (but on the other hand, changing the settings can also change it). That backup might be ons.cfg file in the game folder, but I am not sure. It also seems that readlbl.sav stores your reading status (the lines you have already read), while gloval.sav stores your overall game state (hours played, episodes unlocked, stuff like that). Then each individual save you make is stored in a separate numbered file.<br>
+<br>
+Also there is a screenshot folder, but I cannot find the key for taking screenshots so I am not sure what that is about.<br>
+<br>
+Also as a side note, the <a href="https://umineko-project.org/en/frequently-asked-questions/" class="loclinks" onclick="this.target='_blank';">FAQ </a> is outdated as "What are the game controls?" only lists "m" as the mute key instead of "alt + m". This can cause possible confusion as it did for me.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4410">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2021-10-23 18:33:48</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I think it was opt+e. But I do not have the game nearby. Also, various files store different data, so it is somewhat hard to reset everything without removing them all.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

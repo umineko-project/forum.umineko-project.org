@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Overriding filecheck when first launching chiru - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+
+<h1>Overriding filecheck when first launching chiru</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=364">https://forum.umineko-project.org/viewtopic.php?t=364</a>
+-->
+
+<div class="post" id="p4237">
+	<div class="info">
+		<p class="poster">josesito</p>
+		<p class="dt">2020-12-03 21:42:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I modified the files and added env[verify]=none in ons.cfg to bypass the initial check. Everything works perfectly for the first 4 chapters, but trying to start chiru will prompt a new check and it will say something like FILES ARE MISSING, VOIDING. How can I override this too?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4238">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2020-12-03 23:24:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">This happens, when critical files are actually missing, so you have broken installation really the files checked are:<br>
+<br>
+backgrounds\cha_p1b.png (must exist)<br>
+sound\bgm\umib_194.ogg (must exist)<br>
+sprites\ama\1\ama_a14_defo1.png (must exist)<br>
+chiru.none (must not exit)<br>
+graphics\locale\text008.png (must have 801805 size)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4240">
+	<div class="info">
+		<p class="poster">josesito</p>
+		<p class="dt">2020-12-04 02:11:51</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Is graphics\locale\text008.png correct?  I checked the locale folder on my untampered PC files that run perfectly and there's no 008, just from 13 to 29.png  Also, where is chiru.none created?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4242">
+	<div class="info">
+		<p class="poster">josesito</p>
+		<p class="dt">2020-12-04 02:35:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">oh, forget it, I read locale/text/text008.png  found it in the locale folder, will reply if something's wrong again</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

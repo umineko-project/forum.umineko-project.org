@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Automode - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+
+<h1>Automode</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=191">https://forum.umineko-project.org/viewtopic.php?t=191</a>
+-->
+
+<div class="post" id="p1988">
+	<div class="info">
+		<p class="poster">gaspard</p>
+		<p class="dt">2017-01-29 14:45:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi, first of all thank you so much for the incredible work you have done and continue doing, really amazing!<br>
+<br>
+I was wondering if there is a way to make the game automatically turn automode on when there is voiced dialogue and off when there is narration.<br>
+<br>
+The reason for this is that I find that the flow of the voiced dialogue is not too good when automode is off since I can accidentally click when the voice was not done, or else I'll wait too long because I don't want to cut it off but it disturbs the flow of the dialogue with all the pauses. With automode on it feels perfect, like watching subtitled anime. But the problem is then when the narration comes, the chosen speed for the automode in the config might feel too quick or too slow depending on the text, so it would be better to have it off then to decide myself when to continue (if I click it turns automode off, having to turn it on again manually on the next dialogue).<br>
+<br>
+Another solution to improve the flow might be to make it so that automode is on within the same text box, but off just before it changes to next one so that you decide when to continue, but I am guessing that might be more complicated.<br>
+<br>
+Thanks again <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"><br>
+<br>
+EDIT: Ok, I found a solution: <br>
+<br>
+1. Set the automode speed to the minimum<br>
+2. Have the automode always on<br>
+3. Use the mouse wheel (down) to continue to next line during narration (this doesn't turn off automode as clicking or using the right arrow does).</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1989">
+	<div class="info">
+		<p class="poster">Knox</p>
+		<p class="dt">2017-01-29 15:47:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">That is very close to what I was going to suggest <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"><br>
+<br>
+We weren't aware that mouse wheel down bypasses the automode disabler on click (that's actually a bug), but if we fix it we will provide an ons.cfg option to make clicks preserve automode. That's not likely to happen before EP5, though.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1990">
+	<div class="info">
+		<p class="poster">gaspard</p>
+		<p class="dt">2017-01-29 17:09:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Well actually if you can leave the bug on that would be even better hehe  <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"> , because it is way more comfortable for the hand to scroll down than constantly clicking (edit: I couldn't find a way to imitate the wheel behavior with an xbox controller though, both the d-pad and the B-button turn automode off, or if the analog sticks are touched, would be nice if the wheel down action could somehow be implemented for e.g. the right analog stick or d-pad).<br>
+<br>
+Sometimes the voices jumped a little too quickly between sentences so I also added the "voicedelay-time=milliseconds" that you mentioned in <a href="/6/140#p1494" class="loclinks" onclick="this.target='_blank';">another thread</a> and experimented with different numbers and found that more or less 250 ms give the most natural flow.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1991">
+	<div class="info">
+		<p class="poster">Knox</p>
+		<p class="dt">2017-01-30 13:17:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>gaspard wrote:</cite>Well actually if you can leave the bug on that would be even better hehe  <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"> , because it is way more comfortable for the hand to scroll down than constantly clicking</div></blockquote>Don't worry, we don't plan to remove functionality. Whatever we code we'll make sure  you can still use the wheel for this.<br>
+
+<blockquote><div><cite>gaspard wrote:</cite>Sometimes the voices jumped a little too quickly between sentences so I also added the "voicedelay-time=milliseconds" that you mentioned in <a href="/6/140#p1494" class="loclinks" onclick="this.target='_blank';">another thread</a> and experimented with different numbers and found that more or less 250 ms give the most natural flow.</div></blockquote>It's nice to hear it's helping. If I remember correctly, PS3 has no delay, which is why it's not default.<br>
+
+<blockquote><div><cite>gaspard wrote:</cite>would be nice if the wheel down action could somehow be implemented for e.g. the right analog stick</div></blockquote>We'll think about it <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1992">
+	<div class="info">
+		<p class="poster">gaspard</p>
+		<p class="dt">2017-01-31 17:52:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Knox wrote:</cite>Don't worry, we don't plan to remove functionality. Whatever we code we'll make sure you can still use the wheel for this.</div></blockquote>
+Cool thanks!  <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"><br>
+
+<blockquote><div><cite>Knox wrote:</cite>It's nice to hear it's helping. If I remember correctly, PS3 has no delay, which is why it's not default.</div></blockquote>
+Yeah I guess it kind of depends on how much silence they put within the voice files before/after the recorded dialogue (there is practically none in the voice ogg files, nobody takes an inbreathe in Umineko <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="17" alt=":lol:" title="Смеётся"> ).<br>
+
+<blockquote><div><cite>Knox wrote:</cite><blockquote><div><cite>gaspard wrote:</cite>would be nice if the wheel down action could somehow be implemented for e.g. the right analog stick</div></blockquote>We'll think about it <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"></div></blockquote>
+Now that I think about it more carefully, it's probably not necessary. It is actually quite comfortable with the d-pad (right) or B button even with constant use (it feels a little awkward with the analog sticks to be honest), but thanks anyway <img class="smilies" src="../../../images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Очень доволен"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2035">
+	<div class="info">
+		<p class="poster">tjuhola3</p>
+		<p class="dt">2017-05-04 17:57:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Speaking of automode, is there anyway to make the green small arrow disappear while automode is on? It's okay if not, but it bothers me little bit (I know sounds odd)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2036">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-05-04 18:55:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The only way I could imagine for now will be to replace graphics/system/automode.png with a transparent image <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2037">
+	<div class="info">
+		<p class="poster">gaspard</p>
+		<p class="dt">2017-05-04 19:49:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">That is exactly what I did at first, but then it bothered me even more not being sure if automode was still on (during narrations) or if I accidentally turned it off <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="17" alt=":lol:" title="Смеётся"> <br>
+So instead I replaced the image with this inconspicuous small arrow that is placed at the bottom of the screen (not very fancy but it made me forget about it when playing):</div>
+<dl class="attachbox">
+					<dt>
+						Attachments
+					</dt>
+											<dd>
+			
+		
+		
+				<dl class="file">
+			<dt><span class="imageset icon_topic_attach"></span> <a class="postlink" href="automode.zip">automode.zip</a></dt>
+						<dd>(13.32 KiB) Downloaded 747 times</dd>
+		</dl>
+		
+			</dd>
+									</dl>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2038">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2017-05-07 23:11:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">You might find another configuration option also useful:<br>
+<br>
+final-voicedelay-time=2200<br>
+[you can change the number to any others]<br>
+<br>
+That's for the delay at the end of the last dialogue line before the page is turned.  The original "voicedelay-time" doesn't have that function, and the page would be immediately turned and there would be no any delay for you to catch the last dialogue line.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

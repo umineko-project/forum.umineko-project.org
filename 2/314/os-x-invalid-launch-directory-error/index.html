@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>[OS X] Invalid Launch Directory Error - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+
+<h1>[OS X] Invalid Launch Directory Error</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=314">https://forum.umineko-project.org/viewtopic.php?t=314</a>
+-->
+
+<div class="post" id="p3611">
+	<div class="info">
+		<p class="poster">backstagehands</p>
+		<p class="dt">2019-06-02 03:31:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hello! I just did a fresh download for Umineko Project for OS X (not upgrading from a previous version, just grabbed all the files new yesterday), but trying to run the engine gives me an Invalid Launch Directory error. It seems like this is usually because of the missing default.cfg, but I seem to have that file and most the other relevant ones in the directory so I'm unsure what is causing this T__T<br>
+<br>
+I did my extraction for all the resource folders and scripts, then overwrote with Chiru files, then overwrote with the Extra files.<br>
+
+<div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="c097c5980c88e54496b2043e73c32efa.png" class="postimage" alt="c097c5980c88e54496b2043e73c32efa.png" onclick="viewableArea(this);"></dt>
+						<dd>c097c5980c88e54496b2043e73c32efa.png (620.23 KiB) Viewed 8986 times</dd>
+		</dl>
+		
+		
+			</div>
+
+Sorry for the trouble but if anyone would be able to help I would be eternally grateful &gt; &lt; ! I'm running OSX 10.14 at the moment, let me know if more specs would help.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3612">
+	<div class="info">
+		<p class="poster">backstagehands</p>
+		<p class="dt">2019-06-02 06:36:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I realized I am missing an ons.cfg file that most other players here seem to have, but for the life of me can't figure out where it is on the current downloads page– apologies if I'm missing something painfully obvious...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3613">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2019-06-02 10:55:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hello,<br>
+<br>
+I have just checked the macOS version, and it worked fine for me.<br>
+<br>
+On the good side, I do not see any immediate issue with how you placed the files, and it is actually the same way for myself. default.cfg is used to generate ons.cfg once you set the game preferences, so it is actually expected for this file to not exist before running the game, no worries.<br>
+<br>
+I think the case for this error on macOS can be related to macOS quarantine. If the initial .7z file was flagged as externally downloaded, and that flag was not unset by the program you extracted the app with, then ONScripter-RU may not be able to determine the directory it works from. To fix this open Terminal and enter the following command:
+<div class="codebox"><p>Code:</p><pre><code>xattr -cr &lt;drag &amp; drop onscripter-ru app here&gt;</code></pre></div>
+
+Afterwards the game should launch fine. In case it does not, check the contents of default.cfg file with any text editor of your choice, it should look as follows:
+<div class="codebox"><p>Code:</p><pre><code>game-script=en.file
+window-width=1280
+scale</code></pre></div>
+
+Vit</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3615">
+	<div class="info">
+		<p class="poster">backstagehands</p>
+		<p class="dt">2019-06-02 21:02:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Oh, yep, running xattr that did fix it! I used the Unarchiver which was probably not unsetting it– all works now. Thanks so much for the help Vit!! <img alt="🙇" class="emoji smilies" draggable="false" src="//cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f647.svg"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

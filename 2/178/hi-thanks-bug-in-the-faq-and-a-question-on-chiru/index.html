@@ -1,0 +1,527 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Hi! Thanks! bug in the FAQ and a question on Chiru - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+
+<h1>Hi! Thanks! bug in the FAQ and a question on Chiru</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=178">https://forum.umineko-project.org/viewtopic.php?t=178</a>
+-->
+
+<div class="post" id="p1820">
+	<div class="info">
+		<p class="poster">newtonseple</p>
+		<p class="dt">2016-09-19 03:28:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">First of all, Hi! I registered some time ago, with a hope of reporting bugs and being useful, and still live in that hope. All I can report so far is that the game scales beautifully to the Surface Pro 4 display, once you disable Microsoft's display scaling for it.<br>
+<br>
+Secondly, I will express my gratitude and encouragement to the admins and everyone involved for undertaking the task of putting together a definitive version of this work, keeping quality and compatibility in mind from start to finish. Thank you <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается">, well done with Rondo, and best of luck going forward.<br>
+<br>
+Third, something is wrong with the FAQ. A couple of questions (ironically including one asking for help with the website) are trapped in a link href. See picture:<br>
+<a href="http://ctrlv.in/848243" class="exlinks" onclick="this.target='_blank';"><img src="https://forum.umineko-project.org/ext/bb3mobi/exlinks/styles/all/theme/no_ssl.png" onclick="window.open('/app.php/link/http%253A%252F%252Fimg.ctrlv.in%252Fimg%252F16%252F09%252F19%252F57df5586ca24d.png?sid=eeb1188f37e1bdff3fd28cc20c1ac68e', 'Umineko Project', 'height=720,width=960', false);" class="postimage insecure" alt="Image"></a><br>
+<br>
+Fourth, as the Chiru alpha draws closer, i wonder what you will be doing with the intro videos. With Rondo it was easy, as only one of the intros exist with PS3 sprites anyway, but in Chiru both intros exist with PS3 sprites (<a href="http://youtu.be/JVFWNKM09kQ" class="exlinks" onclick="this.target='_blank';">http://youtu.be/JVFWNKM09kQ</a> and <a href="http://youtu.be/rWwRY3GJc1A" class="exlinks" onclick="this.target='_blank';">http://youtu.be/rWwRY3GJc1A</a>). Will you be using the PS3 intro everywhere, or will you be inserting the fan-made PC openings with PS3 sprites? Or leaving it as an option?<br>
+Myself, I feel that the PC openings have their place, and distinguish 5-6 from 7-8 in a nice way, so I would use the PS3 intro for starting the game, and the PC intros (with PS3 sprites) in the story. But then again, I know this port attempts to approximate the PS3 version.<br>
+<br>
+-newtonseple</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1821">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-09-19 04:47:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi / Morning,
+<blockquote class="uncited"><div>All I can report so far is that the game scales beautifully to the Surface Pro 4 display, once you disable Microsoft's display scaling for it.</div></blockquote>
+I think you may not need to disable scaling, you could just set the real window resolution in ons.cfg. SP4 has a HDPI screen, wiki says it is 2736x1824 with 267 ppi, so my guess will be to try half less — window-width=1368 or maybe quarter less — window-width=1782.<br>
+
+<blockquote class="uncited"><div>Secondly, I will express my gratitude and encouragement to the admins and everyone involved for undertaking the task of putting together a definitive version of this work, keeping quality and compatibility in mind from start to finish. Thank you <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается">, well done with Rondo, and best of luck going forward.</div></blockquote>Thank you, thank you <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"><br>
+
+<blockquote class="uncited"><div>Third, something is wrong with the FAQ. A couple of questions (ironically including one asking for help with the website) are trapped in a link href.</div></blockquote>Indeed. Fixed it. As it comes out FAQ gets least attention.<br>
+
+<blockquote class="uncited"><div>Fourth, as the Chiru alpha draws closer, i wonder what you will be doing with the intro videos. With Rondo it was easy, as only one of the intros exist with PS3 sprites anyway, but in Chiru both intros exist with PS3 sprites (<a href="http://youtu.be/JVFWNKM09kQ" class="exlinks" onclick="this.target='_blank';">http://youtu.be/JVFWNKM09kQ</a> and <a href="http://youtu.be/rWwRY3GJc1A" class="exlinks" onclick="this.target='_blank';">http://youtu.be/rWwRY3GJc1A</a>). Will you be using the PS3 intro everywhere, or will you be inserting the fan-made PC openings with PS3 sprites? Or leaving it as an option?<br>
+Myself, I feel that the PC openings have their place, and distinguish 5-6 from 7-8 in a nice way, so I would use the PS3 intro for starting the game, and the PC intros (with PS3 sprites) in the story. But then again, I know this port attempts to approximate the PS3 version.</div></blockquote>
+As for that it is a bit complicated to answer. PS3 has… 3 OPs first of all: <a href="http://youtu.be/vjSavDI1s2A" class="exlinks" onclick="this.target='_blank';">op4</a>, <a href="http://youtu.be/JVFWNKM09kQ" class="exlinks" onclick="this.target='_blank';">op56</a>, <a href="http://youtu.be/rWwRY3GJc1A" class="exlinks" onclick="this.target='_blank';">op78</a>. Two of these are mentioned by you, and none from the list are "fan-made". All of these are the official openings made by Alchemist. All of the three chiru ops are used in the ps3 game. As for game start ep4 is showed before completing ep5 prologue, ep56 is showed during the first two eps, and ep78 is showed during the second two. Additionally ep56 and ep78 play in the corresponding places in the episodes. We will follow all of this.<br>
+The only difference we have with PS3 is that they seem to cycle openings if a player doesn't touch the game for some while (30 secs if I remember correctly), and we do not.<br>
+<br>
+As for fan-made openings I only know about <a href="https://www.youtube.com/watch?v=hU_vECs4i10" class="exlinks" onclick="this.target='_blank';">Rondo opening</a>. We had a thought of including it but so far did not. There also was <a href="https://www.youtube.com/watch?v=Ky-5HAYu-xE" class="exlinks" onclick="this.target='_blank';">Pachinko op</a>. If chiru also has something it is probably worth mentioning.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1822">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2016-09-19 06:05:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Just to follow up: how about adding to  Question Arc, EP4 this fan-made op using the original PC version song with PS3 sprites? <a href="https://youtu.be/hU_vECs4i10" class="exlinks" onclick="this.target='_blank';">https://youtu.be/hU_vECs4i10</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1823">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-09-19 06:45:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>YNagato wrote:</cite>Just to follow up: how about adding to  Question Arc, EP4 this fan-made op using the original PC version song with PS3 sprites? <a href="https://youtu.be/hU_vECs4i10" class="exlinks" onclick="this.target='_blank';">https://youtu.be/hU_vECs4i10</a></div></blockquote>
+Depends on what you meant. Like I said:
+<blockquote class="uncited"><div>We had a thought of including it but so far did not.</div></blockquote>
+If you mean making it an optional replacement to the existent op we have no plans for it. However, you could simply replace video/720p/op.mp4 and video/1080p/op.mp4 with this op video and sound/bgm/op.ogg with this op audio. After launching the game it will have get the op changed everywhere.<br>
+If you mean extra content so far there are no plans for it as well. And you cannot really do anything with it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1824">
+	<div class="info">
+		<p class="poster">newtonseple</p>
+		<p class="dt">2016-09-19 09:21:53</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>vit9696 wrote:</cite>All of these are the official openings made by Alchemist. All of the three chiru ops are used in the ps3 game. As for game start ep4 is showed before completing ep5 prologue, ep56 is showed during the first two eps, and ep78 is showed during the second two. Additionally ep56 and ep78 play in the corresponding places in the episodes. We will follow all of this.<br>
+The only difference we have with PS3 is that they seem to cycle openings if a player doesn't touch the game for some while (30 secs if I remember correctly), and we do not.</div></blockquote>
+Ah, I see. That's perfect  <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"> I haven't played the PS3 version of Chiru, so I assumed that it was like with Rondo, with just the one op, and fan created remakes of the PC ops (after all, the youtube video is titled "Umineko no Naku Koro ni Chiru <strong class="text-strong">PC</strong> OP 1 (EP5-6) with PS3 sprites"). <br>
+<br>
+So in other words, Alchemist remade the PC ops for Chiru, but did not for Rondo? That's odd..<br>
+
+<blockquote><div><cite>vit9696 wrote:</cite>I think you may not need to disable scaling, you could just set the real window resolution in ons.cfg.</div></blockquote>
+I'll try that. But with display scaling off in "compatibility settings" and window-width=2736 the UI was pixel perfect and the sprites/backgrounds looked fine. My experience with Windows's display scaling is that it blurs everything it scales, which may work well for images, but totally destroys UI. So I think it's rather a matter of Windows not understanding by itself that ons-ru can do its own scaling.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1825">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2016-09-20 00:12:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>vit9696 wrote:</cite>you could simply replace video/720p/op.mp4 and video/1080p/op.mp4 with this op video and sound/bgm/op.ogg with this op audio. After launching the game it will have get the op changed everywhere.</div></blockquote>
+
+Just for fun, I experimented the alternative op a bit. The only obstacle is after I changed the ogg file, the game engine says some files are missing and then quits. It seems at the outset the engine would check the integrity of the files. I could change the ogg file only after the game is lauched.<br>
+<br>
+How could I make the engine recognize the new ogg file as a valid one? I have made it the same sample rate and bit rate. Do I need to make it the same size? <br>
+<br>
+Sorry for bothering you with this, but I am just curious about the inside secret of the engine!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1827">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-09-20 14:05:00</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hmmm. Indeed we check it, it is as simple as file size. However, there also are drawbacks that include song names and subtitles. For that reason I added an official way to use yo-yu op. Try it in the alpha forums and report. If it goes smoothly we will include it in an update.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1830">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2016-09-20 19:59:45</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Report: It's Perrrrrrrrfectttttttt!!! Now Mammon asks me to ask you for the yo-yu op subtitles. <img class="smilies" src="../../../images/smilies/icon_mrgreen.gif" width="15" height="17" alt=":mrgreen:" title="Зелёный"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1831">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-09-20 20:41:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The executioner self of mine predicts the witch hunt initiated by our archbishop to eliminate heresy and pseudodemons. <img class="smilies" src="../../../images/smilies/icon_mrgreen.gif" width="15" height="17" alt=":mrgreen:" title="Зелёный"> <br>
+For real… maybe if someone times the thing we could possibly try looking at it sooner or later, but notably finding a better quality video should also be considered.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1839">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2016-09-22 01:32:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>vit9696 wrote:</cite>maybe if someone times the thing we could possibly try looking at it sooner or later</div></blockquote>
+
+約束よ！Japanese parts translated and timed:<br>
+
+<dl class="codebox"><dt><a href="javascript:void%280%29;" onclick="var el = this.parentNode.parentNode.getElementsByTagName('dd')[0]; var v = el.style.display != 'none'; el.style.display = v ? 'none' : 'block'; this.innerHTML = (v ? '[+]' : '[−]') + ' Spoiler'; ">[+] Spoiler </a></dt><dd style="display:none">yo wo watariyuku tsuki ni　<br>
+As the moon crosses the night sky <br>
+00:28.07-00:30.25<br>
+<br>
+shio wa takaku michite<br>
+the waves grow enraged <br>
+00:31.03-00:34.12<br>
+<br>
+umineko no naku koe wa　 <br>
+The cry of seagulls<br>
+00:34.23-00:37.14<br>
+<br>
+fuon no kumo wo maneku<br>
+beckons the turbulent clouds<br>
+00:37.19-00:40.24<br>
+<br>
+konjiki no noroi to<br>
+The golden curse<br>
+00:41:04-00:43.30<br>
+<br>
+nokosareshi kotoba to<br>
+the words left behind<br>
+00:44.12-00:47.09<br>
+<br>
+himeyaka na hohoemi wa　 <br>
+and the secretive smile<br>
+00:47.16-00:50:17<br>
+<br>
+kurenai ni nijimu<br>
+all become smeared with crimson <br>
+00:50.25-00:53.23<br>
+<br>
+tozasareta hitomi de<br>
+With closed eyes<br>
+00:53.27-00:57.17<br>
+<br>
+nani wo motomete'ru<br>
+what are you looking for?<br>
+00:57.21-01:00.17<br>
+<br>
+kowareta sono kakera wo<br>
+Even if you may try to collect<br>
+01:00.22-01:04.02<br>
+<br>
+atsumete mite mo<br>
+the shattered fragments<br>
+01:04.09-01:06.19<br>
+<br>
+fureta yubi wo koboreru<br>
+they shall spill from the hands that touch them <br>
+01:06.24-01:10.21<br>
+<br>
+kimi ni todokanai<br>
+and never reach you<br>
+01:10.27-01:13.19<br>
+<br>
+kazarareta kyojitsu<br>
+The glossed truths and lies<br>
+01:13.20-01:16.22<br>
+<br>
+ai ga nakereba mienai<br>
+without love, you won’t be able to see<br>
+01:16:25-01:21.08</dd></dl></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1840">
+	<div class="info">
+		<p class="poster">Knox</p>
+		<p class="dt">2016-09-22 01:52:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thank you very much, that will help greatly <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"><br>
+<br>
+We're very busy at the moment...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1845">
+	<div class="info">
+		<p class="poster">aquagon</p>
+		<p class="dt">2016-09-24 05:27:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi, and thanks for the wonderful work you're doing by bringing the PS3 versions and all its upgrades to the original novel to the PC!<br>
+And well, since I wanted to be of some help too, here's a supplement to what YNagato posted: it's the entirety of the Aegisub subtitles I made for timing and positioning the Italian choruses that "Umineko no Naku Koro ni" (the original PC version opening theme) had, together with translations to English based off the official glossing that Akiko Shikata, Wataru Hano and Noriko Mitose gave them as seen in the booklet to Shikata's Turaida album.<br>
+
+<dl class="codebox"><dt><a href="javascript:void%280%29;" onclick="var el = this.parentNode.parentNode.getElementsByTagName('dd')[0]; var v = el.style.display != 'none'; el.style.display = v ? 'none' : 'block'; this.innerHTML = (v ? '[+]' : '[−]') + ' Spoiler'; ">[+] Spoiler </a></dt><dd style="display:none">Dialogue: 0,0:00:00.64,0:00:01.78,Default,,0,0,0,,{\pos(89,32)}Né regole.<br>
+Dialogue: 0,0:00:00.64,0:00:01.78,Default,,0,0,0,,{\pos(1023,714)}Bury Van Dine's Twenty Commandments.<br>
+Dialogue: 0,0:00:01.98,0:00:03.70,Default,,0,0,0,,{\pos(151,38)}Né comandamenti.<br>
+Dialogue: 0,0:00:01.98,0:00:03.70,Default,,0,0,0,,{\pos(1122,710)}Crush Knox's Decalogue.<br>
+Dialogue: 0,0:00:03.76,0:00:06.74,Default,,0,0,0,,{\pos(190,66)}Ne ragione.\NIn altre parole: imprevedibile.<br>
+Dialogue: 0,0:00:03.90,0:00:06.74,Default,,0,0,0,,{\pos(927,716)}Eliminate even the exposed reality.\NIn other words, make it unpredictable in all possible ways.<br>
+Dialogue: 0,0:00:06.86,0:00:11.60,Default,,0,0,0,,{\pos(394,32)}Ma succede. Cose spiacevole succedono. E io ne sono la causa.<br>
+Dialogue: 0,0:00:06.86,0:00:11.60,Default,,0,0,0,,{\pos(870,716)}However, calamities approach. The first cries of the catastrophes all rise. The hardships are strum by my hand.<br>
+Dialogue: 0,0:00:11.60,0:00:14.80,Default,,0,0,0,,{\pos(142,38)}Ancora non capisci?<br>
+Dialogue: 0,0:00:11.60,0:00:14.80,Default,,0,0,0,,{\pos(927,712)}Are you still going to continue having that idiotic mentality?<br>
+Dialogue: 0,0:00:14.88,0:00:16.66,Default,,0,0,0,,{\pos(135,32)}Niente di cui nutrirmi.<br>
+Dialogue: 0,0:00:14.88,0:00:16.66,Default,,0,0,0,,{\pos(990,714)}There is nothing you can even take a bite from.<br>
+Dialogue: 0,0:00:16.88,0:00:19.82,Default,,0,0,0,,{\pos(155,36)}Mi fanno morire di fame.<br>
+Dialogue: 0,0:00:16.88,0:00:19.82,Default,,0,0,0,,{\pos(1023,712)}Come now, drown in endless anguish!<br>
+Dialogue: 0,0:00:19.96,0:00:27.94,Default,,0,0,0,,{\pos(280,30)}Mi fanno morire credendo di poter predevere.<br>
+Dialogue: 0,0:00:19.96,0:00:27.94,Default,,0,0,0,,{\pos(861,714)}Starve to death while still clinging to your ways of reaching the truth!<br>
+Dialogue: 0,0:01:18.64,0:01:27.48,Default,,0,0,0,,{\pos(300,28)}Senza amore, senza amore la veritá non si vede.<br>
+Dialogue: 0,0:01:18.64,0:01:27.48,Default,,0,0,0,,{\pos(964,710)}Without love, without love you won't see the truth.</dd></dl></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1846">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-09-25 01:52:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thanks a lot <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1850">
+	<div class="info">
+		<p class="poster">Knox</p>
+		<p class="dt">2016-09-30 05:28:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">It looks like we aren't going to be able to use that Italian translation, unfortunately. <img class="smilies" src="../../../images/smilies/icon_e_sad.gif" width="15" height="17" alt=":(" title="Грустный"><br>
+<br>
+Although the Turaida album does provide Japanese for the song, so does the Harmonia album (the opening lyrics for Rengoku are the same), and the Japanese translation provided is entirely different. Both versions creatively reinterpret the Italian in different ways, and so much like it was with the Rokkenjima message bottles, both are cast into doubt. Which was closer to the original intention of the song? Was either? Where did the Italian come from in the first place — was it a translation of something or written from scratch? We may never know.<br>
+<br>
+There are two other reasons.<br>
+<br>
+1. <a href="https://forums.animesuki.com/showpost.php?p=2300536&amp;postcount=215" class="exlinks" onclick="this.target='_blank';">Earlier posts</a> indicate that the Italian here is grammatically correct, which reduces my will to ignore it.<br>
+<br>
+2. Many of the Rondo ending credit rolls used the Japanese technique of "lyrics written with different kanji than are sung" to a huge extent. We already decided back then to translate <em class="text-italics">what was sung</em> — i.e. the way every Japanese person listening to the song will hear and understand it, rather than the external document which isn't even distributed with the game, that assigns other inaudible meanings to the lyrics. A similar principle applies here: We'd like to translate the Italian that can be heard, rather than the external materials.<br>
+<br>
+If there were Italian grammatical mistakes fixed by a single Japanese gloss that was relatively literal and showed the original intention, instead of creatively reinterpreting it all over the place, our approach would be different here, but that is just not what we have.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1851">
+	<div class="info">
+		<p class="poster">aquagon</p>
+		<p class="dt">2016-09-30 09:13:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Here are my thoughts on the matter:<br>
+The Italian parts were made by an external translation agency that took as its basis the original Japanese glossing written by the actual lyricists, so I'm guessing the Italian parts were actually written the way they are in order to keep the choruses as short as possible, given the amount of meaning they crammed into these short sentences and the total duration of the choruses when actually sung.<br>
+<br>
+As for the lyrics to Rengoku, I'm aware they are the same and that the glossing is different between both versions, but that's because Rengoku is supposed to express different feelings and ideas from the original version of the song. In fact, Shikata herself wrote in her personal blog (<a href="http://raka1025.blog78.fc2.com/blog-date-200908-2.html" class="exlinks" onclick="this.target='_blank';">http://raka1025.blog78.fc2.com/blog-date-200908-2.html</a>) that the song was supposed to be an expression of the feelings she got from playing Umineko up to the end of Alliance of the Golden Witch and that it has as its theme the "flames of madness that spread throughout the humans' hearts", while the original version is more of a general vision of what the novel will be like.<br>
+<br>
+And finally, the translation from Turaida actually is very close in meaning to the messages that appear in the opening video of the second chapter to the original release of Umineko, Engrishy as they are:<br>
+<br>
+"No Dine"<br>
+"No Knox"<br>
+"No Fair"<br>
+"In other words, it is not mystery"<br>
+<br>
+"But it happens"<br>
+"All it happens"<br>
+"Let it happens"<br>
+<br>
+"Once again"<br>
+"No Dine"<br>
+"In other words, it is to starve"<br>
+"Starve while demanding the fair, and die'<br>
+<br>
+(Here's also the video at the start of where these messages show up: <a href="https://youtu.be/5Jfalz9NABU?t=11s" class="exlinks" onclick="this.target='_blank';">https://youtu.be/5Jfalz9NABU?t=11s</a>)<br>
+<br>
+So all in all, I find little reason to doubt the validity of the Turaida glossing, and in fact, I think it would be the best interpretation to consider for translating these lines, as the glossing is supposed to have been penned by Mitose and Hano themselves.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1852">
+	<div class="info">
+		<p class="poster">Knox</p>
+		<p class="dt">2016-09-30 13:26:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hmm, I forgot about that original opening. That's interesting. "<strong class="text-strong">Let</strong> it happens" could possibly be interpreted as "make" (causative, cause...), and the "<strong class="text-strong">all</strong> it happens" feels like it could link up to 遍く somehow. There are two lines "No Fair" and "Starve while demanding the fair" that imply a link between them by the repeated usage of "fair", but the Turaida gloss has no real link (公然たる事実 in one place, 真実 in the other) and neither does the Italian. I can't figure out why "Once again" and "No Dine" (the second one) are present.<br>
+<br>
+In conclusion, not sure if that opening helps or just muddles things further...<br>
+<br>
+Let's say for the sake of argument we trust Turaida completely. The main problem is then these three lines, I guess.<br>
+<br>
+Niente di cui nutrirmi<br>
+Mi fanno morire di fame<br>
+Mi fanno morire credendo di poter prevedere<br>
+<br>
+If we're <strong class="text-strong">translating</strong> the Italian, I really can't outright ignore the "mi" in "Mi fanno morire di fame" and surrounding lines, and translate as if it was a command instead, when what is sung is grammatical and explicitly not that. It leaves the realm of interpretation and just starts ignoring the Italian entirely. <br>
+<br>
+We basically have two options: to include the translation of the glossing as you did <strong class="text-strong">and also</strong> somehow write/indicate that it is a glossing and not a translation of the Italian (any suggestions? Maybe we actually cite the Turaida album as source?), or to translate the Italian, and use the glossing as an interpretation guide.<br>
+<br>
+The disadvantage of the former is that the Japanese is flowery in a way that works best poetically <strong class="text-strong">for Japanese</strong> (not necessarily for English once translated), and providing a glossing instead of a translation in a subtitle file is pretty unusual. The disadvantage of the latter is that I see no way to work "interpretation" into those three lines above. They simply contradict, from what I can see.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1853">
+	<div class="info">
+		<p class="poster">aquagon</p>
+		<p class="dt">2016-09-30 16:25:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I'm 100% sure that the "No Dine" part is supposed to link up with the 二十の理は埋れ glossing, as it's the only reference to Van Dine's Twenty Commandments in the lyrics (as well as setting up the cringeworthy pun that we see later on in "Once Again" "No Dine" "In other words, it is to starve" "Starve while demanding the fair, and die").<br>
+<br>
+However, I see your point in these three particular lines. I really don't understand either why they used first person conjugation for them ("Mi fanno" instead of "Ti farai" and the way "nutrirmi" is conjugated) if the intention was to make them imperative, and sadly that same exact problem is also present in the lyrics to Rengoku.<br>
+<br>
+As for these two options... I'd go with the first one if I had to make the call. After all, I've had to work with songs for other game series where using the glossing instead of the literal translation for the lyrics is not only the norm, but almost a necessity to conserve the meanings.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1854">
+	<div class="info">
+		<p class="poster">Knox</p>
+		<p class="dt">2016-09-30 16:59:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>aquagon wrote:</cite>(as well as setting up the cringeworthy pun that we see later on in "Once Again" "No Dine" "In other words, it is to starve" "Starve while demanding the fair, and die").</div></blockquote>Oh.<br>
+Ohhhhhhh.<br>
+God. <img class="smilies" src="../../../images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Очень доволен"><br>
+That explains that.<br>
+I missed it completely.<br>
+
+<blockquote><div><cite>aquagon wrote:</cite>As for these two options... I'd go with the first one if I had to make the call. After all, I've had to work with songs for other game series where using the glossing instead of the literal translation for the lyrics is not only the norm, but almost a necessity to conserve the meanings.</div></blockquote>Alright <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1856">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2016-10-02 09:29:39</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thanks for the newest updates that have incorporated the subtitles and have been gorgeously done! <br>
+<br>
+Since suddenly the whole alpha-testing discussion section was all gone, I can only make a report on this most recent alpha version here.<br>
+<br>
+It's just a minor mistake concerning the last parts of the English subtitles:<br>
+Dialogue: 0,0:01:13.59,0:01:16.69,Translation,,0,0,0,,The artful truths and lies<br>
+Dialogue: 0,0:01:16.69,0:01:22.26,Translation,,0,0,0,,Without love, it cannot be ‘seen’<br>
+<br>
+Since the line starts with plural truths and lies, it should end with "THEY cannot be 'seen.'"</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1857">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-10-02 09:32:51</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I will let Knox know about it. But it probably is intentional due to key phrase specifics.
+<blockquote class="uncited"><div>Since suddenly the whole alpha-testing discussion section was all gone, I can only make a report on this most recent alpha version here.</div></blockquote>
+This is a little worrying. <a href="https://forum.umineko-project.org/viewtopic.php?t=5" class="loclinks" onclick="this.target='_blank';">[EN] Discussion</a> works for me…</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1860">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2016-10-02 10:48:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I found the place now! Sorry my eyes skipped at 3 am...<br>
+<br>
+The Japanese original is in active voice, with the topicalization of the objects:<br>
+"The artful truths and lies -- without love, you can't see“ = "Without love, you can't see the artful truths and lies."</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1864">
+	<div class="info">
+		<p class="poster">Knox</p>
+		<p class="dt">2016-10-02 15:06:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">About active vs. passive voice: that was for consistency. I wouldn't be averse to discussing how we translate that phrase within the game (let me know!), but <em class="text-italics">right now</em>, 「愛がなければ視えない」 is "Without love, it cannot be seen", and I was trying not to diverge from that translation by changing the voice. This phrase is currently unchanged from the way WH translated it.<br>
+<br>
+As for "it" vs. "they", that should probably be changed. It might be possible to stick with "it" by changing the translation of 虚実... it's a bit of an awkward word to deal with, though. It might be easiest just to make it "they".</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1866">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2016-10-02 23:18:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Oh, of course the voice is not the issue. I was just explaining the issue of singular or plural all depends on the object of the verb. If in this case the object is 虚実, and if we translate it as "truths and lies," then we need to use "they" instead of "it."<br>
+<br>
+虚実 is tricky. And I can see the plural they makes it even more clumsy. What about:<br>
+"A decorated truth or lie, without love, it cannot be seen"?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1867">
+	<div class="info">
+		<p class="poster">Knox</p>
+		<p class="dt">2016-10-03 02:36:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote class="uncited"><div>What about:<br>
+"A decorated truth or lie, without love, it cannot be seen"?</div></blockquote>That sounds usable <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"><br>
+<br>
+A few other ideas were on my mind:<br>
+1) "The embellished half-truth/partial truth"<br>
+2) "The/My tapestry of truth and lies"<br>
+3) "The/My ornate web of truth and lies"<br>
+<br>
+I think we would like this to be decided quickly, though, so we will go ahead with yours unless we hear back within the next day or two <img class="smilies" src="../../../images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Очень доволен"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1869">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2016-10-03 18:41:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I like the poetic one!<br>
+<br>
+The tapestry of truth and lies--without love, it cannot be seen.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1870">
+	<div class="info">
+		<p class="poster">newtonseple</p>
+		<p class="dt">2016-10-04 01:24:30</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yes! Definitely "The tapestry of truth and lies".<br>
+<br>
+Also, about the quality of the video... The only 1080p videos I could find are <a href="https://www.youtube.com/watch?v=Jf5TuBb_EqQ" class="exlinks" onclick="this.target='_blank';">https://www.youtube.com/watch?v=Jf5TuBb_EqQ</a> and <a href="https://www.youtube.com/watch?v=hU_vECs4i10" class="exlinks" onclick="this.target='_blank';">https://www.youtube.com/watch?v=hU_vECs4i10</a><br>
+The original youtube video mentioned by yo-yu in his post(<a href="http://yohyu.blog100.fc2.com/blog-entry-172.html" class="exlinks" onclick="this.target='_blank';">http://yohyu.blog100.fc2.com/blog-entry-172.html</a>) is down. Probably posted on Alchemist channel or something.<br>
+<br>
+Maybe try asking yo-yu for the original file directly? His email is right there on the blog, and it seems like he is active. Maybe he would even be interested in remaking one or both of the other two openings. One can always dream...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1871">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-10-04 10:23:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Dropped him an e-mail. Preferred not to bother somebody with extra work, but asked for a video file. Perhaps he sees a message, and hopefully he still has the file.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1888">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-10-25 21:01:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Alright, this is now included in the latest update:<br>
+<a href="https://umineko-project.org/en/2016/10/rondo-refresh/" class="loclinks" onclick="this.target='_blank';">https://umineko-project.org/en/2016/10/rondo-refresh/</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

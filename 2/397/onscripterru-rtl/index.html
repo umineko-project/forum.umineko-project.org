@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>onscripter-ru RTL - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+
+<h1>onscripter-ru RTL</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=397">https://forum.umineko-project.org/viewtopic.php?t=397</a>
+-->
+
+<div class="post" id="p4423">
+	<div class="info">
+		<p class="poster">uminar</p>
+		<p class="dt">2022-01-11 21:12:58</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi<br>
+is there any chance to implement right to left dialogues in onscripter-ru ?<br>
+We want to translate the game into Arabic (translation almost ready but we need RTL support)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4425">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2022-01-12 03:33:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi,<br>
+<br>
+Yes, of course, the build system of onscripter-ru is still in a fairly decent state, so it is possible. Unfortunately you will have to be mostly on your own doing that. My suggestion is to modify the language command to allow for Arabic, and then rework the text rendering system to swap the coordinates, it is mostly in Dialogue.cpp.<br>
+<br>
+We can surely participate in the integration of the patches into the main branch of the repository (<a href="https://github.com/umineko-project/onscripter-ru" class="exlinks" onclick="this.target='_blank';">https://github.com/umineko-project/onscripter-ru</a>) once the pull-requests are ready.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4427">
+	<div class="info">
+		<p class="poster">uminar</p>
+		<p class="dt">2022-01-12 07:15:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thanks for the reply<br>
+the problem is that I am not familiar with that code, it's like a puzzle I can't figure out which variable is what.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4428">
+	<div class="info">
+		<p class="poster">uminar</p>
+		<p class="dt">2022-01-12 10:30:30</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I can't even compile the engine<br>
+it says something about SDL not finding the autoconfig</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4429">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2022-01-12 10:39:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Unfortunately we are very tired of this project to spend extra time on it both free and paid. The compilation instructions are published here: <a href="https://github.com/umineko-project/onscripter-ru/blob/master/Resources/Docs/Compilation.md" class="exlinks" onclick="this.target='_blank';">https://github.com/umineko-project/onsc ... ilation.md</a>. Hope it helps!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4430">
+	<div class="info">
+		<p class="poster">uminar</p>
+		<p class="dt">2022-01-12 10:57:27</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">We followed the compilation instructions we even hired pro devs but they all failed to compile it<br>
+We lost all hopes</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4431">
+	<div class="info">
+		<p class="poster">Deca</p>
+		<p class="dt">2022-01-12 18:44:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote cite="./viewtopic.php?p=4430&amp;sid=e6e9fbf73991cb9fad80e7e0cf7cb237#p4430"><div><cite>uminar wrote: <a href="./viewtopic.php?p=4430&amp;sid=e6e9fbf73991cb9fad80e7e0cf7cb237#p4430" data-post-id="4430" onclick="if(document.getElementById(hash.substr(1)))href=hash" class="loclinks">↑</a><span class="responsive-hide">12 Jan 2022, 13:57</span></cite>
+We lost all hopes</div></blockquote>
+
+Try DM <a href="https://gitlab.com/Neurochitin/kaleido/-/blob/on-ru/onscripter-ru-docs.md" class="exlinks" onclick="this.target='_blank';">Neurochitin</a>. He's writing a documentation for onscripter-ru. Probably the only human, except for UP's staff, who understand how the engine works.The documentation itself may not be useful for your purpose, but he probably can help you.<br>
+
+<blockquote cite="./viewtopic.php?p=4429&amp;sid=e6e9fbf73991cb9fad80e7e0cf7cb237#p4429"><div><cite>vit9696 wrote: <a href="./viewtopic.php?p=4429&amp;sid=e6e9fbf73991cb9fad80e7e0cf7cb237#p4429" data-post-id="4429" onclick="if(document.getElementById(hash.substr(1)))href=hash" class="loclinks">↑</a><span class="responsive-hide">12 Jan 2022, 13:39</span></cite>
+Unfortunately we are very tired of this project to spend extra time on it both free and paid</div></blockquote>
+
+Riposa, riposa in pace, Saku's dream.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4432">
+	<div class="info">
+		<p class="poster">uminar</p>
+		<p class="dt">2022-01-12 21:53:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thank you Deca, I will try to reach Neurochitin</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

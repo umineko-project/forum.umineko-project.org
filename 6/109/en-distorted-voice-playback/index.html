@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>[EN] Distorted Voice playback - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+
+<h1>[EN] Distorted Voice playback</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=109">https://forum.umineko-project.org/viewtopic.php?t=109</a>
+-->
+
+<div class="post" id="p1095">
+	<div class="info">
+		<p class="poster">drojf</p>
+		<p class="dt">2015-12-17 10:41:51</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><strong class="text-strong">1. You must make sure to be using the latest engine and game script but even so, write engine filename and script date and filename here.</strong><br>
+Version v3.2b+<br>
+onscripter-ru_sdl2_win_r1699<br>
+scripts_11.12.15<br>
+<br>
+<strong class="text-strong">3. Describe the issue happened properly, step by step. </strong><br>
+Hi, I was trying out your Episode 2 Beta release, on a Windows 10 x64 machine.<br>
+<br>
+I already played the old umitweak version a long time ago, and noticed some issues when I was playing the chapters 1-4 with voice/sfx/music playback. So I thought I'd try out your version to compare.<br>
+<br>
+The main problem I found was that the voices didn't sound quite right, so I went to the voice folder to play the originals. It looks like during playback, the voices are downsampled from 44100hz to 22000hz ..or some other filtering is applied, making the voices sound a bit muffled, and the "sss" sounds a bit off. Could also be clipping, not sure. Actually upon closer listening it sounds like a slight ringing as well.<br>
+<br>
+I have attached two sound files, one from the game, and one playing the voice files back in foobar. The game was played with the VOICE volume set to 6/10, and all other volumes set to 0/10 (off) - this file is (bad eva). The other (good eva) is playing the raw sound files (in the sound\voice\05 folder) in foobar. Both are recorded the same way to make the comparison fair (my soundcard has loopback recording built in, so I used Audacity to record it). They have both been amplified to reach the same volume level so there is no discrepancy in that respect. <br>
+<br>
+(note: only the first few phrases are the same)<br>
+<br>
+Eva Sound Samples: <a href="https://mega.nz/#F!Iswy2KQJ!vmKIXe7zTa811SRhwEng8g" class="exlinks" onclick="this.target='_blank';">https://mega.nz/#F!Iswy2KQJ!vmKIXe7zTa811SRhwEng8g</a><br>
+<br>
+Streaming (not really a good way to compare):<br>
+<a href="https://clyp.it/fbc3nvfe" class="exlinks" onclick="this.target='_blank';">https://clyp.it/fbc3nvfe</a><br>
+<a href="https://clyp.it/lkss2o0f" class="exlinks" onclick="this.target='_blank';">https://clyp.it/lkss2o0f</a><br>
+<br>
+I think you'll agree that they sound slightly different, the only question is whether this only happens on my machine or not :S. <br>
+<br>
+<strong class="text-strong">5. It may well be helpful to post your hardware information here (esp. CPU, GPU, RAM, VRAM).</strong>
+<div class="codebox"><p>Code:</p><pre><code>         Operating System: Windows 10 Pro 64-bit (10.0, Build 10240) (10240.th1_st1.151104-1714)
+                 Language: English (Regional Setting: English)
+                Processor: Intel(R) Core(TM) i5-4570S CPU @ 2.90GHz (4 CPUs), ~2.9GHz
+                GPU: Intel HD Graphics 4600 (Integrated Graphics)
+                Soundcard: Realtek ALC892
+                   Memory: 8192MB RAM
+      Available OS Memory: 7846MB RAM
+          DirectX Version: 12
+       System DPI Setting: 96 DPI (100 percent)
+           DxDiag Version: 10.00.10240.16384 64bit Unicode</code></pre></div></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1098">
+	<div class="info">
+		<p class="poster">Knox</p>
+		<p class="dt">2015-12-17 14:23:48</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Great find. Thank you for the detailed report <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"> I verified the issue on my machine.<br>
+<br>
+We will explore this today.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1099">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2015-12-17 21:52:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I think we have resolved the issue, many thanks for such a find. <br>
+<br>
+The cause is pretty ancient: in old days ons was unable to properly handle 48 KHz sounds, so all the files were downsampled to 44.1 KHz. This created a lot of glitches to lipsync, which we fixed by reencoding the voice files only. However, the default audio rate remained 44.1 causing the voices to be downsampled on the fly.<br>
+<br>
+From this point we have switched to 48 KHz for all the sounds and even reencoded the bgms to get closer to their original quality. This should not only fix your bug, but improve the sound throughout the game. Unfortunately in order to verify the fix you will either have to wait for the next public release, or switch to alpha upgrade channel (which I would prefer <img class="smilies" src="../../../images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Очень доволен">), a fix will arrive there this weekend.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1100">
+	<div class="info">
+		<p class="poster">Knox</p>
+		<p class="dt">2015-12-17 22:13:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Also, if you would like to be featured in our credits for finding this bug, please post your preferred credit name <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1101">
+	<div class="info">
+		<p class="poster">drojf</p>
+		<p class="dt">2015-12-17 23:05:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I can't believe you guys respond so quickly, thanks - you can credit me as "drojf" <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"><br>
+<br>
+hmm I dunno if I have time to be an alpha tester, but I'll at least check this particular issue and put in my alpha test request.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1182">
+	<div class="info">
+		<p class="poster">drojf</p>
+		<p class="dt">2016-01-16 04:02:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi, I tried out the fixed version and all is well, seems to match the voice files in quality.<br>
+<br>
+I was just wondering what the original PS3 voice file format was (i'm guessing AAC or ogg vorbis, but what bitrate?). For the beta versions it's not really worth it to upload huge voice files, but for the final version, would it be possible to use the original voice files? how big is the original voice archive?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1183">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-01-16 13:40:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi,<br>
+<br>
+The original voices are in ATRAC3: 1 ch, 48 KHz, 64 Kbps. We do not support this format decoding, and therefore reencoded them into vorbis: 1 ch, 48 KHz, 80 Kbps. Opensource ATRAC3 decoders are rather imperfect (and at the time we started there were none at all) so even if we bothered using them, which is not a trivial task, there will unlikely be any quality increase. As for sizes, it should be obvious that our voice pack is bigger by ~500 MBs. <br>
+In case you still have doubts I uploaded a couple of original files for a test:<br>
+<a href="http://rghost.ru/private/6sG5cS5sx/6993ebd82cf3f4fa8f40ac783b1b9ec3" class="exlinks" onclick="this.target='_blank';">http://rghost.ru/private/6sG5cS5sx/6993 ... 783b1b9ec3</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

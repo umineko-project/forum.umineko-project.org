@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проблема с Андроид-версией - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+
+<h1>Проблема с Андроид-версией</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=278">https://forum.umineko-project.org/viewtopic.php?t=278</a>
+-->
+
+<div class="post" id="p3129">
+	<div class="info">
+		<p class="poster">SanbikiNoKaeru</p>
+		<p class="dt">2018-11-05 10:56:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Здравствуйте.<br>
+<br>
+Проблема заключается в том, что в мобильной версии наблюдаются артефакты. Причем только в 2 случаях:<br>
+<br>
+<br>
+1. Меню "Персонажи" (см. приложение).<br>
+2. Рот персонажей и его анимация (такого же вида как в п.1, только в меньшем масштабе).<br>
+<br>
+При этом бекграунды и сами персонажи в полном порядке.<br>
+Вопрос соответственно, с чем это может быть связано и можно ли это пофиксить.
+<dl class="codebox"><dt><a href="javascript:void%280%29;" onclick="var el = this.parentNode.parentNode.getElementsByTagName('dd')[0]; var v = el.style.display != 'none'; el.style.display = v ? 'none' : 'block'; this.innerHTML = (v ? '[+]' : '[−]') + ' Spoiler'; ">[+] Spoiler </a></dt><dd style="display:none">
+<div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="Screenshot_2018-11-05-12-54-20-408_org.umineko_project.onscripter_ru%5B1%5D.png" class="postimage" alt="Screenshot_2018-11-05-12-54-20-408_org.umineko_project.onscripter_ru[1].png" onclick="viewableArea(this);"></dt>
+						<dd>Screenshot_2018-11-05-12-54-20-408_org.umineko_project.onscripter_ru[1].png (1.55 MiB) Viewed 6477 times</dd>
+		</dl>
+		
+		
+			</div>
+<div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="Screenshot_2018-11-05-12-54-40-452_org.umineko_project.onscripter_ru%5B1%5D.png" class="postimage" alt="Screenshot_2018-11-05-12-54-40-452_org.umineko_project.onscripter_ru[1].png" onclick="viewableArea(this);"></dt>
+						<dd>Screenshot_2018-11-05-12-54-40-452_org.umineko_project.onscripter_ru[1].png (1.42 MiB) Viewed 6477 times</dd>
+		</dl>
+		
+		
+			</div>
+<div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="Screenshot_2018-11-04-11-24-20-511_org.umineko_project.onscripter_ru%5B1%5D.png" class="postimage" alt="Screenshot_2018-11-04-11-24-20-511_org.umineko_project.onscripter_ru[1].png" onclick="viewableArea(this);"></dt>
+						<dd>Screenshot_2018-11-04-11-24-20-511_org.umineko_project.onscripter_ru[1].png (1.63 MiB) Viewed 6477 times</dd>
+		</dl>
+		
+		
+			</div>
+</dd></dl></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3134">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2018-11-06 09:41:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Привет, скорее всего, дело в особенностях GPU на на мобильном устройстве. Попробуй добавить в ons.cfg следующую строчку:
+<div class="codebox"><p>Code:</p><pre><code>render-self=no</code></pre></div>
+Файлик будет в корне ONScripter-RU в папке игры. Возможно на внутренней памяти устройства (папок бывает несколько), так как на карту памяти обычно записывать нельзя.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3135">
+	<div class="info">
+		<p class="poster">SanbikiNoKaeru</p>
+		<p class="dt">2018-11-06 11:06:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Помогло.<br>
+<br>
+Спасибо за вашу работу на проектом.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

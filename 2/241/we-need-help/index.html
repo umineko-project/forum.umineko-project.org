@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>We need help. - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+
+<h1>We need help.</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=241">https://forum.umineko-project.org/viewtopic.php?t=241</a>
+-->
+
+<div class="post" id="p2725">
+	<div class="info">
+		<p class="poster">InochiPM</p>
+		<p class="dt">2018-02-07 00:08:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">So i know this is kind of a long shot here to ask this, but i have been an alpha tester of umi since i think Ep 3 and up so far everything is good. <br>
+But i have a problem not related to this project and i could really use some help here! <br>
+<br>
+I'm apart of the Higurashi PS3 patch for Higurashi on steam, and recently one of our major editors and coder decided to step away for personal reasons unknown to us and he did taking all of his code and work with him. Now a few of us know what to do but the major thing he was working on was a lipsync patch for higu and it was close to being done as well as he was the only person who really knew how to mess with the assembly.Csharp.dll files with higurashi and were just hurting over this. Its a major blow to our project and were all running around scrambling to figure out what to do! <br>
+<br>
+If anyone here who works on the Umi PS3 game knows how to work with the files for Higurashi on steam and can help us please we really need it right now! We need someone who understands how to code in C# and edit the files for Higurashi. Since its all a unity game now its much different than it used to be. We need someone who can use the code we managed to get off of the github to help us with the Lipsync patch and a few other htings like videos. <br>
+<br>
+please we would forever be greatfull for any help from you guys OTL;;</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2726">
+	<div class="info">
+		<p class="poster">irlPM</p>
+		<p class="dt">2018-02-07 11:32:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">So I'm trying to convert the main higurashi ps3 script(main.snr) to something readable and found out that it uses S-NEO engine as in all previous PS3 (Uminekos) and PS2 games (Parfait, Keyorina, KonnYaku, PureCure, Chanter, Higurashis...) maybe anyone can help? (We currently need to know where the music/bg/effect sounds are being pulled from, the script only contain the voice lines and that is kinda of tricky)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2728">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2018-02-07 22:43:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hello,<br>
+<br>
+We have received a total of three messages with a reasonably similar content regarding Higurashi.<br>
+It took some time to find a free minute to write a reply, so I am sorry for keeping you waiting.<br>
+Since the context is more or less similar, I will address all the messages at once.<br>
+<br>
+Yes, we do have a basis for the necessary toolset to work with Higurashi PS3, the script decompiler is actually not fully ready, but it should not take too much time to finish it if we had to. I suppose our engine will be able to run the converted game with reasonably few modifications too, although these are just the estimates we had after observing the script a couple of years ago.<br>
+<br>
+However, to put it simply, it is unclear what you want by your claim. So far all the "ps2fications" or "ps3patches" I saw were full of bugs, and I really could not have made myself to get past a chapter. If you ask for us to reverse-engineer the script for you, what are the guarantees that our time spent will result in a port we will enjoy playing (even after 3 years or more). If you ask for us to continue your job in porting instead of the staff who left, it is kind of the wrong way to do it, from our perspective. If we were to work on it we would want to redo it from scratch, and we neither have the resources (do not forget that we still heavily work on chiru), nor enough desire to take a new project.<br>
+<br>
+Sorry<br>
+<br>
+P. S. I also merged the topics into one.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2729">
+	<div class="info">
+		<p class="poster">irlPM</p>
+		<p class="dt">2018-02-08 00:14:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Actually I just need advice with the script, I believe that our crew is competent enough to make a patch that everyone will enjoy. We have our limitations because of the steam engine but we are trying our best to replicate the sui game. Well, back to the topic we can't locate in the main script where the command lines for the sound/bg/sound effects are  , we already decoded it  but it only contains the voice lines, we did the same with the umineko for reference and it is the same strucutre as well(only the voice lines) , probably you guys   know where the other command lines are located(maybe in other script or something) because I believe everyone in your team  worked so hard to make this awesome port that is  Umineko Project. maybe  you could give us some advice, and help the community to have a better experience with higurashi as a whole.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2731">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2018-02-08 07:26:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Well, ok. "Decoding" just the voice files is kind of inaccurate, you could regex them mostly, but for example you won't be able to see "hidden voice" commands. And without understanding the concept of slots and spritesets and their properties you cannot make sense of the background commands. In any case I will try to find a couple of hours to get our script decoder work a little better with Sui, and will pass it to you in the reasonable future as a PM. Due to our resource limitations I do not think we could do more. Will that be fine?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2732">
+	<div class="info">
+		<p class="poster">irlPM</p>
+		<p class="dt">2018-02-08 11:39:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">That would be really great. If we could get the script with all the  command lines it would accelerate everything in almost 1000%. Thank you so much for helping. I'll wait for your PM.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

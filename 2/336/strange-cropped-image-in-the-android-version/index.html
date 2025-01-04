@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Strange cropped image in the Android version - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+
+<h1>Strange cropped image in the Android version</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=336">https://forum.umineko-project.org/viewtopic.php?t=336</a>
+-->
+
+<div class="post" id="p4040">
+	<div class="info">
+		<p class="poster">vmarcelo</p>
+		<p class="dt">2020-03-10 20:17:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I installed the android version of Onscripter-Ru, everything worked fine except the image of the game itself<br>
+<br>
+<a href="https://imgur.com/a/UfhPMKd" class="exlinks" onclick="this.target='_blank';"> https://imgur.com/a/UfhPMKd </a><br>
+<br>
+I tried changing the resolution of the game but nothing happens<br>
+<br>
+Can anyone help me?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4041">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2020-03-10 20:22:30</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I could suggest trying to add render-self=no to ons.cfg, but most likely it is some issue with your phone/drivers.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4042">
+	<div class="info">
+		<p class="poster">vmarcelo</p>
+		<p class="dt">2020-03-10 20:45:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I tried to do that, but nothing happened either, i searched a lot before posting here</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4043">
+	<div class="info">
+		<p class="poster">vmarcelo</p>
+		<p class="dt">2020-03-10 20:49:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I forgot to say but, my phone is a Motorola One Vision</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4221">
+	<div class="info">
+		<p class="poster">Khlover</p>
+		<p class="dt">2020-11-24 09:21:51</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I am also experiencing this issue on a Sony Xperia 1, it's somewhat playable but it's like the screen believes it's the right size. <br>
+<br>
+I can see this as when navigating the menu I have to tap an inch or two to the left of the item I want to select. <br>
+<br>
+Changing resolutions does not appear to resolve the issue, nor does the suggested ons tweak. <br>
+<br>
+Any help would be greatly apreciated.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4224">
+	<div class="info">
+		<p class="poster">GeniuneWinrar</p>
+		<p class="dt">2020-11-25 22:46:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">i have the same problem on windows. everything is on 1080p just like my monitor. but on windowed mode the screen is too big so everything is cropped</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4320">
+	<div class="info">
+		<p class="poster">ndgnuh</p>
+		<p class="dt">2021-03-04 07:43:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I'm having the same problem on RedmiNote9 Pro. Have anyone found out how to workaround this?  <img class="smilies" src="../../../images/smilies/icon_e_sad.gif" width="15" height="17" alt=":(" title="Грустный"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4323">
+	<div class="info">
+		<p class="poster">ndgnuh</p>
+		<p class="dt">2021-03-05 01:15:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">GUYS I DID A THING!<br>
+<br>
+Apk + patched source here: <a href="https://github.com/ndgnuh/onscripter-ru-longscreen/releases/tag/longscreen" class="exlinks" onclick="this.target='_blank';">https://github.com/ndgnuh/onscripter-ru ... longscreen</a><br>
+<br>
+Edit: I forgot to mention that you have to put the game in fullscreen mode. Here is my ons.cfg just in case
+<div class="codebox"><p>Code:</p><pre><code>fullscreen
+prefer-renderer=GLES3
+force-fps=30
+window-width=2560
+game-script=wh.file
+render-self=no
+scale
+</code></pre></div>
+
+If you find tapping your phone have no effect on the buttons, it is because the button is somehow miss-placed. In that case, pull down the statusbar real hard so that the navigation bar and the status bar popup, after that everything should be normal again (maybe?). <br>
+<br>
+I was <em class="text-italics">blind patching</em> so I don't guarantee that this will work on your phone. But as long as the chance is not zero... &gt;:)<br>
+<br>
+<img src="https://user-images.githubusercontent.com/33273948/110052570-5cc05700-7d8a-11eb-9f57-b527cbe737fb.png" class="postimage" alt="Image"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4325">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2021-03-09 19:58:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Congratulations! It is a useful find, though now I believe the workaround is much simpler.<br>
+<br>
+UPD: Most of the discussion is ongoing in <a href="https://github.com/ndgnuh/onscripter-ru-longscreen/compare/longscreen...master" class="exlinks" onclick="this.target='_blank';">https://github.com/ndgnuh/onscripter-ru ... n...master</a>.<br>
+
+<dl class="codebox"><dt><a href="javascript:void%280%29;" onclick="var el = this.parentNode.parentNode.getElementsByTagName('dd')[0]; var v = el.style.display != 'none'; el.style.display = v ? 'none' : 'block'; this.innerHTML = (v ? '[+]' : '[−]') + ' Spoiler'; ">[+] Spoiler </a></dt><dd style="display:none">The only relevant change seems to be an ons.cfg change, not the engine change. Let me explain why. Here is the changeset you made:<br>
+<a href="https://github.com/ndgnuh/onscripter-ru-longscreen/compare/longscreen...master" class="exlinks" onclick="this.target='_blank';">https://github.com/ndgnuh/onscripter-ru ... n...master</a><br>
+<br>
+1. dw &gt; 0 will essentially be always false on Android, as it equals preferred_width, which can only be 0, as it is set exclusively via ONScripter::setPreferredWidth function, and this function cannot be called on anything but desktop platforms. See the preprocessor guide in Loader.cpp. Therefore the change does nothing to the game behaviour.<br>
+2. rw and rh also are essentially script_width and script_height values passed to the WindowController::applyDimensions function, so replacing rw with script_width and rh with script_height does not change the code behaviour. All the values remain the same.<br>
+3. Returning true instead of false from WindowController::updateDisplayData also makes no difference for Android as this path is not taken. In the ons.cfg you have <strong class="text-strong">scale</strong> option, which is equivalent to scaled_flag in the code. As a result displayData.fullscreenDisplay is always set to a valid screen inside the for (int d = 0; d &lt; displays; d++) loop, and then the function enters the if (displayData.fullscreenDisplay) condition and always returns with true.<br>
+<br>
+All this combined no code change happened after you modded the engine. The only actual change that helped you is the addition of <strong class="text-strong">fullscreen</strong> option, which forces SDL in fullscreen in mode. I believe this is where the bug was. Please try to just add this option with the unmodded engine and confirm that it works. Afterwards, please take down the repo not to confuse people.</dd></dl></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

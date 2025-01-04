@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Automating which openings play in Rondo depending on the episode - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+
+<h1>Automating which openings play in Rondo depending on the episode</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=405">https://forum.umineko-project.org/viewtopic.php?t=405</a>
+-->
+
+<div class="post" id="p4457">
+	<div class="info">
+		<p class="poster">GiveUpBrobot</p>
+		<p class="dt">2022-05-19 23:09:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Does anyone know how I could go about editing the game files to automate which opening plays for Rondo depending on the episode? Specifically, I want to play the original PC opening for episodes 1-2, the updated visual PC opening for Episode 3, and the first PS3 opening for Episode 4. I can do this by replacing the name of the mp4 in the game files to switch between the two PC openings, then using ons.cfg to change from the legacy opening to the PS3 opening on episode 4. I would like to automate this process though, so I don’t have to go digging through the files each time I want to change it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4460">
+	<div class="info">
+		<p class="poster">Deca</p>
+		<p class="dt">2022-05-21 01:05:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">First, fork <a href="https://github.com/umineko-project/umineko-scripting" class="exlinks" onclick="this.target='_blank';">this repository</a>.<br>
+I believe you need to make changes in <strong class="text-strong">umi_ftr.txt</strong> to change opening order, and then edit <strong class="text-strong">main.yml</strong> to create new releases in your fork.<br>
+<br>
+In a way, you want to see the openings as they are displayed on the PS4/Switch versions, which I believe is the best, but unfortunately not officially supported here.<br>
+<br>
+Edit: apparently you also need to edit the umi_op.txt inside the "main" folder like was made <a href="https://github.com/Pteryon/umipro-goat/commit/93177a0c28c6426454c5040f6d6f8b3db3ab847b" class="exlinks" onclick="this.target='_blank';">here</a>.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>[EN] Save failure after moving game folder - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+
+<h1>[EN] Save failure after moving game folder</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=113">https://forum.umineko-project.org/viewtopic.php?t=113</a>
+-->
+
+<div class="post" id="p1163">
+	<div class="info">
+		<p class="poster">Knox</p>
+		<p class="dt">2016-01-10 01:26:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Topic for <a href="https://forum.umineko-project.org/viewtopic.php?p=1162#p1162" class="loclinks" onclick="this.target='_blank';">this issue</a>.
+<blockquote><div><cite>Chaumin wrote:</cite>I'm having an issue with saving though. I think it's probably because I moved the game files from my desktop to my documents, since I could still save before I moved everything. Is there any way to fix this without re-downloading everything, or should I keep the files on my desktop?</div></blockquote>Hmmm, it's meant to work even after being moved...<br>
+<br>
+Sorry for the inconvenience, but could you answer some questions? We'd like to get to the bottom of this <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"><br>
+
+<ul><li> Can you describe exactly what happens? <br>
+(Something like: You right click, hit save, choose a slot, see the save appear, exit the game (how?), and when you reopen it and select Load from the main menu the save is not there?)</li>
+<li> Can you PM or post the full path of the game exe in Documents, if that's not confidential? We're interested in whether it has any unusual (non-Latin) characters in it. You can also PM it for privacy. (If the exe is loose in Documents, you can get the full path by right-click -&gt; Properties)</li>
+<li> Can you put your "C:\ProgramData\ONScripter-RU" save data folder in a zip file and attach it to a post or PM?</li>
+<li> What's your <a href="http://www.isunshare.com/windows-10/change-system-locale-in-windows-10.html" class="exlinks" onclick="this.target='_blank';">system locale</a>?</li>
+<li> (Please mention it if: The game crashed and you have an RPT file; you have altered Windows's UAC settings; you have installed iCloud Drive; you have previously run a different version of the game)</li></ul>
+
+Damn, there's just so many ways for things to go wrong... <img class="smilies" src="../../../images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Очень доволен"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1165">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-01-10 14:46:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Given the description Knox forwarded me in the evening, and my crystal ball I have finally got repaired, it looks like a path issue.<br>
+<br>
+ONScripter-RU save<span style="color:#FF0000">*</span> folder is generally chosen in the following order on Windows Vista and above:
+<ul><li>User provided path if <span style="text-decoration:underline">save</span> option is used in ons.cfg;</li>
+<li>Game directory if shfolder does not tell us where ProgramData or AppData are;</li>
+<li>%SYSTEMDRIVE%\Users\%USERNAME%\iCloudDrive if iCloud Drive app is installed and <span style="text-decoration:underline">disable-icloud</span> is not present in ons.cfg;</li>
+<li>%SYSTEMDRIVE%\ProgramData or %SYSTEMDRIVE%\Users\%USERNAME%\AppData\Roaming depending on <span style="text-decoration:underline">current-user-appdata</span> presence in ons.cfg.</li></ul>
+
+If the folder does not exist or is not writable the similar issues you experience will happen. <br>
+It is unlikely shfolder fails on Windows 10, and UAC preferences are now relatively harmless it looks like. <br>
+Therefore I suspect you somehow got a <span style="text-decoration:underline">save</span> option pointing to a non-existent folder present in ons.cfg.<br>
+
+<ul><li>Could you show us ons.cfg contents? (You can open it in Notepad.)</li>
+<li>Did you set <span style="text-decoration:underline">save</span> (or maybe <span style="text-decoration:underline">root</span>) variables in ons.cfg on your own, if they are present?</li>
+<li>If these variables are present and they were not added by you, does removing them help to solve the issue?</li></ul>
+
+Good luck <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"><br>
+<br>
+<span style="color:#FF0000">*</span><span style="color:#CCCCCC">Save folder will not include logs (enabled by use-logfile option) if the iCloudDrive or custom <span style="text-decoration:underline">save</span> path folders are used, err.txt and out.txt will go to a next directory according to the priority. This is done due to an obvious reason.</span></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1166">
+	<div class="info">
+		<p class="poster">Chaumin</p>
+		<p class="dt">2016-01-10 19:01:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">It seems restarting my computer fixed the issue. I guess I should've tried that to begin with lol. Thanks for the help though. <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1167">
+	<div class="info">
+		<p class="poster">Knox</p>
+		<p class="dt">2016-01-10 19:21:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Strange. <img class="smilies" src="../../../images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Очень доволен"><br>
+<br>
+Glad it's fixed, PM or post another topic if you have any other problems~</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

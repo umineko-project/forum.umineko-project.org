@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>The Archive is Corrupt - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+
+<h1>The Archive is Corrupt</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=90">https://forum.umineko-project.org/viewtopic.php?t=90</a>
+-->
+
+<div class="post" id="p922">
+	<div class="info">
+		<p class="poster">Battora18</p>
+		<p class="dt">2015-09-18 19:06:30</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">So I just finished downloading everything. <br>
+I try to extract files from the archive but it just says:<br>
+!   C:\Users\****\AppData\Local\Temp\7zOE6B6.tmp\video_10.07.15.7z: The archive is corrupt<br>
+What do I do?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p923">
+	<div class="info">
+		<p class="poster">Knox</p>
+		<p class="dt">2015-09-18 20:18:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">We did have some problems with our file hosts resulting in corrupted files, but if you downloaded recently it should be fine...<br>
+<br>
+Check the following in order (assuming you have a password for the archive of course, otherwise this will be pointless <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается">):<br>
+<br>
+(<strong class="text-strong">these instructions are for the file you posted, video_10.07.15.7z.001</strong>)<br>
+<br>
+1) If you right-click the file and click Properties, next to "Size:" it should say "840 MB (880,827,802 bytes)" -- if it doesn't, the file is incomplete/corrupt. You can try redownloading, but if the size was close but not exact, let us know which host you used so we can check if it was your connection or the host having a bad file <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"><br>
+<br>
+2) To guarantee support for the archive, you should use 7-Zip v9.35 or newer, or better one of the 15.x series. I've also verified that <a href="http://www.bandisoft.com/bandizip/" class="exlinks" onclick="this.target='_blank';">Bandizip</a> works. To check your 7-Zip version, click the Start menu icon, type "7-Zip" and click on the 7-Zip File Manager, then Help-&gt;About and compare the version number -- if it is lower, you need to upgrade 7-Zip. If you're using a different archiver, we might not have tested it -- let us know what you're using.<br>
+<br>
+3) Try installing <a href="http://implbits.com/products/hashtab/" class="exlinks" onclick="this.target='_blank';">HashTab</a> (you can use it to check files for corruption / broken downloads etc), then right click the file, click Properties, click the new File Hashes tab, and check that the MD5 hash is B45F87B0047BEF5A078A06F0043D599E. (This hash is written out for you when you click the file on the <a href="https://umineko-project.org/en/downloads/" class="loclinks" onclick="this.target='_blank';">Downloads</a> page.) If it isn't the same, the file is incomplete/corrupt.<br>
+<br>
+If you're using a high enough 7-Zip version and the file is the right size and hash, then something is badly wrong and I'll need to get Vit on the case. <img class="smilies" src="../../../images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Очень доволен"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

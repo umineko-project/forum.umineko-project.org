@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Glitch on Windows Tablet? - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+
+<h1>Glitch on Windows Tablet?</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=193">https://forum.umineko-project.org/viewtopic.php?t=193</a>
+-->
+
+<div class="post" id="p2003">
+	<div class="info">
+		<p class="poster">Palcto</p>
+		<p class="dt">2017-02-07 13:22:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I recently downloaded the game, and it works fine on my laptop.<br>
+<br>
+However when I transferred it to my windows tablet this weird glitch happens.<br>
+<br>
+I've already updated my graphics drivers from device controller and have installed older versions of directx. I've also tried to run it on compatibility mode but nothing.<br>
+<br>
+System Specs:<br>
+<br>
+Model: Chuwi Hi8<br>
+Processor: Intel Atom Z3736F @ 1.33Ghz  2.16Ghz<br>
+RAM: 2GB<br>
+OS: 32 bit Windows 10 Home</div>
+<dl class="attachbox">
+					<dt>
+						Attachments
+					</dt>
+											<dd>
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="IMG_20170206_234953.jpg" class="postimage" alt="Sorry, I don't know how to take screenshots on a windows tablet." onclick="viewableArea(this);"></dt>
+			<dd><em>Sorry, I don't know how to take screenshots on a windows tablet.</em></dd>			<dd>IMG_20170206_234953.jpg (1.77 MiB) Viewed 15024 times</dd>
+		</dl>
+		
+		
+			</dd>
+									</dl>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2004">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-02-07 13:27:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi,<br>
+<br>
+The bad news is that you unfortunately suffer from terrible bugs present in Intel HD Graphics video drivers on Windows.<br>
+The good news is that we have a workaround. You can find it on our <a href="https://umineko-project.org/en/known-issues/" class="loclinks" onclick="this.target='_blank';">Known issues</a> page, but let me quote it:<br>
+
+<blockquote class="uncited"><div>— Various visual glitches (like black rectangles, missing textures, random glitches) are known to exist with certain Intel HD 3000 GPUs and newer<br>
+This is partially fixed with our Episode 2 and Episode 3 releases, however, you might need to add an extra configuration option to the ons.cfg file. Firstly try a no-glclear option. If it fails to help, replace it with a no-texture-reuse line. This should fix the glitches, however, you might want a more powerful PC with discrete graphics for a better experience.</div></blockquote>
+
+Let me know if that works for you. Adding an option is as simple as opening this file in some text editor (e.g. Notepad++) and appending a mentioned line to the end of the file.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2005">
+	<div class="info">
+		<p class="poster">Palcto</p>
+		<p class="dt">2017-02-07 14:01:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thank you very much, the first no-glclear thing works perfectly fine!<br>
+<br>
+Now to fix Steins Gates 0 full screen problem... This tablet has way too much problems.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2006">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-02-07 14:08:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Nice it worked. Cannot help you with the other games though <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2009">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2017-03-01 20:33:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">A friend of mine, also using Windows, seems to have similar problems. Sometimes the background is missing, and a mouth becomes disembodied. Do you think it's the same kind of graphic card's issue, Vit9696?<br>
+
+<dl class="codebox"><dt><a href="javascript:void%280%29;" onclick="var el = this.parentNode.parentNode.getElementsByTagName('dd')[0]; var v = el.style.display != 'none'; el.style.display = v ? 'none' : 'block'; this.innerHTML = (v ? '[+]' : '[−]') + ' Spoiler'; ">[+] Spoiler </a></dt><dd style="display:none"><div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="1.png" class="postimage" alt="1.png" onclick="viewableArea(this);"></dt>
+						<dd>1.png (73.72 KiB) Viewed 14938 times</dd>
+		</dl>
+		
+		
+			</div></dd></dl></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2010">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-03-01 20:35:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yeah, that's pretty much the same bug I think. Quite weird, that it is still unfixed on some cards, because several of them did get an update as far as I know. We are looking forward to providing an out of the box solution but unfortunately it is currently impossible to detect the glitch anyhow but visually.<br>
+Could you tell me what gpu does he have and whether the suggested workaround helped him?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2011">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2017-03-01 20:40:58</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">We communicated online, across different time zones. I have asked him for further details, and provided him with your "known issues" workaround. Hopefully it will work for him as well. I will report back by tomorrow.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2012">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-03-01 20:46:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Understood, well, let's hope it works for him <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2013">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2017-03-02 18:27:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Problem solved! As suspected, his GPU (ATI Radeon HD 6630M) is closely related to the species of Intel HD 3000 (they are switchable to each other on his VAIO laptop). And there is an updated driver available. Once updated, it works like charm!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2014">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2017-03-02 22:15:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">That's good to hear at least. ATIs also were very problematic at some time. Apparently in the past it was particularly bad with OpenGL support on win, nobody tested it :/</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

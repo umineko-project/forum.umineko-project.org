@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>It's me again (issue lunching the game) - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+
+<h1>It's me again (issue lunching the game)</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=274">https://forum.umineko-project.org/viewtopic.php?t=274</a>
+-->
+
+<div class="post" id="p3118">
+	<div class="info">
+		<p class="poster">helpinghand</p>
+		<p class="dt">2018-11-02 02:50:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Well sorry I'm again bothering here but I have a new issue..<br>
+Today I lunched the game and the game wont start <br>
+<br>
+<img src="https://i.imgur.com/OA3csQa.jpg" class="postimage" alt="Image"><br>
+(it asks me to press any key to continue and then it just closes and nothing)<br>
+<br>
+I was playing normally yesterday and didn't touch or changed anything <br>
+<br>
+I tried with onscripter-ru_win_r3130 too but same thing<br>
+<br>
+what is going on  <img class="smilies" src="../../../images/smilies/icon_eek.gif" width="15" height="17" alt=":shock:" title="В шоке"><br>
+
+<div class="codebox"><p>Code:</p><pre><code>Usage: onscripter-ru [option ...]
+     --cdaudio                    use CD audio if available
+     --waveout-audio              use the windows waveform audio driver (instead
+ of Direct Sound)
+     --match-audiodevice-to-bgm   reset audio to match bgm specs
+     --nomatch-audiodevice-to-bgm don't reset audio to match bgm specs (default)
+
+     --registry file              set a registry file
+     --dll file                   set a dll file
+     --english                    set preferred text mode to English (default)
+     --japanese                   set preferred text mode to Japanese
+ -r, --root path                  set the root path to the game
+ -s, --save path                  set the path to use for saved games
+     --disable-icloud             do not store saved games in iCloud for Windows
+
+     --current-user-appdata       use the current user's AppData folder instead
+of AllUsers' AppData
+     --use-console                use Windows Console for application output
+     --use-logfile                use out.txt and err.txt for application output
+
+     --use-app-icons              use the icns for the current application, if b
+undled/embedded
+     --gameid id                  set game identifier (like with game.id)
+     --game-script                set game script filename
+     --fullscreen                 start in fullscreen mode
+     --window                     start in window mode
+     --scale                      scale game to native display size when in full
+screen mode.
+     --window-width width         set preferred window width
+     --force-png-alpha            always use PNG alpha channels
+     --force-png-nscmask          always use NScripter-style masks
+     --detect-png-nscmask         detect PNG alpha images that actually use mask
+s
+     --force-button-shortcut      ignore useescspc and getenter command
+     --automode-time time         default time at clickwaits before continuing,
+when in automode
+     --voicedelay-time time       additional delay after playing the voices, whe
+n in automode (default: 650)
+     --voicewait-time time        additional delay before automatic voice contin
+uation (default: 500)
+     --final-voicedelay-time time additional delay after playing the final voice
+ in a dialogue, when in automode (overrides voicedelay-time)
+     --nsa-offset offset          use byte offset x when reading arc*.nsa files
+     --allow-color-type-only      syntax option for only recognizing color type
+for color arguments
+     --enable-wheeldown-advance   advance the text on mouse wheeldown event
+     --set-tag-page-origin-to-1   syntax option for setting 'gettaglog' origin t
+o 1 instead of 0
+     --answer-dialog-with-yes-ok  have 'yesnobox' and 'okcancelbox' give 'yes/ok
+' result
+     --audiodriver dev            set the SDL_AUDIODRIVER to dev
+     --audiobuffer size           set the audio buffer size in kB (default: 2)
+     --audioformat format         set the audio format (choose from s8, u8, s16,
+ u16, s32, f32)
+     --renderer-blacklist list    comma-separated list of disabled renderers (ch
+oose from GL2, GLES2, GLES3, ANGLE2, ANGLE3)
+     --prefer-renderer name       try using this renderer first of all
+     --d3dcompiler compiler.dll   hlsl shader compiler library for angle (e.g. d
+3dompiler_43.dll)
+     --force-vsync                forces vsync (default on Windows)
+     --try-late-swap              tries late swap vsync mode (default on other O
+S)
+     --no-texture-reuse           forces freed textures deletion
+     --texture-upload style       set preferred texture uploading fallback (ramc
+opy or perrow, GLES2 only)
+     --no-glclear                 workaround for visual glitches on some specifi
+c hardware
+     --render-self mode           workaround for certain drivers not supporting
+rendering to self (auto, yes, no)
+     --simulate-reads             workaround for visual glitches on some specifi
+c hardware
+     --hwdecoder state            pass on/off to enable/disable hardware video d
+ecoder (default: on)
+     --hwconvert state            pass on/off to enable/disable hardware format
+conversion (default: on)
+     --breakup mode               pass new/old/newintel to enable/disable new br
+eakup effect (default: new)
+     --glassbreak mode            pass new/old to enable/disable new glassbreak
+effect (default: new)
+     --texlimit size              set the maximum texture dimensions (in pixels)
+
+     --chunklimit size            set the maximum texture chunk size (in bytes)
+     --mouse-scrollmul mul        set mouse scroll multipler and direction
+     --touch-scrollmul mul        set touch scroll multipler and direction
+     --full-clip-limit            reduces visible fullscreen area to mitigate ed
+ge artifacts on some resolutions
+     --ramlimit size              set the amount of ram available on your system
+ in megabytes
+     --strict                     treat warnings more like errors
+     --debug                      generate runtime debugging output (use multipl
+e times to increase debug level)
+     --check-file-case            attempt to check file case on case-insensitive
+ file systems
+     --show-fps                   display a ms/frame counter in the window title
+
+     --force-fps value            override all fps changes to this value
+     --cursor                     set cursor parameters: hide, show, auto are su
+pported (default: auto)
+     --pad-map                    provide custom button mapping for a gamepad
+     --prefer-rumble              specify preferred method of gamepad rumble (sd
+l/libusb)
+     --font-overrides             provides custom font mapping interface
+     --font-multiplier            provides custom font scaling interface
+ -h, --help                       show this help and exit
+ -v, --version                    show the version information and exit
+Press any key to continue . . .</code></pre></div></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3119">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2018-11-02 06:42:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi, you most likely have invalid data in ons.cfg. You can either correct or remove this file.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3123">
+	<div class="info">
+		<p class="poster">helpinghand</p>
+		<p class="dt">2018-11-03 04:11:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">ok, i removed it from the folder tried to start the game and obviously didnt start then add it back and now it works fine again, weird since i didnt edit anything.<br>
+Thanks again!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

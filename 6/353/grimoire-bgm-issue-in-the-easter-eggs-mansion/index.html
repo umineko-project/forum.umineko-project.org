@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Grimoire BGM issue (in the Easter Eggs Mansion) - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+
+<h1>Grimoire BGM issue (in the Easter Eggs Mansion)</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=353">https://forum.umineko-project.org/viewtopic.php?t=353</a>
+-->
+
+<div class="post" id="p4170">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2020-07-01 15:28:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The "Promise" in the Grimoire is preceded by BGM "hope."<br>
+<br>
+But in EP5, the BGM should be "dir."<br>
+<br>
+The atmosphere is subtly different. May we change it back to "dir" in Grimoire?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4171">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2020-07-01 18:42:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I am trying to follow <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"> What do you mean in particular?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4174">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2020-07-10 00:01:45</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">In the original EP5 scene, the background music right before the song "Promise" is "dir."<br>
+<br>
+Even though the same scene is reproduced in Grimoire (in the Easter Eggs Mansion), the background music right before the "Promise" becomes "Hope" instead of "dir," because "Hope" is the background music inside the whole Easter Eggs Mansion. But I believe the background music should have changed to "dir" once we click a door to play that particular EP5 scene.<br>
+<br>
+The atmosphere of the whole scene in Grimoire now becomes different. And there is also no differentiation in terms of music between the inside and outside of the scene, since the Mansion's BGM continues into the scene. I was therefore suggesting making a minor change to switch the background music to "dir" when we click the door in Grimoire to enter that scene.<br>
+<br>
+I hope this time I explain myself more clearly?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4175">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2020-07-10 05:57:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yeah, it is more clear now. You could have just mentioned the labels o8_0/omakeeee_m1f_p1br_door to make it obvious. Maybe replace<br>
+
+<div class="codebox"><p>Code:</p><pre><code>*omakeeee_m1f_p1br_door
+csp_rst
+bg black,0
+vol_mix_fade 1000
+flush 2
+wait 500
+goto *o8_0
+goto *omakeeee_m1f_p1br_loop</code></pre></div>
+
+with<br>
+
+<div class="codebox"><p>Code:</p><pre><code>*omakeeee_m1f_p1br_door
+csp_rst
+bg black,0
+vol_mix_fade 1000
+vol_bgm -1,1000
+flush 2
+wait 500
+bgmplay 106,90,0
+wait 500
+goto *o8_0
+goto *omakeeee_m1f_p1br_loop</code></pre></div>
+
+Will that feel right?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4176">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2020-07-10 14:12:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">That's great! Thanks for making the change.<br>
+<br>
+(I reported as a layman this time, without discussing it with my teammate programmers, so I failed to refer to the code. Sorry...)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4177">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2020-07-10 14:27:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I did not make this change in the repository, but if it works for you, please commit.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4178">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2020-07-14 17:16:23</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Committed. Thanks!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

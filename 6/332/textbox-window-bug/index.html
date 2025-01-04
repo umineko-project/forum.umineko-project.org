@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Textbox window bug? - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+
+<h1>Textbox window bug?</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=332">https://forum.umineko-project.org/viewtopic.php?t=332</a>
+-->
+
+<div class="post" id="p3988">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2020-01-24 18:43:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">This seems to be a little bug from the English/Russian version, so it might be appropriate to report here rather than in the Chinese SNS bloc.<br>
+<br>
+We stumbled upon this issue when we played with switching between different textbox window types. We found that during the game if we switch from one textbox window type to another and then switch back to the previous type, the dimension of the textbox window would be somehow shifted as well rather than going back to the original state. You can tell from the variations of the distance from the boundaries of the window frame. And this would be reset and back to normal only when we restart the game.<br>
+<br>
+Here are the snapshots we took to show the shift in the textbox window dimension:<br>
+
+<dl class="codebox"><dt><a href="javascript:void%280%29;" onclick="var el = this.parentNode.parentNode.getElementsByTagName('dd')[0]; var v = el.style.display != 'none'; el.style.display = v ? 'none' : 'block'; this.innerHTML = (v ? '[+]' : '[−]') + ' Spoiler'; ">[+] Spoiler </a></dt><dd style="display:none">
+Original textbox window type
+<div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="1.png" class="postimage" alt="1.png" onclick="viewableArea(this);"></dt>
+						<dd>1.png (2.43 MiB) Viewed 22582 times</dd>
+		</dl>
+		
+		
+			</div>
+
+Switch to another textbox window type
+<div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="2.png" class="postimage" alt="2.png" onclick="viewableArea(this);"></dt>
+						<dd>2.png (2.19 MiB) Viewed 22582 times</dd>
+		</dl>
+		
+		
+			</div>
+
+Switch back to the original textbox window type
+<div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="3.png" class="postimage" alt="3.png" onclick="viewableArea(this);"></dt>
+						<dd>3.png (2.22 MiB) Viewed 22582 times</dd>
+		</dl>
+		
+		
+			</div>
+
+In comparison to the 1st pic
+<div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="1.png" class="postimage" alt="1.png" onclick="viewableArea(this);"></dt>
+						<dd>1.png (2.43 MiB) Viewed 22582 times</dd>
+		</dl>
+		
+		
+			</div>
+</dd></dl></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3989">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2020-01-24 18:45:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">One more pic to show the shift in textbox window dimension:<br>
+
+<div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="4.jpg" class="postimage" alt="4.jpg" onclick="viewableArea(this);"></dt>
+						<dd>4.jpg (44.33 KiB) Viewed 22581 times</dd>
+		</dl>
+		
+		
+			</div>
+
+Just thought you might want to know.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3990">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2020-01-24 22:49:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Indeed, the issue is caused due to incomplete textwindow dimension update in settings. There also are issues with changing textbox when fullscreen text is displayed (e.g. in the end of chapter 4 in episode 1).<br>
+<br>
+Fixed in master:<br>
+[master f9aa433] Fix textbox positioning after updating it in settings<br>
+ 1 file changed, 24 insertions(+), 17 deletions(-)<br>
+<br>
+Please report whether it works correctly.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3995">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2020-01-25 19:09:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The fix is good! Problem solved. Many thanks!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4065">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2020-04-13 20:04:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi Vit,<br>
+<br>
+We have just found out that this bug still lingers. If one saves and then loads the file, the dimension of the textbox window would shift. Would you please help fix it? Many thanks!<br>
+<br>
+Here are the snapshot:<br>
+
+<dl class="codebox"><dt><a href="javascript:void%280%29;" onclick="var el = this.parentNode.parentNode.getElementsByTagName('dd')[0]; var v = el.style.display != 'none'; el.style.display = v ? 'none' : 'block'; this.innerHTML = (v ? '[+]' : '[−]') + ' Spoiler'; ">[+] Spoiler </a></dt><dd style="display:none">The normal textbox window dimension:<br>
+
+<div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="1.jpg" class="postimage" alt="1.jpg" onclick="viewableArea(this);"></dt>
+						<dd>1.jpg (127.22 KiB) Viewed 21816 times</dd>
+		</dl>
+		
+		
+			</div>
+
+The shifted dimension after loading:<br>
+
+<div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="2.jpg" class="postimage" alt="2.jpg" onclick="viewableArea(this);"></dt>
+						<dd>2.jpg (127.79 KiB) Viewed 21816 times</dd>
+		</dl>
+		
+		
+			</div></dd></dl></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4066">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2020-04-14 07:06:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Well, old saves will obviously cause the bug. New ones will not. That is expected and not fixable.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4067">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2020-04-14 07:42:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">But these are all new saves. I can testify that the engine, script, save files were all created in this week. And I very recently reset the game and erased all the records before and after the fix. Would you please take a second look? Many thanks!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4068">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2020-04-14 08:02:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hmmm, tried fixing in master.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4069">
+	<div class="info">
+		<p class="poster">YNagato</p>
+		<p class="dt">2020-04-14 08:21:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thanks!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

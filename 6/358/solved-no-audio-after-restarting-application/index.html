@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>[SOLVED] No audio after restarting application - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+
+<h1>[SOLVED] No audio after restarting application</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=358">https://forum.umineko-project.org/viewtopic.php?t=358</a>
+-->
+
+<div class="post" id="p4191">
+	<div class="info">
+		<p class="poster">Ten</p>
+		<p class="dt">2020-08-12 22:37:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi! Hoping someone can help me solve this issue.<br>
+<br>
+Fresh install. Everything works fine... until I restart the application. On relaunching the application, there is no audio.<br>
+I'm able to get audio back if I delete gloval.sav, but this makes my save files incompatible.<br>
+<br>
+<strong class="text-strong">System Info</strong><br>
+Operating System: Windows 10<br>
+Game Version: 8.1b r3520<br>
+<br>
+<strong class="text-strong">FAQ</strong><br>
+1. The game is not muted. M / Alt + M does nothing.<br>
+2. This isn't a general PC audio issue. I still get sound from all other applications.<br>
+<br>
+<strong class="text-strong">Things I've tried</strong><br>
+3. Deleting everything and reinstalling - didn't work<br>
+4. Restarting the audio service for Windows - didn't work<br>
+5. Deleting the audio policy config registry key for onscripter-ru.exe - didn't work<br>
+<br>
+<strong class="text-strong">Additional information</strong><br>
+Not sure if this is relevant, but despite this being a fresh install that I downloaded today from <a href="https://umineko-project.org/en/downloads/" class="loclinks" onclick="this.target='_blank';">https://umineko-project.org/en/downloads/</a><br>
+I see red text on the title screen that says "Your game is over 6 months old, it might be outdated!"<br>
+<br>
+Considering all of this, and that the problem can be solved by deleting gloval.sav, it would appear that there's some kind of issue with the application rather than an issue on my end.<br>
+<br>
+Thanks.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4192">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2020-08-13 08:22:30</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Whether the game is muted or not is displayed in the window title bar. You will be able to see [Sound: Off] if the game is muted. Please check. If it is not, try updating to the latest alpha version:<br>
+<a href="http://github.com/umineko-project/umineko-scripting/releases/latest" class="exlinks" onclick="this.target='_blank';">http://github.com/umineko-project/umine ... ses/latest</a><br>
+<a href="http://github.com/umineko-project/onscripter-ru/releases/latest" class="exlinks" onclick="this.target='_blank';">http://github.com/umineko-project/onscr ... ses/latest</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4193">
+	<div class="info">
+		<p class="poster">Ten</p>
+		<p class="dt">2020-08-13 21:05:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The title bar displays: 'Umineko no Naku Koro ni ~Rondo of Witch and Reasoning~ (8.1b r3520)'<br>
+<br>
+I've now updated to 8.2 r3596 + OnscripterRU r3567, but unfortunately there's still no sound. And the title bar gives no indication the game is muted. And, to be sure, I deleted the ProgramData folder contents before updating. Problem is still resolved by deleting gloval.sav.<br>
+<br>
+<img src="https://i.imgur.com/bEeY8if.png" class="postimage" alt="Image"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4194">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2020-08-14 09:06:23</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Is the sound enabled in game preferences?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4195">
+	<div class="info">
+		<p class="poster">Ten</p>
+		<p class="dt">2020-08-14 09:30:53</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yes.<br>
+<br>
+<img src="https://i.imgur.com/YwpwqK4.png" class="postimage" alt="Image"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4196">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2020-08-17 13:56:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Really unsure what can it be. Anything in the log? You could enable it with `use-console` ons.cfg parameter for instance.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4197">
+	<div class="info">
+		<p class="poster">Ten</p>
+		<p class="dt">2020-08-18 08:17:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Uhhh...<br>
+<img src="https://i.imgur.com/001Vvz5.png" class="postimage" alt="Image"><br>
+<br>
+Apparently this is an issue with WASAPI. I looked it up and it's a known bug. Running this in command prompt seems to fix it:
+<div class="codebox"><p>Code:</p><pre><code>setx SDL_AUDIODRIVER directsound</code></pre></div>
+
+As for why it happens specifically with Umineko Project, and only after the first launch, I have no idea. I haven't seen this with any other app.<br>
+In any case, at least it's documented now?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4199">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2020-08-18 17:08:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Congrats! This is indeed strange. We know about this bug and in fact force directsound when initialising:<br>
+
+<div class="codebox"><p>Code:</p><pre><code>	it = ons_cfg_options.find("audiodriver");
+	if (it != ons_cfg_options.end()) {
+		SDL_setenv("SDL_AUDIODRIVER", it-&gt;second.c_str(), true);
+	} else {
+#ifdef WIN32
+		// WASAPI driver that appeared in 2.0.7 is total garbage
+		SDL_setenv("SDL_AUDIODRIVER", "directsound", false);
+#endif
+	}</code></pre></div>
+
+You could technically write ons.cfg audiodriver=directsound, but this will likely also fail. Perhaps SDL broke something again <img class="smilies" src="../../../images/smilies/icon_mad.gif" width="15" height="17" alt=":x" title="Раздражён"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p4200">
+	<div class="info">
+		<p class="poster">Ten</p>
+		<p class="dt">2020-08-19 08:02:35</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Really weird that it fails to force directsound when it's right there in the code. I guess I should have considered driver issues from the start.<br>
+<br>
+Thanks for the help.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">β-testing / β-тестирование</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

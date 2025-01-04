@@ -1,0 +1,206 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ran into a little problem here - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+
+<h1>Ran into a little problem here</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=183">https://forum.umineko-project.org/viewtopic.php?t=183</a>
+-->
+
+<div class="post" id="p1912">
+	<div class="info">
+		<p class="poster">ritsulaw</p>
+		<p class="dt">2016-11-18 00:16:13</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">When I try to launch the game by ''onscripter-ru_win_r2397.exe'' it always gives me this error:<br>
+<img src="https://scontent.ffor2-1.fna.fbcdn.net/v/t1.0-9/15036181_1189393591142826_716288774227622119_n.jpg?oh=ec709954f39bcfdd6ae5564fcffbaccc&amp;oe=5888EA16" class="postimage" alt="Image"><br>
+My system is windows 10, 32 bits (with a 64 bits based processor), 3.2GHz, 4gb of ram, with a onboard intel video card, but I never ran in a problem with OpenGL before when running other visual novels, not even with Nek*para.<br>
+I tried changing the resolution on ''default.cfg'', but it keeps giving me this error.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1913">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-11-18 04:41:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hello,<br>
+<br>
+May we know which CPU model do you have? You could find it by right-clicking Start button and choosing System. There will be a complete CPU name in Processor field.<br>
+<br>
+I am afraid your issue might be in Windows 10. Intel dropped the support of two relatively recent generations of CPUs starting with Windows 8 (<a href="http://www.intel.com/content/www/us/en/support/processors/000006105.html" class="exlinks" onclick="this.target='_blank';">http://www.intel.com/content/www/us/en/ ... 06105.html</a>). That includes Nehalem and Sandy Bridge series. As a result these CPUs did not get compatible GPU drivers, and they miss any OpenGL implementation but 1.1, which is not even accelerated. There also is a number of other irrelevant limitations.<br>
+<br>
+According to steam Nekopara (hopefully I picked the right name) uses not OpenGL but DirectX 9 which is somewhat supported in the aforementioned processors thanks to the changes made by Microsoft itself.<br>
+<br>
+If your CPU is supported, then you likely only need to upgrade your GPU drivers. If your CPU is not supported your only options are Linux or Windows 7.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1914">
+	<div class="info">
+		<p class="poster">ritsulaw</p>
+		<p class="dt">2016-11-18 05:33:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Oh, sorry, I forgot to say what's my CPU's model; its a Intel pentium dual core.<br>
+And, uhh, sorry to ask, but, how do I upgrade the drives? I hope it's not a problem with windows 10... If I changed to the 64 bits version, do you think that would solve the problem?<br>
+Thanks for the attention.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1915">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-11-18 06:09:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">That is unfortunately not much clearer. There are dozens of different pentium dual core processors, and we need an exact cpu model number, e.g. E2210. Check the window I mentioned, you could make a screenshot of the line if you do not want to retype <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"><br>
+Switching to 64-bit will not help almost certainly. Once I know the cpu model number I could try to find the driver for you.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1916">
+	<div class="info">
+		<p class="poster">ritsulaw</p>
+		<p class="dt">2016-11-18 15:53:48</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ah, I see, here it is: <img src="https://scontent.ffor2-1.fna.fbcdn.net/v/t1.0-9/15055615_1190026911079494_1588762247144858455_n.jpg?oh=0fb876c0371848344039b35b2e13c8fc&amp;oe=58BFAE00" class="postimage" alt="Image"><br>
+I guess it's E2160 then?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1917">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-11-19 00:17:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">It is. However, this also means that your CPU has no graphics chip in it aside basic framebuffer output.<br>
+If you play DirectX games without issues I expect you to have a discrete GPU you do not know about.<br>
+You could find the model by pressing win+r and typing in dxdiag. There is an instruction here if you have any issues <a href="http://m.wikihow.com/Find-Out-What-Graphics-Card-You-Have" class="exlinks" onclick="this.target='_blank';">http://m.wikihow.com/Find-Out-What-Grap ... d-You-Have</a>.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1918">
+	<div class="info">
+		<p class="poster">ritsulaw</p>
+		<p class="dt">2016-11-19 02:17:23</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Oh, I didn't know there was such a easy way to know that. Here it is:<br>
+<img src="https://scontent.ffor2-1.fna.fbcdn.net/v/t1.0-9/15095534_1190452734370245_1352465699436895194_n.jpg?oh=6108ba927d9770a9ba37855c493cd1bc&amp;oe=58C13473" class="postimage" alt="Image"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1919">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-11-19 03:12:30</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ernngh. So, the official Intel website is just misleading, and your processor actually does have built-in GPU: Intel GMA G41.<br>
+And as I suspected it looks like the last working driver with OpenGL support was released for Windows 7. However, according to the net you could install it on Windows 8.1 and even on Windows 10.<br>
+<br>
+But what we almost certainly have is Microsoft supplying its own version of the driver which is not compatible with OpenGL :/. This means we somehow need to install the right one and prevent the wrong one from automatic installation.<br>
+<br>
+1. Check the driver version to make sure my thoughts are correct.<br>
+— Open Device Manager (accessible from right clicking on Start);<br>
+— Go to video adapters (or maybe graphics adapters unsure of the translation);<br>
+— Open the properties of your video adapter and go to Driver tab;<br>
+— Note the driver version there.<br>
+If my thoughts are correct, then it is (much) higher than 15.17.19.2869, e.g. 15.22 or something like that.<br>
+If it is not, you better report it here, so that I could correct the guide.<br>
+<br>
+2. Disable automatic driver installation from windows update and uninstall the original driver.<br>
+This page properly describes the procedure:<br>
+<a href="http://www.howtogeek.com/223864/how-to-uninstall-and-block-updates-and-drivers-on-windows-10/" class="exlinks" onclick="this.target='_blank';">http://www.howtogeek.com/223864/how-to- ... indows-10/</a><br>
+Check "Disable Automatic Download of Drivers from Windows Update" section.<br>
+After you are done uninstall your video adapter driver according to "Uninstall a Driver" section.<br>
+<br>
+Do NOT reboot.<br>
+<br>
+3. Install the right driver and reboot.<br>
+<br>
+Download and install either of the two:<br>
+<a href="https://downloadcenter.intel.com/download/22165" class="exlinks" onclick="this.target='_blank';">https://downloadcenter.intel.com/download/22165</a> — last compatible driver (I would try it first)<br>
+<a href="https://downloadcenter.intel.com/download/18400" class="exlinks" onclick="this.target='_blank';">https://downloadcenter.intel.com/download/18400</a> — previous compatible driver often found in guides<br>
+<br>
+Extract, run, reboot. Running might require setting compatibility file properties of the setup executable to Windows 7.<br>
+<br>
+After rebooting it is worth opening Device Manager (accessible from right clicking on Start) and checking gpu video adapter driver version. It must be 15.17.19.2869 or 15.17.17.2413.<br>
+<br>
+Please report the results and try to run umi <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"><br>
+Good luck!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1920">
+	<div class="info">
+		<p class="poster">ritsulaw</p>
+		<p class="dt">2016-11-19 17:32:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">It all went well until the part where I have to install the driver. I tried to install both you listed but both had me a error, ''This Pc Does Not Meet The Minimum Requirement'', I tried running it in win 7/vista compatibility, but it ended the same. I tried to install the same drivers but for 64 bits systems too, to no avail. I searched a little and found this file, and it instaled without errors: <a href="https://downloadcenter.intel.com/download/18402" class="exlinks" onclick="this.target='_blank';">https://downloadcenter.intel.com/download/18402</a>, but in the driver properties it says the version as ''8.15.10.2413''?<br>
+<img src="https://scontent.ffor2-1.fna.fbcdn.net/v/t1.0-9/15055829_1191124920969693_425927170960468122_n.jpg?oh=f52a43025b7ad6eb36f07da78ba7c0dd&amp;oe=58894D0F" class="postimage" alt="Image"><br>
+And I tried running the game again but the error persists. Oh, and because of some other programs that were giving me a headache I changed my system to 64 bits yesterday, if that says anything. Thanks for all the help.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1921">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-11-19 17:39:00</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hmm. Maybe you could try installing the driver manually via Device Manager.<br>
+There is a video instruction with the details: <a href="https://youtu.be/0hmdQO-ewl4" class="exlinks" onclick="this.target='_blank';">https://youtu.be/0hmdQO-ewl4</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1922">
+	<div class="info">
+		<p class="poster">ritsulaw</p>
+		<p class="dt">2016-11-19 23:05:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Following that tutorial I managed to install it manually, but I still get the same error when trying to launch the game. I guess it's just that my video card isn't compatiple with it. But it's fine, I mean, I played the first chapter of the game already on my PC copy using the ps3 sprites patch, and apart from the horrible resolution and lack of CG's, it's still better than my PS3 copy; I tried playing it a little(i'm fluent in japanese so that's not a problem) but, even tough the graphics and engine are eons better, it just doesn't feel right to play a visual novel on a console. I'll try playing a few more chapters on the original VN before I finally buy a good video card, and then I'll definitly switch to the version made by you guys. By what i've seen on videos it really looks fantastic, even better than the ps3 version, and it's amazing for you guys do all that for free, so I'd like to thank you all by your hard work. And thank you for the help too, it's rare for a developer to care so much about just one error like this. <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"><br>
+Oh, and I'm loving the game so far, I can definitely see why you guys wanted to give such a special treatment to it like this.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1923">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-11-20 05:46:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">It is a bit unfortunate that it did not work, but I would have to admit it was not unlikely from the beginning.<br>
+Even if we did get the game launch, the performance would have been not so good.<br>
+<br>
+As for ps3 and our port differences, let me be honest, they are not as great as you might think, probably it is more to do with the taste and preference. Aside some small alterations coming from PC and PSP, I could only remember a single significant visual change compared to PS3: stateful effect transitions. PS3 does not have enough power to preserve before scene animations (e.g. rain) during the transition from before to after. And that's probably all of it, the rest is more or less 1:1.<br>
+<br>
+Anyway, I hope you could enjoy the game to the fullest with a discrete gpu later.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

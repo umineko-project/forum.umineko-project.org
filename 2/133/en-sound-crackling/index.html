@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>[EN] Sound crackling - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+
+<h1>[EN] Sound crackling</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=133">https://forum.umineko-project.org/viewtopic.php?t=133</a>
+-->
+
+<div class="post" id="p1430">
+	<div class="info">
+		<p class="poster">AeddGynvael</p>
+		<p class="dt">2016-06-28 08:44:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thanks for the hard work, first of all.<br>
+I have a problem - everything extracts, runs, looks fine, and there seem to be zero issues with the game, apart from this one thing - the BGM crackles and sounds a bit choppy. I have no idea what causes this, and I've tried everything to fix it, but nothing has helped. SOunds, voices, cinematics, are all fine, it's just the BGM. Is this a known issue and what is the fix if so? Thanks for your time.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1431">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2016-06-28 16:47:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi,<br>
+<br>
+I moved your message to a separate topic to avoid messing up the discussion thread <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"><br>
+<br>
+This is the first time we hear of this issue (if I remember correctly), so it is definitely not known about.<br>
+I think we will need a lot of details to solve it. As for now it should be vital to know:<br>
+— what audio codec do you have (might need something like AIDA64 if windows device manager does not display it)? You could also name the model of your laptop/motherboard, I guess, it might be easier to go this way.<br>
+— which driver (system-provided/custom downloaded) and which driver version do you use?<br>
+— how do you output your audio (3.5 mm jack, dvi audio, hdmi audio)?<br>
+— what device are you playing audio on?<br>
+<br>
+BGM code is indeed a little different from voices and effects, so I may imagine specific issues there.<br>
+<br>
+First of all it is probably best to check the files themselves. Could you calculate a md5 hash of some bgm file? For example, umib_009.ogg hash (found in sound/bgm folder) is ae48e403968b460912533ee3c030640f. I guess you could use HashTab if you have no program for that. If the hash matches, it is unlikely that the files are corrupt. Could you play this file with some other player?<br>
+<br>
+The second thing to check is the abilities of your audio codec and its driver. All the bgms are encoded with the following parameters: OGG Vorbis, 48 KHz, 256 Kbit/s, 2 channels. If your audio system cannot play 48 KHz sound you might have issues. This is unlikely on any relatively modern PC but I may imagine this happen if the drivers have bugs or are misconfigured.<br>
+<br>
+My third thought is to try switching to waveout driver. Unsure if it still works, but hopefully it does <img class="smilies" src="../../../images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Очень доволен">. Add the following line to your ons.cfg file and restart the game: 
+<div class="codebox"><p>Code:</p><pre><code>waveout-audio</code></pre></div>
+
+Good luck,<br>
+Vit</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>

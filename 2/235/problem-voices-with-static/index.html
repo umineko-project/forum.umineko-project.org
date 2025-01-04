@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Problem voices with static - Umineko Project</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+
+<h1>Problem voices with static</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.umineko-project.org/viewtopic.php?t=235">https://forum.umineko-project.org/viewtopic.php?t=235</a>
+-->
+
+<div class="post" id="p2671">
+	<div class="info">
+		<p class="poster">totopesce</p>
+		<p class="dt">2018-01-26 03:01:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Dont know if anyone has this problem, but when maria or jessica speak in the story theres some noise or distortion along, kind of like when the radio or tv have static or bad reception,but it doesnt seem to happen when I replay the voice, is there any known way to fix it? Had the same problem with the old one with ps3 voices and graphics<br>
+<br>
+Also if theres any way to reduce the speed in which the ending texts roll?<br>
+<br>
+Forgot to put that Im on win 7 64bits with version 4.2b<br>
+<br>
+EDIT: Tried on another PC with and without a DAC and the problem with the audio persists, its more thyan just marie and jessica, others as well in tea party 1 is easy to tell with the 3 first characters that speak<br>
+Heres a link with a recording of the problem: <a href="https://mega.nz/#!p5JEAQAD!DUhQa7impQvKJRFJ4hNP7kxwCednDpmMalrrHtreV70" class="exlinks" onclick="this.target='_blank';">https://mega.nz/#!p5JEAQAD!DUhQa7impQvK ... lrrHtreV70</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2672">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2018-01-26 08:02:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi,<br>
+<br>
+Regarding the ending scrolls we have to stick to PS3 synchronisation. The speed is 1:1 equal to what PS3 has, and because most of the scrolls are synchronised to the music, we simply cannot make them scroll slower. Sorry.<br>
+<br>
+As for noises, I do not think they exist on macOS and iOS at least. Does changing the volume level make any difference? There are several ons.cfg options options to fine-tune volume output. Could you try a different audio driver?
+<div class="codebox"><p>Code:</p><pre><code>audiodriver=winmm</code></pre></div>
+Another thing to try could be changing the audio buffer size:
+<div class="codebox"><p>Code:</p><pre><code>audiobuffer=8</code></pre></div>
+Instead of 8 you could yse 1, 2 (default), 4, 8, 16.<br>
+Other than that we have another driver and a number of audio subsystem changes in the upcoming update. You should probably try these suggestions, and if nothing helps, may I ask you to try the alpha?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2673">
+	<div class="info">
+		<p class="poster">totopesce</p>
+		<p class="dt">2018-01-26 08:25:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">tried all combinations of audiodriver and audiobuffer, changing pc volume and indiidual volume in game and the problem persists.<br>
+Though when I replay it on the log it sounds just fine, like the bgm is failing instead of the voices, could be wrong though.<br>
+How do I go to trying the alpha?, I already filled all the profile fields that appear in the alpha post<br>
+<br>
+EDIT: Just remembered, the same problem ocurrs in the Umitweak version and something similar happened when I played higurashi, but I played that without voices and the music had that problem.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2674">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2018-01-26 08:36:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I added you to the list of alpha testers (see this forum for more details: <a href="https://forum.umineko-project.org/viewforum.php?f=4" class="loclinks" onclick="this.target='_blank';">α-testing / α-тестирование</a>).<br>
+The new driver to try is <div class="codebox"><p>Code:</p><pre><code>audiodriver=wasapi</code></pre></div></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2676">
+	<div class="info">
+		<p class="poster">totopesce</p>
+		<p class="dt">2018-01-26 18:30:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Tried the new driver and nothing.<br>
+Also tried the game in another computer and the same.<br>
+Asked other people and they all heard it (thought for a bit I was crazy), also played the voices separately from the game folder and the bgm and cant hear the same noise.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2678">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2018-01-27 02:11:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I think we were able to reproduce and identify the problem. Here it only reproduces when all the volume levels are set to the maximum, but I suppose it varies depending on the tracks and voices.<br>
+Please try the binary which includes a workaroud:<br>
+<a href="https://besplsoft.org/xtova/out.php?proj=onscripter-win32&amp;btype=release&amp;hash=9185af95e73f7ce327b4d253bd24a2939bd6a5d183f3adea74354dae22d84c72" class="exlinks" onclick="this.target='_blank';">https://besplsoft.org/xtova/out.php?pro ... ae22d84c72</a><br>
+For the time being the fix is not turned on by default, because we are not sure about the consequences. To enable it you need to pass an ons.cfg option:
+<div class="codebox"><p>Code:</p><pre><code>audioformat=f32</code></pre></div>
+Here f32 is one of the audio formats, float 32-bit. All in all there are 6 formats: s8, u8, s16 (default), u16, s32, f22. u/s formars stand for unsigned and signed integral formats.<br>
+Try them all nd tell us if you have any differences not just in sound clipping but perhaps performance, stabilty, and sound quality.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2679">
+	<div class="info">
+		<p class="poster">totopesce</p>
+		<p class="dt">2018-01-27 19:11:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Just tried it (f32), no more audio problem, have only tried the tea party that I know had the problem.<br>
+Will keep playing and tell if I find any problem or anything.<br>
+<br>
+<br>
+Thanks <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2680">
+	<div class="info">
+		<p class="poster">totopesce</p>
+		<p class="dt">2018-01-27 23:03:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">An error ocurrer in episode 2, in the link theres an image, the game closes after pressing ok.<br>
+It was the alpha 5.1 with audioformat f32<br>
+<a href="https://prnt.sc/i6ixmb" class="exlinks" onclick="this.target='_blank';">https://prnt.sc/i6ixmb</a><br>
+It happens even without the audioformat f32 with the onscript r2974<br>
+With onscript r2967 it doesnt shoiw the error.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2681">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2018-01-27 23:11:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"> This is fixed, but we haven't upped an updated script yet. See <a href="https://forum.umineko-project.org/viewtopic.php?t=234" class="loclinks" onclick="this.target='_blank';">[EN] Crash in Turn of the Golden Witch, Chapter 10</a>. Next time please post alpha-specific issues in the alpha forums <img class="smilies" src="../../../images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Улыбается"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2723">
+	<div class="info">
+		<p class="poster">Deca</p>
+		<p class="dt">2018-02-05 23:52:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I can hear this static in Maria's lines now.<br>
+<br>
+r2981</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2724">
+	<div class="info">
+		<p class="poster">vit9696</p>
+		<p class="dt">2018-02-06 10:55:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Deca, do you have the relevant ons.cfg parameter that fixes it?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3452">
+	<div class="info">
+		<p class="poster">nickrobin</p>
+		<p class="dt">2019-02-04 07:20:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">This problem is very much common in Windows 7 and this error is mainly categorized under the <a href="https://errorcode0x.com/resolve-windows-update-error-code-8007000e/%22" class="exlinks" onclick="this.target='_blank';"> Windows update error code 8007000e </a> and it can easily be solved by just updating the Windows properly.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">Umineko Project</a> &raquo; <a href="../../">General Discussion / Обсуждение</a></p>
+</div>
+<footer>
+<!-- This will be appended to each topic. You can use it to add links at the end
+of each topic page. --></footer>
+</body></html>
